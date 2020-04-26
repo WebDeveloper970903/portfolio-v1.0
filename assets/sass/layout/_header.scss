@@ -1,0 +1,46 @@
+
+
+/** Header
+***********************************************/
+.nav {
+	border: 1px solid red;
+	display: flex;
+	align-items: center;
+	z-index: 1;
+
+	// nesting - ".header__logo-box"
+	&__logo-box {
+		display: inline-flex;
+		padding: 0;
+		margin: 0;
+
+		a {
+			display: flex;
+			margin: 0;
+			padding: 0;
+		}	
+	}
+	&__logo {
+		width: 3.5rem;
+		border: 1px solid green;
+		// display: none;
+	}
+}
+
+.header {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	
+	&__heading-box {
+	  max-width: $grid-width; // variable
+		text-align: center;
+		animation-name: move-in-down; // smooth animation (top to bottom)
+		animation-duration: 1.5s;
+		animation-timing-function: ease; //https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function
+		// animation-delay: 1.5s;
+		// animation-iteration-count: 2; 
+	} 
+}

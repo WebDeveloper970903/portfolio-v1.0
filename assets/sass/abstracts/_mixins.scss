@@ -1,0 +1,26 @@
+
+
+// mixin
+@mixin special-text($specialColor) {
+	.special-text {
+		color: $specialColor;
+		&::after {
+			content: "\a";
+      white-space: pre; // wraps content after this elem onto a new line
+		}
+	}
+}
+@mixin textSpace-textSsize {
+	letter-spacing: .1rem;
+	word-spacing: .2rem;
+}
+
+// clearfix 
+@mixin clearfix {
+	// row::after { some code } 
+	&::after {
+		content: "";
+		display: table;
+		clear: both; // (both float left and float right)
+	}
+}

@@ -1,0 +1,21 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Freelance Web Developer Portfolio",
+  "main": "index.js",
+  "scripts": {
+    "//": [ 
+      "script name => compilesass", 
+      "(npm) package name => node-sass",
+      "input file => assets/sass/main.scss",
+      "output file => assets/css/main.css",
+      "watch option to detect file change in the sass folder automatically compile our sass into css => -w"
+    ], 
+    "compilesass": "node-sass assets/sass/main.scss assets/css/main.css -w"
+  },
+  "author": "Alexandre Formoso",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.14.0"
+  }
+}

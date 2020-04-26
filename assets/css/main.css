@@ -1,0 +1,185 @@
+/*
+NOTES:
+- * => reset with universal selector
+- rem units use the (html) root font-size as a reference (eg. n rem => n x 10px of root font-size)
+- BEM (Block Element Modifier) methodology used with Sass
+- Responsive Design with FLOAT LAYOUTS and (litle bit of) FLEXBOX. Bootstrap Grid System was not used in this project.
+*/
+/** Importing partial sass files
+***********************************************/
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 10px;
+  /* 1rem = 10px(root font-size) / 16px(browser default) = 0.625 */
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box; }
+
+@keyframes move-in-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px); }
+  80% {
+    opacity: .8; }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+body {
+  font-family: 'Silka-SemiBold', 'Lato', sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #292C30; }
+
+h1.heading-primary {
+  color: #292C30;
+  margin-bottom: 4rem;
+  line-height: 1.4; }
+  h1.heading-primary .heading-primary--title {
+    font-size: 1.3rem;
+    display: block;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    color: #bfbfbf;
+    letter-spacing: .1rem;
+    word-spacing: .2rem;
+    font-weight: 400; }
+  h1.heading-primary .heading-primary--sub {
+    font-size: 4.8rem;
+    display: block;
+    letter-spacing: .1rem;
+    word-spacing: .2rem;
+    font-weight: 700; }
+    h1.heading-primary .heading-primary--sub .special-text {
+      color: #A58861; }
+      h1.heading-primary .heading-primary--sub .special-text::after {
+        content: "\a";
+        white-space: pre; }
+
+/** Media Queries
+***********************************************/
+@media screen and (max-width: 414px) {
+  h1.heading-primary .heading-primary--sub {
+    font-size: 3.4rem;
+    line-height: 4.2rem; } }
+
+.btn {
+  transition: transform 0.5s linear; }
+  .btn .fontawesome-icon {
+    color: gray;
+    margin-left: .5rem; }
+  .btn:link, .btn:visited {
+    vertical-align: middle;
+    font-size: 1.3rem;
+    text-decoration: none;
+    padding: 2rem 3.5rem;
+    display: inline-block;
+    border-radius: 3rem;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    word-spacing: .2rem;
+    font-weight: 700; }
+  .btn:hover {
+    cursor: pointer;
+    transition: transform 0.5s linear; }
+
+.btn--black {
+  background-color: #292C30;
+  color: #fff; }
+  .btn--black:hover .fontawesome-icon {
+    color: #fff;
+    transform: translateX(0.3rem);
+    transition: transform 250ms; }
+
+.btn--white {
+  background-color: #fff;
+  color: #292C30;
+  border: 0.1rem solid rgba(41, 44, 48, 0.15); }
+  .btn--white:hover .fontawesome-icon {
+    color: #292C30;
+    transform: translateX(0.3rem);
+    transition: transform 250ms; }
+
+.grid-example {
+  background-color: #292C30; }
+
+.row {
+  border: 2px solid orange;
+  background-color: #eee;
+  /* 1140px / 10 = 114rem
+	* max-width: if available space the row will take up 1140px, otherwise (if the viewport is smaller than 1140px) row = 100% of available space */
+  max-width: 114rem;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row .col-1-of-1 {
+    width: 100%;
+    text-align: center; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col"] {
+    background-color: orangered;
+    border: 1px solid green;
+    text-align: center;
+    float: left;
+    /* apply right-margin on all elems except the last elem */ }
+    .row [class^="col"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-2 {
+    /* (width - horizontal gutter / 2) */
+    width: calc((100% - 6rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - (6rem *2)) / 3); }
+  .row .col-1-of-3 {
+    width: calc((100% - (6rem *2)) / 3); }
+  .row .col-2-of-3 {
+    /* (1 of 3 + gutter + 1 of 3) */
+    width: calc( 2 * ((100% - 2 * 6rem) / 3) + 6rem); }
+  .row .col-1-of-4 {
+    width: calc((100% - (6rem *3)) / 4); }
+  .row .col-2-of-4 {
+    /* (1 of 4 + gutter + 1 of 4) */
+    width: calc( 2 * ((100% - (6rem) * 3)) / 4 + 6rem); }
+  .row .col-3-of-4 {
+    /* ( (1 of 4) + gutter + (1 of 4) + gutter + (1 of 4)) */
+    width: calc( 3 * (100% - (6rem *3)) / 4 + (2 * 6rem)); }
+
+/** Header
+***********************************************/
+.nav {
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  z-index: 1; }
+  .nav__logo-box {
+    display: inline-flex;
+    padding: 0;
+    margin: 0; }
+    .nav__logo-box a {
+      display: flex;
+      margin: 0;
+      padding: 0; }
+  .nav__logo {
+    width: 3.5rem;
+    border: 1px solid green; }
+
+.header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  .header__heading-box {
+    max-width: 114rem;
+    text-align: center;
+    animation-name: move-in-down;
+    animation-duration: 1.5s;
+    animation-timing-function: ease; }

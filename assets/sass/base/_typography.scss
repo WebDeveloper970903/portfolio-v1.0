@@ -1,0 +1,46 @@
+
+
+body {
+	font-family: 'Silka-SemiBold', 'Lato', sans-serif;
+	font-weight: 400; 
+	line-height: 1.7;
+	color: $color-primary-grey-dark;
+}
+
+h1.heading-primary {
+	color: $color-primary-grey-dark;
+	margin-bottom: 4rem;
+	line-height: 1.4;
+
+	.heading-primary--title { // Freelance Web Developer
+		font-size: 1.3rem;
+		display: block;
+		margin-bottom: 1rem;
+		text-transform: uppercase;
+		color:  darken($color-primary-white, 25%);
+		// adding mixin
+		@include textSpace-textSsize;
+		font-weight: 400;
+		
+	}
+	.heading-primary--sub {
+		font-size: 4.8rem;
+		display: block;
+		// adding mixin 
+		@include textSpace-textSsize;
+		font-weight: 700;
+		@include special-text($color-primary-gold);
+	}
+}
+
+/** Media Queries
+***********************************************/
+@media screen and (max-width: 414px) {
+	h1.heading-primary {
+		.heading-primary--title {}
+		.heading-primary--sub {
+			font-size: 3.4rem;
+			line-height: 4.2rem; 
+	  }
+	}
+}

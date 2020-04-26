@@ -1,0 +1,31 @@
+
+/*
+NOTES:
+- * => reset with universal selector
+- rem units use the (html) root font-size as a reference (eg. n rem => n x 10px of root font-size)
+- BEM (Block Element Modifier) methodology used with Sass
+- Responsive Design with FLOAT LAYOUTS (and litle bit of FLEXBOX); Bootstrap Grid System was not used in this project.
+*/
+
+
+
+/** Importing partial sass files
+***********************************************/
+@import "abstracts/functions"; 
+@import "abstracts/mixins"; 
+@import "abstracts/variables";
+
+@import "base/base"; 
+@import "base/animations";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/button";  
+
+@import "layout/grid"; 
+@import "layout/header"; 
+ 
+@import "pages/home";
+
+
+

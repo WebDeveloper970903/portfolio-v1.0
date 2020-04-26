@@ -1,0 +1,45 @@
+
+
+.btn {
+	transition: transform 0.5s linear;
+
+	.fontawesome-icon {
+		color: darken($color-primary-white, 50%);
+		margin-left: .5rem;
+	}	
+	&:link, &:visited {
+		vertical-align: middle;
+		font-size: 1.3rem;
+		text-decoration: none;
+		padding: 2rem 3.5rem;
+		display: inline-block;
+		border-radius: 3rem;
+		// transition: all .2;
+		position: relative;
+		text-transform: uppercase;
+		// adding mixin
+		@include textSpace-textSsize;
+		font-weight: 700;
+	}
+	&:hover {
+		cursor: pointer;
+		transition: transform 0.5s linear;
+	}
+}
+
+.btn--black {
+	background-color: $color-primary-grey-dark;
+	color: $color-primary-white;
+	// add mixin
+	&:hover {		
+    @include arrow-right-animate($color-primary-white);
+	}
+}
+.btn--white {
+	background-color: $color-primary-white;
+	color: $color-primary-grey-dark;
+	border: 0.1rem solid rgba($color-primary-grey-dark, .15);
+  &:hover {		
+    @include arrow-right-animate($color-primary-grey-dark);
+	}
+}
