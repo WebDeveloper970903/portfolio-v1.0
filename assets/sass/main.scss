@@ -1,4 +1,3 @@
-
 /*
 NOTES:
 - * => reset with universal selector
@@ -7,25 +6,52 @@ NOTES:
 - Responsive Design with FLOAT LAYOUTS (and litle bit of FLEXBOX); Bootstrap Grid System was not used in this project.
 */
 
-
-
 /** Importing partial sass files
 ***********************************************/
-@import "abstracts/functions"; 
-@import "abstracts/mixins"; 
+@import "abstracts/functions";
+@import "abstracts/mixins";
 @import "abstracts/variables";
 
-@import "base/base"; 
+@import "base/base";
 @import "base/animations";
 @import "base/typography";
 @import "base/utilities";
 
-@import "components/button";  
+@import "components/button";
 
-@import "layout/grid"; 
-@import "layout/header"; 
- 
+@import "layout/grid";
+@import "layout/header";
+
 @import "pages/home";
 
-
-
+/** Media Queries
+***********************************************/
+@media screen and (max-width: 760px) {
+  h1.heading-primary {
+    .heading-primary--title {
+    }
+    .heading-primary--sub {
+      font-size: 3.4rem;
+      line-height: 4.2rem;
+    }
+  }
+  .section-about {
+    .container {
+      padding-left: 4rem;
+      padding-right: 4rem;
+      
+      .col-left {
+        padding-right: 0;
+        width: 100%;
+      }
+      .col-right {
+        width: 100%;
+        padding-left: 0; // 15vw;
+        padding-top: 2rem;
+      }
+    }
+  }
+  .section-about p {
+    margin-bottom: 0;
+  }
+}

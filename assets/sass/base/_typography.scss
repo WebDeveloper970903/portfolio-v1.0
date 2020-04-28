@@ -1,46 +1,87 @@
-
-
 body {
-	font-family: 'Silka-SemiBold', 'Lato', sans-serif;
-	font-weight: 400; 
-	line-height: 1.7;
-	color: $color-primary-grey-dark;
+  font-family: "Silka-SemiBold", "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: $color-primary-grey-dark;
+  font-size: 1.6rem;
 }
 
 h1.heading-primary {
-	color: $color-primary-grey-dark;
-	margin-bottom: 4rem;
-	line-height: 1.4;
+  color: $color-primary-grey-dark;
+  margin-bottom: 4rem; // betteen the text and the btn
+  line-height: 1.4;
 
-	.heading-primary--title { // Freelance Web Developer
-		font-size: 1.3rem;
-		display: block;
-		margin-bottom: 1rem;
-		text-transform: uppercase;
-		color:  darken($color-primary-white, 25%);
-		// adding mixin
-		@include textSpace-textSsize;
-		font-weight: 400;
-		
-	}
-	.heading-primary--sub {
-		font-size: 4.8rem;
-		display: block;
-		// adding mixin 
-		@include textSpace-textSsize;
-		font-weight: 700;
-		@include special-text($color-primary-gold);
-	}
+  .heading-primary--title {
+    // Freelance Web Developer
+    font-size: 1.3rem;
+    display: block;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    color: darken($color-primary-white, 25%);
+    // adding mixin
+    @include textSpace-textSsize;
+    font-weight: 400;
+  }
+  .heading-primary--sub {
+    font-size: 5.4rem;
+    display: block;
+    // adding mixin
+    @include textSpace-textSsize;
+    font-weight: 700;
+    @include u-special-text(
+      $color-primary-gold
+    ); // adds color and collapses following text
+  }
 }
 
-/** Media Queries
-***********************************************/
-@media screen and (max-width: 414px) {
-	h1.heading-primary {
-		.heading-primary--title {}
-		.heading-primary--sub {
-			font-size: 3.4rem;
-			line-height: 4.2rem; 
-	  }
-	}
+// section-about typography
+.heading-secondary {
+  font-size: 3.4rem;
+  font-size: 2.8rem;
+  line-height: 4rem;
+  margin-bottom: 3rem;
+  // adding mixin
+  @include textSpace-textSsize;
+  font-weight: 700;
+  // creating colour grandience on heading
+  background-image: linear-gradient(
+    to right,
+    $color-primary-grey-dark,
+    $color-primary-grey
+  ); // 1. add gradient background
+  display: inline-block; // 2. change elem display to be inline (so that gradient only goes unitil end of text)
+  -webkit-background-clip: text; // 3. apply colour gradient background effect to text
+  color: transparent; // 4. make text transparent so we see the text
+}
+
+.section-about {
+  .container {
+    .col {
+      // h3
+      p {
+        font-size: 1.5rem;
+        line-height: 3rem;
+        color: $color-primary-grey;
+        opacity: 0.7;
+        letter-spacing: 0.1rem;
+
+        &::not(:last-child) {
+          margin-bottom: 3rem; // margin-bottom to all elems apart from the last elem
+        }
+      }
+      // a
+      .skills {
+        .heading-tertiary {
+          font-size: 1.3rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.1rem;
+        }
+        p {
+          font-size: 1.4rem;
+          font-weight: 700;
+        }
+      }
+    }
+  }
 }

@@ -1,0 +1,136 @@
+
+
+<!-- Native Layouts with FLOATS (CSS Grids, Flexbox are also good but less supported than FLOATS *2020) -->
+
+<section class="grid-test">
+	<div class="row">
+		<div class="col col-1-of-1">
+			Col 1 of 1
+		</div>
+	</div>
+	<div class="row">
+		<div class="col col-1-of-2">
+			Col 1 of 2
+		</div>
+		<div class="col col-1-of-2">
+			Col 1 of 2
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col col-1-of-3">
+			Col 1 of 3
+		</div>
+		<div class="col col-1-of-3">
+			Col 1 of 3
+		</div>
+		<div class="col col-1-of-3">
+			Col 1 of 3
+		</div>
+	</div>
+		
+	<div class="row">
+		<div class="col col-1-of-3">
+			Col 1 of 3
+		</div>
+		<div class="col col-2-of-3">
+			Col 2 of 3
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col col-1-of-4">
+			Col 1 of 4
+		</div>
+		<div class="col col-1-of-4">
+			Col 1 of 4
+		</div>
+		<div class="col col-1-of-4">
+			Col 1 of 4
+		</div>
+		<div class="col col-1-of-4">
+			Col 1 of 4
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col col-1-of-4">
+			Col 1 of 4
+		</div>
+		<div class="col col-1-of-4">
+			Col 1 of 4
+		</div>
+		<div class="col col-2-of-4">
+			Col 2 of 4
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col col-1-of-4">
+			Col 1 of 4
+		</div>
+		<div class="col col-3-of-4">
+			Col 3 of 4
+		</div>
+	</div>
+</section>
+
+
+<!--
+
+	.grid-example {
+  border: 2px solid red; }
+
+.row {
+  border: 2px solid orange;
+  background-color: #eee;
+  /* 10px = 1rem so width: 1140px / 10 = 114rem.
+	* max-width: if available space the row will take up 1140px, 
+	* otherwise (if the viewport is smaller than 1140px) row = 100% of available space */
+  /* Adding variables */
+  max-width: 114rem;
+  /* centers inner block elem */
+  margin: 0 auto;
+  /* &:last-child {	margin-bottom: 0; }*/
+  /* add mixin to clear floats */
+  /* row::after { some code } */
+  /* DRY practice with the attribute selector: selecting elems "initial classes of" (^) - also "ending with" ($) or "containing" (*) */ }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row .col-1-of-1 {
+    width: 100%;
+    text-align: center; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both;
+    /*(both float left and float right)*/ }
+  .row [class^="col"] {
+    background-color: orangered;
+    border: 1px solid green;
+    text-align: center;
+    float: left;
+    /* apply right-margin on all elems except the last elem */ }
+    .row [class^="col"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-2 {
+    /* entire width - h gutter / 2*/
+    width: calc((100% - 6rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - (6rem *2)) / 3); }
+  .row .col-1-of-3 {
+    width: calc((100% - (6rem *2)) / 3); }
+  .row .col-2-of-3 {
+    /* (1 of 3 + gutter + 1 of 3) */
+    width: calc( 2 * ((100% - 2 * 6rem) / 3) + 6rem); }
+  .row .col-1-of-4 {
+    width: calc((100% - (6rem *3)) / 4); }
+  .row .col-2-of-4 {
+    /* (1 of 4 + gutter + 1 of 4) */
+    width: calc( 2 * ((100% - (6rem) * 3)) / 4 + 6rem); }
+  .row .col-3-of-4 {
+    /* ( (1 of 4) + gutter + (1 of 4) + gutter + (1 of 4)) */
+		width: calc( 3 * (100% - (6rem *3)) / 4 + (2 * 6rem)); }
+		
+
+-->

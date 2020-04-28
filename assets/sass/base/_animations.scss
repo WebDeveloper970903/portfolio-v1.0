@@ -1,25 +1,23 @@
-
-
 // animation mixins with an argument
 @mixin arrow-right-animate($iconColor) {
-	.fontawesome-icon {
-	color: $iconColor;
-	transform: translateX(.3rem);
-	transition: transform 250ms;
-	}
+  .fontawesome-icon {
+    color: $iconColor;
+    transform: translateX(0.3rem);
+    transition: transform 250ms;
+  }
 }
 // animation with @keyframes
 @keyframes move-in-down {
-	0% {
-		opacity: 0;
-		// display: none; 
-		transform: translateY(-100px);
-	}
-	80% {
-		opacity: .8; 
-	}
-	100% {
-		opacity: 1; 
+  0% {
+    opacity: 0;
+    // display: none;
+    transform: translateY(-100px);
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
     transform: translate(0); // to look as it looked at the beggining
   }
 }

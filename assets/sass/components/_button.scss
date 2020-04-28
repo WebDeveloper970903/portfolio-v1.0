@@ -1,45 +1,52 @@
-
-
 .btn {
-	transition: transform 0.5s linear;
+  transition: transform 0.5s linear;
+  // margin-bottom: 4.8rem;
 
-	.fontawesome-icon {
-		color: darken($color-primary-white, 50%);
-		margin-left: .5rem;
-	}	
-	&:link, &:visited {
-		vertical-align: middle;
-		font-size: 1.3rem;
-		text-decoration: none;
-		padding: 2rem 3.5rem;
-		display: inline-block;
-		border-radius: 3rem;
-		// transition: all .2;
-		position: relative;
-		text-transform: uppercase;
-		// adding mixin
-		@include textSpace-textSsize;
-		font-weight: 700;
-	}
-	&:hover {
-		cursor: pointer;
-		transition: transform 0.5s linear;
-	}
+  .fontawesome-icon {
+    color: darken($color-primary-white, 50%);
+    margin-left: 0.5rem;
+  }
+  &:link,
+  &:visited {
+    vertical-align: middle;
+    font-size: 1.6rem;
+    text-decoration: none;
+    padding: 1.55rem 2.9rem;
+    display: inline-block;
+    border-radius: 3rem;
+    position: relative;
+    // text-transform: uppercase;
+    // adding mixin
+    @include textSpace-textSsize;
+    font-weight: 700;
+  }
+  &:hover {
+    cursor: pointer;
+    transition: transform 0.5s linear;
+  }
 }
 
 .btn--black {
-	background-color: $color-primary-grey-dark;
-	color: $color-primary-white;
-	// add mixin
-	&:hover {		
-    @include arrow-right-animate($color-primary-white);
-	}
+  background-color: $color-primary-grey-dark;
+  color: $color-primary-grey;
+  // add mixin
+  &:hover {
+    @include arrow-right-animate($color-primary-grey);
+  }
 }
 .btn--white {
-	background-color: $color-primary-white;
-	color: $color-primary-grey-dark;
-	border: 0.1rem solid rgba($color-primary-grey-dark, .15);
-  &:hover {		
+  background-color: $color-primary-white;
+  color: $color-primary-grey-dark;
+  border: 0.1rem solid rgba($color-primary-grey-dark, 0.15);
+  &:hover {
     @include arrow-right-animate($color-primary-grey-dark);
-	}
+  }
 }
+.btn--text {
+  color: $color-primary-grey;
+  // add mixin
+  &:hover {
+    @include arrow-right-animate($color-primary-grey);
+  }
+}
+

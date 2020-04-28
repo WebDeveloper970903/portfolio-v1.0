@@ -1,0 +1,34 @@
+// mixin and utility classes
+
+.u-center-text {
+  text-align: center;
+}
+
+// uppercase text
+.u-text-ppercase {
+  text-transform: uppercase;
+}
+
+// margin-bottom
+.u-margin-bottom-xsmall {
+  margin-bottom: 1rem; // 10px
+}
+.u-margin-bottom-small {
+  margin-bottom: 2rem; // 20px
+}
+.u-margin-bottom-medium {
+  margin-bottom: 4rem; // 40px
+}
+.u-margin-bottom-big {
+  margin-bottom: 8rem; // 80px
+}
+
+.u-text-align-left {
+  text-align: left;
+}
+
+.section-about .container .col-left a.btn--text {
+	border-radius: unset; // removes border-radius
+	padding-left: 0;
+	background-color: purple;
+}

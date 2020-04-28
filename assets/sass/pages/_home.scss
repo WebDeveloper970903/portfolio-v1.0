@@ -1,0 +1,34 @@
+// About section
+.section-about {
+  background-color: $color-primary-grey-dark;
+  padding-bottom: 6rem;
+  // margin-top: -13rem;
+
+  .container {
+    @include clearfix;
+    margin-top: 6rem;
+    margin: auto;
+    padding-left: 80px;
+    padding-right: 80px;
+    
+    @include clearfix;
+
+    .col-left {
+      float: left;
+      padding-right: 4rem;
+    }
+    .col-right {
+      float: left;
+      padding-top: 10rem; // 100px
+      padding-left: 10rem;
+
+      .skills-1 {
+        float: left;
+        padding-right: 5rem;
+        height: 100%;
+        border: 1px solid green;
+      }
+    }
+  }
+}
+

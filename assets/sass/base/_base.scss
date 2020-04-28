@@ -1,15 +1,16 @@
-
-
-*, *::before, *::after { 
+*,
+*::before,
+*::after {
   margin: 0;
-	padding: 0;
-	box-sizing: inherit; 
+  padding: 0;
+  box-sizing: inherit;
 }
 html {
-	// allowing that the default font-size translates into the font-size given by the Browser/user 
-	font-size: 10px; /* 1rem = 10px(root font-size) / 16px(browser default) = 0.625 */
-	font-size: 62.5%;
+  // allowing that the default font-size translates into the font-size given by the Browser/user
+  font-size: 10px; /* 1rem = 10px(root font-size) / 16px(browser default) = 0.625 */
+  font-size: 62.5%;
 }
 body {
-	box-sizing: border-box; 
+  box-sizing: border-box;
+  // see more styles in typograpgy.sccss
 }
