@@ -6,6 +6,12 @@
     transition: transform 250ms;
   }
 }
+@mixin arrow-bottom-animate() {
+  .fontawesome-icon {
+    transform: translateY(0.3rem);
+    transition: transform 250ms;
+  }
+}
 // animation with @keyframes
 @keyframes move-in-down {
   0% {

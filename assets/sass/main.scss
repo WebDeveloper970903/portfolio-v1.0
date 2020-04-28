@@ -28,14 +28,20 @@ NOTES:
 ***********************************************/
 @media screen and (max-width: 760px) {
   h1.heading-primary {
-    .heading-primary--title {
-    }
     .heading-primary--sub {
       font-size: 3.4rem;
       line-height: 4.2rem;
     }
   }
   .section-about {
+    // padding-bottom: 8rem;
+
+    .row {
+      .profile {
+        height: 25rem;
+        // top: -8rem; // this results in equal margin between elems in mobile view
+      }
+    }
     .container {
       padding-left: 4rem;
       padding-right: 4rem;
@@ -46,12 +52,9 @@ NOTES:
       }
       .col-right {
         width: 100%;
-        padding-left: 0; // 15vw;
+        padding-left: 0;
         padding-top: 2rem;
       }
     }
-  }
-  .section-about p {
-    margin-bottom: 0;
   }
 }

@@ -27,8 +27,25 @@
   text-align: left;
 }
 
-.section-about .container .col-left a.btn--text {
-	border-radius: unset; // removes border-radius
-	padding-left: 0;
-	background-color: purple;
+.header {
+  a.btn--scroll {
+    border-radius: unset;
+  }
+}
+.section-about {
+  a.btn--text {
+    border-radius: unset; // removes border-radius
+    padding-left: 0;
+    background-color: purple;
+  }
+  .u-reset-padding-left {
+    padding-left: 2.9rem;
+  }
+  .row {
+    .profile {
+      .btn--scroll {
+        border-radius: unset;
+      }
+    }
+  }
 }

@@ -1,4 +1,4 @@
-.btn {
+.btn, .btn-medium {
   transition: transform 0.5s linear;
   // margin-bottom: 4.8rem;
 
@@ -49,4 +49,28 @@
     @include arrow-right-animate($color-primary-grey);
   }
 }
+.btn--scroll {
+  background-color: $color-primary-gold;
+  width: 8.5rem;
+  height: 8.5rem;
+  bottom: 4.5rem;
+  z-index: 2;
+  border-radius: unset;
 
+  &:link,
+  &:visited {
+    padding-top: 2.5rem;
+    vertical-align: middle;
+  }
+
+  // add mixin
+  &:hover {
+    @include arrow-bottom-animate();
+  }
+  .fontawesome-icon {
+    color: $color-primary-grey;
+  }
+}
+.section-about .row .profile a.btn-medium {
+  padding: 2rem 4rem;
+}

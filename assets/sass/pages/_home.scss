@@ -1,16 +1,45 @@
 // About section
 .section-about {
   background-color: $color-primary-grey-dark;
-  padding-bottom: 6rem;
+  padding-bottom: 8rem;
   // margin-top: -13rem;
 
-  .container {
+  .row {
     @include clearfix;
-    margin-top: 6rem;
+
+    .profile {
+      background-color: $color-primary-grey-dark;
+      float: left;
+      top: -8rem;
+      position: relative;
+      border: 2px solid blue;
+      width: 100%;
+      height: 50rem;
+
+      &__photo {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+      }
+      .btn--text {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+        border: 1px solid green;
+      }
+    }
+  }
+
+  .container {
+    // margin-top: 6rem;
     margin: auto;
     padding-left: 80px;
     padding-right: 80px;
-    
+
     @include clearfix;
 
     .col-left {
@@ -31,4 +60,3 @@
     }
   }
 }
-
