@@ -1,22 +1,35 @@
-
-
-
 .row {
   border: 2px solid orange;
   max-width: $grid-width;
   margin: auto;
-  // @include clearfix;
 }
 
 [class^="col"] {
-  border: 1px solid lighten($color: green, $amount: 0%);
+  border: 1px dashed lighten($color: green, $amount: 0%);
   text-align: center;
   width: 50%;
   float: left;
   text-align: left;
 }
 
+// Work section
+.section-work {
+  .row {
+    @include clearfix;
 
+    .col {
+      &:not(:last-child) {
+        margin-right: $gutter-horizontal;
+      }
+    }
+    .col-1-of-2 {
+      // (width - horizontal gutter / 2) 
+      max-width: calc((100% - #{$gutter-horizontal}) / 2);
+      display: inline-block;
+      padding: 0 0 8rem;
+    }
+  }
+} 
 
 // .grid-example {
 //   background-color: $color-primary-grey-dark;
@@ -49,33 +62,33 @@
   }
   // .col-1-of-2 {
   //   /* (width - horizontal gutter / 2) */
-  //   max-width: calc((100% - #{$gutter-horizontal}) / 2);
-  // }
-  // .col-1-of-3 {
-  //   width: calc((100% - (#{$gutter-horizontal} * 2)) / 3);
-  // }
-  // .col-1-of-3 {
-  //   width: calc((100% - (#{$gutter-horizontal} * 2)) / 3);
-  // }
-  // .col-2-of-3 {
-  //   /* (1 of 3 + gutter + 1 of 3) */
-  //   width: calc(
-  //     2 * ((100% - 2 * #{$gutter-horizontal}) / 3) + #{$gutter-horizontal}
-  //   );
-  // }
-  // .col-1-of-4 {
-  //   width: calc((100% - (#{$gutter-horizontal} * 3)) / 4);
-  // }
-  // .col-2-of-4 {
-  //   /* (1 of 4 + gutter + 1 of 4) */
-  //   width: calc(
-  //     2 * ((100% - (#{$gutter-horizontal}) * 3)) / 4 + #{$gutter-horizontal}
-  //   );
-  // }
-  // .col-3-of-4 {
-  //   /* ( (1 of 4) + gutter + (1 of 4) + gutter + (1 of 4)) */
-  //   width: calc(
-  //     3 * (100% - (#{$gutter-horizontal} * 3)) / 4 + (2 * #{$gutter-horizontal})
-  //   );
-  // }
+//   max-width: calc((100% - #{$gutter-horizontal}) / 2);
+// }
+// .col-1-of-3 {
+//   width: calc((100% - (#{$gutter-horizontal} * 2)) / 3);
+// }
+// .col-1-of-3 {
+//   width: calc((100% - (#{$gutter-horizontal} * 2)) / 3);
+// }
+// .col-2-of-3 {
+//   /* (1 of 3 + gutter + 1 of 3) */
+//   width: calc(
+//     2 * ((100% - 2 * #{$gutter-horizontal}) / 3) + #{$gutter-horizontal}
+//   );
+// }
+// .col-1-of-4 {
+//   width: calc((100% - (#{$gutter-horizontal} * 3)) / 4);
+// }
+// .col-2-of-4 {
+//   /* (1 of 4 + gutter + 1 of 4) */
+//   width: calc(
+//     2 * ((100% - (#{$gutter-horizontal}) * 3)) / 4 + #{$gutter-horizontal}
+//   );
+// }
+// .col-3-of-4 {
+//   /* ( (1 of 4) + gutter + (1 of 4) + gutter + (1 of 4)) */
+//   width: calc(
+//     3 * (100% - (#{$gutter-horizontal} * 3)) / 4 + (2 * #{$gutter-horizontal})
+//   );
+// }
 // }

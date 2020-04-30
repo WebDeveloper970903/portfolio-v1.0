@@ -18,11 +18,12 @@ NOTES:
 @import "base/utilities";
 
 @import "components/button";
+@import "components/featured";
 
 @import "layout/grid";
 @import "layout/header";
 
-@import "pages/home";
+@import "pages/home"; 
 
 /** Media Queries
 ***********************************************/
@@ -45,7 +46,7 @@ NOTES:
     .container {
       padding-left: 4rem;
       padding-right: 4rem;
-      
+
       .col-left {
         padding-right: 0;
         width: 100%;
@@ -55,6 +56,18 @@ NOTES:
         padding-left: 0;
         padding-top: 2rem;
       }
+    }
+  }
+  // work section
+
+  .section-work {
+    .wrapper {
+      .heading-secondary {
+        width: 100%;
+      }
+    }
+    .u-width-10 {
+      width: 100%;
     }
   }
 }

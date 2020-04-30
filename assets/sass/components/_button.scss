@@ -1,4 +1,5 @@
-.btn, .btn-medium {
+.btn,
+.btn-medium {
   transition: transform 0.5s linear;
   // margin-bottom: 4.8rem;
 
@@ -34,6 +35,7 @@
     @include arrow-right-animate($color-primary-grey);
   }
 }
+
 .btn--white {
   background-color: $color-primary-white;
   color: $color-primary-grey-dark;
@@ -42,6 +44,7 @@
     @include arrow-right-animate($color-primary-grey-dark);
   }
 }
+
 .btn--text {
   color: $color-primary-grey;
   // add mixin
@@ -49,6 +52,7 @@
     @include arrow-right-animate($color-primary-grey);
   }
 }
+
 .btn--scroll {
   background-color: $color-primary-gold;
   width: 8.5rem;
@@ -73,4 +77,49 @@
 }
 .section-about .row .profile a.btn-medium {
   padding: 2rem 4rem;
+}
+
+// .featured {
+//   transition: transform 0.5s linear;
+//   position: relative;
+
+//   &:hover {
+//     cursor: pointer;
+//     transition: transform 0.5s linear;
+//     .highlight-text {
+//       color: red;
+//     }
+//   }
+
+// }
+
+.featured {
+  padding: unset;
+  display: inline-block;
+  border: 2px dashed lighten($color: green, $amount: 0%);
+  border-radius: .3rem 0 0 .3rem;
+  transition: transform 0.3s;
+  // transition: transform 0.5s linear;
+
+  // &__box {
+  //   // background-color: darken(#eeeee5, .25%);
+  //   // transition: transform 0.3s;
+  // }
+  .fontawesome-icon {
+    color: darken($color-primary-white, 50%);
+  }
+  .highlight-text {
+    color: darken($color-primary-white, 50%);
+    font-size: 1.5;
+  }
+  &:hover {
+    // border-top: .3rem solid $color-primary-grey-dark;
+    // border-left: .3rem solid $color-primary-grey-dark;
+    // border-bottom: .3rem solid $color-primary-grey-dark;
+
+    cursor: pointer;
+    transform: translateY(-1.5rem) scale(1.03rem);
+    // add mixin - "featured.scss" and "animations.scss" for inherited properties
+    @include arrow-up-animate($color-primary-grey-dark);
+  }
 }

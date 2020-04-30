@@ -27,3 +27,24 @@
     transform: translate(0); // to look as it looked at the beggining
   }
 }
+
+// long arrow right (animate up)
+@mixin arrow-up-animate($iconColor) {
+  .fontawesome-icon {
+    margin-left: 0;
+    color: $iconColor;
+    // transform: skewY(-45deg);
+    transform: rotate(-45deg);
+    transition: transform 250ms;
+  }
+  .highlight-text {
+    color: $iconColor;
+    font-weight: 700;
+  }
+  .featured__box-1 {
+    background-color: darken($color-primary-beije, 5%);
+  }
+  .featured__box-2  {
+      background-color: darken($color-primary-babyblue, 5%);
+  }
+}

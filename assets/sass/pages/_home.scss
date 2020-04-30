@@ -1,3 +1,16 @@
+.row {
+  @include clearfix;
+}
+.col-left {
+  float: left;
+  // padding-right: 4rem;
+}
+.col-right {
+  float: left;
+  padding-top: 10rem; // 100px
+  // padding-left: 10rem;
+}
+
 // About section
 .section-about {
   background-color: $color-primary-grey-dark;
@@ -5,7 +18,7 @@
   // margin-top: -13rem;
 
   .row {
-    @include clearfix;
+    // @include clearfix;
 
     .profile {
       background-color: $color-primary-grey-dark;
@@ -22,7 +35,6 @@
         position: absolute;
         top: 0;
         left: 0;
-
       }
       .btn--text {
         position: absolute;
@@ -43,12 +55,12 @@
     @include clearfix;
 
     .col-left {
-      float: left;
+      // float: left;
       padding-right: 4rem;
     }
     .col-right {
-      float: left;
-      padding-top: 10rem; // 100px
+      // float: left;
+      // padding-top: 10rem; // 100px
       padding-left: 10rem;
 
       .skills-1 {
@@ -59,4 +71,18 @@
       }
     }
   }
+}
+
+// Work section
+.section-work {
+  .wrapper {
+    border: 2px dashed green;
+    text-align: center;
+    padding: 0;
+    padding: 8rem 0;
+    @include clearfix;
+  }
+  // .col-1-of-2 {
+  
+  // }
 }

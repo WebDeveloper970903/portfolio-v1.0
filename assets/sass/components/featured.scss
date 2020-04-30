@@ -1,0 +1,42 @@
+.section-work {
+  .col-1-of-2 {
+    .featured {
+
+      &:link,
+      &:visited {
+        text-decoration: none;
+      }
+      &__box {
+
+        .heading-primary {
+          padding: 4rem 0 0 4rem;
+
+          .heading-primary--title {
+            margin-bottom: 0;
+          }
+        }
+        .wrapper {
+          border: 1px solid purple;
+          padding: 4rem 0 0 4rem;
+
+          .col {
+            padding: 0;
+            margin: 0;
+            width: 50%;
+
+            .heading-primary--sub {
+              font-size: 2.8rem;
+              line-height: 4rem;
+            }
+          }
+        }
+        .wrapper:last-child {
+          .highlight-text {
+            text-align: center;
+            padding: 0.1rem 0;
+          }
+        }
+      } // &__box
+    }
+  }
+}
