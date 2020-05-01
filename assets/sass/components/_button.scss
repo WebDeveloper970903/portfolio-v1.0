@@ -12,11 +12,11 @@
     vertical-align: middle;
     font-size: 1.6rem;
     text-decoration: none;
-    padding: 1.55rem 2.9rem;
+    padding: 1.65rem 2.9rem;
     display: inline-block;
     border-radius: 3rem;
     position: relative;
-    // text-transform: uppercase;
+    text-transform: uppercase;
     // adding mixin
     @include textSpace-textSsize;
     font-weight: 700;
@@ -47,6 +47,7 @@
 
 .btn--text {
   color: $color-primary-grey;
+  background-color: $color-primary-grey-dark;
   // add mixin
   &:hover {
     @include arrow-right-animate($color-primary-grey);
@@ -79,20 +80,6 @@
   padding: 2rem 4rem;
 }
 
-// .featured {
-//   transition: transform 0.5s linear;
-//   position: relative;
-
-//   &:hover {
-//     cursor: pointer;
-//     transition: transform 0.5s linear;
-//     .highlight-text {
-//       color: red;
-//     }
-//   }
-
-// }
-
 .featured {
   padding: unset;
   display: inline-block;
@@ -101,10 +88,6 @@
   transition: transform 0.3s;
   // transition: transform 0.5s linear;
 
-  // &__box {
-  //   // background-color: darken(#eeeee5, .25%);
-  //   // transition: transform 0.3s;
-  // }
   .fontawesome-icon {
     color: darken($color-primary-white, 50%);
   }
@@ -113,10 +96,6 @@
     font-size: 1.5;
   }
   &:hover {
-    // border-top: .3rem solid $color-primary-grey-dark;
-    // border-left: .3rem solid $color-primary-grey-dark;
-    // border-bottom: .3rem solid $color-primary-grey-dark;
-
     cursor: pointer;
     transform: translateY(-1.5rem) scale(1.03rem);
     // add mixin - "featured.scss" and "animations.scss" for inherited properties

@@ -14,6 +14,7 @@
 
 // Work section
 .section-work {
+  
   .row {
     @include clearfix;
 
@@ -26,10 +27,15 @@
       // (width - horizontal gutter / 2) 
       max-width: calc((100% - #{$gutter-horizontal}) / 2);
       display: inline-block;
-      padding: 0 0 8rem;
+      // padding: 0 0 8rem;
     }
   }
 } 
+
+//  section
+.section-footer {
+
+}
 
 // .grid-example {
 //   background-color: $color-primary-grey-dark;

@@ -68,8 +68,7 @@ body {
         white-space: pre; }
 
 .heading-secondary {
-  font-size: 3.4rem;
-  font-size: 2.8rem;
+  font-size: 3.8rem;
   line-height: 4rem;
   margin-bottom: 3rem;
   letter-spacing: 0.1rem;
@@ -164,10 +163,11 @@ body {
     vertical-align: middle;
     font-size: 1.6rem;
     text-decoration: none;
-    padding: 1.55rem 2.9rem;
+    padding: 1.65rem 2.9rem;
     display: inline-block;
     border-radius: 3rem;
     position: relative;
+    text-transform: uppercase;
     letter-spacing: 0.1rem;
     word-spacing: 0.2rem;
     font-weight: 700; }
@@ -194,7 +194,8 @@ body {
     transition: transform 250ms; }
 
 .btn--text {
-  color: #e6e9ec; }
+  color: #e6e9ec;
+  background-color: #292c30; }
   .btn--text:hover .fontawesome-icon {
     color: #e6e9ec;
     transform: translateX(0.3rem);
@@ -265,9 +266,11 @@ body {
       font-size: 2.8rem;
       line-height: 4rem; }
 
-.section-work .col-1-of-2 .featured__box .wrapper:last-child .highlight-text {
-  text-align: center;
-  padding: 0.1rem 0; }
+.section-work .col-1-of-2 .featured__box .wrapper:last-child {
+  padding-bottom: 4rem; }
+  .section-work .col-1-of-2 .featured__box .wrapper:last-child .highlight-text {
+    text-align: center;
+    padding: 0.1rem 0; }
 
 .row {
   border: 2px solid orange;
@@ -287,12 +290,11 @@ body {
   clear: both; }
 
 .section-work .row .col:not(:last-child) {
-  margin-right: 6rem; }
+  margin-right: 4rem; }
 
 .section-work .row .col-1-of-2 {
-  max-width: calc((100% - 6rem) / 2);
-  display: inline-block;
-  padding: 0 0 8rem; }
+  max-width: calc((100% - 4rem) / 2);
+  display: inline-block; }
 
 /*
 .row {
@@ -392,8 +394,9 @@ body {
       border: 1px solid green; }
   .section-about .container {
     margin: auto;
-    padding-left: 80px;
-    padding-right: 80px; }
+    padding-left: 8rem;
+    padding-right: 8rem;
+    padding-bottom: 4rem; }
     .section-about .container::after {
       content: "";
       display: table;
@@ -401,22 +404,66 @@ body {
     .section-about .container .col-left {
       padding-right: 4rem; }
     .section-about .container .col-right {
-      padding-left: 10rem; }
+      padding-left: 12rem; }
       .section-about .container .col-right .skills-1 {
         float: left;
         padding-right: 5rem;
         height: 100%;
         border: 1px solid green; }
 
-.section-work .wrapper {
-  border: 2px dashed green;
-  text-align: center;
-  padding: 0;
-  padding: 8rem 0; }
-  .section-work .wrapper::after {
-    content: "";
-    display: table;
-    clear: both; }
+.section-work {
+  padding: 12rem 0; }
+  .section-work .row .wrapper {
+    border: 2px dashed green;
+    text-align: center;
+    padding: 0;
+    padding: 0 0 6rem; }
+    .section-work .row .wrapper::after {
+      content: "";
+      display: table;
+      clear: both; }
+    .section-work .row .wrapper .heading-secondary {
+      line-height: 8rem;
+      margin-right: 4rem; }
+    .section-work .row .wrapper .btn--white {
+      top: -0.7rem; }
+
+.section-footer {
+  height: 100vh;
+  padding: 12rem 0;
+  border-top: 0.1rem solid rgba(41, 44, 48, 0.15); }
+  .section-footer .heading-primary .heading-primary--sub {
+    font-size: 3.8rem; }
+  .section-footer .btn--white {
+    margin-bottom: 6rem; }
+  .section-footer .row .footer-block {
+    border: 1px solid green;
+    position: relative;
+    height: 18.7rem;
+    text-align: center;
+    background-image: linear-gradient(to right bottom, rgba(72, 116, 160, 0.808), rgba(41, 44, 48, 0.808)), url(../img/my-photo.jpg);
+    /* reference path from "main.css" */
+    background-size: cover;
+    background-position: top; }
+    .section-footer .row .footer-block__text {
+      color: #9ea9b5;
+      position: absolute;
+      display: inline-block;
+      top: 50%;
+      left: 10%; }
+    .section-footer .row .footer-block__logo {
+      text-transform: uppercase;
+      position: absolute;
+      top: 50%;
+      display: inline-block;
+      right: 10%;
+      font-size: 1.6rem;
+      letter-spacing: 0.1rem;
+      word-spacing: 0.2rem;
+      font-weight: 900; }
+      .section-footer .row .footer-block__logo:link, .section-footer .row .footer-block__logo:visited {
+        text-decoration: none;
+        color: #f3f5f6; }
 
 /** Media Queries
 ***********************************************/
