@@ -24,12 +24,14 @@
       }
     }
     .col-1-of-2 {
-      // (width - horizontal gutter / 2) 
       max-width: calc((100% - #{$gutter-horizontal}) / 2);
       display: inline-block;
-      // padding: 0 0 8rem;
+    }
+    .col-1-of-3 {
+      width: calc((100% - (#{$gutter-horizontal} *2)) / 3);
     }
   }
+  
 } 
 
 //  section

@@ -99,14 +99,14 @@
 // Footer section
 .section-footer {
   height: 100vh;
-  padding: 12rem 0;
+  padding: 12rem 0 0;
   border-top: 0.1rem solid rgba($color-primary-grey-dark, 0.15);
 
   .heading-primary {
     .heading-primary--sub {
       font-size: 3.8rem;
     }
-  }
+  } 
   .btn--white {
     margin-bottom: 6rem;
   }
@@ -116,6 +116,7 @@
       position: relative;
       height: 18.7rem;
       text-align: center;
+      bottom: 0vh;
 
       // Transparent Background
       background-image: linear-gradient(
