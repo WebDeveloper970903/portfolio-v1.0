@@ -148,7 +148,7 @@ body {
   background-color: #eeeee5; }
 
 .featured-2 {
-  background-color: #E7ECEF; }
+  background-color: #e7ecef; }
 
 .btn,
 .btn-medium {
@@ -249,18 +249,27 @@ body {
 
 .card {
   perspective: 150rem;
-  -moz-perspective: 150rem; }
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 50rem; }
   .card__side {
     height: 50rem;
-    background-color: orangered;
-    transition: all 0.8s;
+    transition: all 0.8s ease;
     color: white;
-    font: 2rem; }
+    font: 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
     .card__side--front {
-      background-color: purple; }
+      background-color: #eeeee5; }
     .card__side--back {
-      background-color: pink;
       transform: rotateY(180deg); }
+      .card__side--back-1 {
+        background-image: linear-gradient(to right bottom, #B79891, #94716B); }
   .card:hover .card__side--front {
     transform: rotateY(180deg); }
   .card:hover .card__side--back {
@@ -297,7 +306,6 @@ body {
   margin: auto; }
 
 [class^="col"] {
-  border: 1px dashed green;
   text-align: center;
   width: 50%;
   float: left;

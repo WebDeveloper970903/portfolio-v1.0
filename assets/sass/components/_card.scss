@@ -1,30 +1,41 @@
 .card {
   perspective: 150rem;
   -moz-perspective: 150rem;
+  position: relative;
+  height: 50rem;
 
   &__side {
     height: 50rem;
-    background-color: orangered;
-		transition: all 0.8s;
-		color: white;
-		font: 2rem;
+    transition: all 0.8s ease;
+    color: white;
+    font: 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+		backface-visibility: hidden;
+		border-radius: 3px;
+		box-shadow: 0 1.5rem 4rem $shandow-grey;
 
-		&--front {
-     background-color: purple;
-		}
-		&--back {
-			background-color: pink;
-			// before we hover the card, flip the backside 180*
-			transform: rotateY(180deg);
-		}
+    &--front {
+      background-color: #eeeee5;
+    }
+    &--back {
+      // before we hover the card, flip the backside 180*
+      transform: rotateY(180deg);
+
+      &-1 {
+        background-image: linear-gradient(to right bottom, #B79891, #94716B);
+      }
+    }
   }
-
-  &:hover /*..transform card__side*/ &__side--front {
-		// when we hover the card frontside, flip 180*
+  // hover card...transform card__side--front/back
+  &:hover &__side--front {
+    // when we hover the card frontside, flip 180*
     transform: rotateY(180deg);
-	}
-	&:hover /*..transform card__side*/ &__side--back {
-		// since the backside is set to 180* by default, when we hover it should go back to normal (0*)
+  }
+  &:hover &__side--back {
+    // since the backside is set to 180* by default, when we hover it should go back to normal (0*)
     transform: rotateY(0deg);
   }
 }

@@ -2,15 +2,16 @@
 $color-primary-black: #000;
 $color-primary-white: #fff;
 $color-primary-gold: #a58861;
+$color-primary-gold-light: lighten($color-primary-gold, .25%);
 $color-primary-grey: #e6e9ec; // rgba(#E6E9EC, 0.25);
 $color-primary-grey-dark: #292c30;
 $color-primary-grey-light: #f3f5f6; //#f7f7f7
 $color-primary-beije: #eeeee5;
-$color-primary-babyblue: #E7ECEF;
+$color-primary-babyblue: #e7ecef;
 .u-special-text {
   color: $color-primary-gold; // for single text
 }
-
+$shandow-grey: rgba(#000, .15);
 // GRID
 $grid-width: 110rem; // n rem*10px
 $gutter-vertical: 8rem;
