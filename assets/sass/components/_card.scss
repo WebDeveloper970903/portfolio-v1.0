@@ -1,21 +1,25 @@
 .card {
+  // FUNCTIONALITY
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
-  height: 50rem;
+  // height: 50rem;
+  height: 38rem;
 
   &__side {
-    height: 50rem;
-    transition: all .8s ease;
+    // height: 50rem;
+    height: 38rem;
+    transition: all 0.8s ease;
     color: white;
     font: 2rem;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-		backface-visibility: hidden;
-		border-radius: .2rem;
-		box-shadow: 0 1.5rem 4rem $shandow-grey;
+    backface-visibility: hidden;
+    border-radius: 0.1rem;
+    // box-shadow: 0 1.5rem 4rem $shandow-grey;
+    overflow: hidden;
 
     &--front {
       background-color: #eeeee5;
@@ -23,9 +27,16 @@
     &--back {
       // before we hover the card, flip the backside 180*
       transform: rotateY(180deg);
-
+      
       &-1 {
-        background-image: linear-gradient(to right bottom, #B79891, #94716B);
+        background-image: linear-gradient(to right bottom, #b79891, #94716b);
+        position: relative;
+
+        .card__cta {
+          position: absolute;
+          top: 41.65%; // parent height = 83.3%
+          left: 33.75%; // parent width = 67.5%
+        }
       }
     }
   }
@@ -37,5 +48,61 @@
   &:hover &__side--back {
     // since the backside is set to 180* by default, when we hover it should go back to normal (0*)
     transform: rotateY(0deg);
+  }
+
+  // FRONT CARD STYLYING
+
+  // card__picture
+  &__picture {
+    background-size: cover;
+    height: 23rem;
+    // blend back side with image on the fron side
+    background-blend-mode: screen;
+
+    &--1 {
+      // blend back side with image on the fron side
+      background-image: linear-gradient(to right bottom, #b79891, #94716b),
+        url(../img/foodspot.png);
+    }
+    &--2 {
+      background-image: url(../img/boardgame.png);
+    }
+  }
+  // card__brand
+  &__brand {
+    // border: 1px solid purple;
+    background-size: cover;
+    position: relative;
+    padding-top: 5.5rem;
+    text-align: center;
+
+    &--logo {
+      // card__brand--logo
+      background-color: $color-primary-grey-dark;
+      padding: 1rem;
+      width: 8rem;
+      height: 8rem;
+      border-radius: 100%;
+      position: absolute;
+      top: -4rem;
+      left: calc(50% - 4rem);
+      z-index: 2;
+    }
+
+    &--name {
+      color: $color-primary-grey-dark;
+      margin-bottom: 4rem; // between the text and the btn
+      line-height: 1.4;
+
+      p {
+        span:first-child {
+          font-size: 2.8rem;
+        }
+        span.heading-primary--title {
+          font-size: 1.3rem;
+          margin-top: 0.5rem;
+        }
+      }
+    }
   }
 }

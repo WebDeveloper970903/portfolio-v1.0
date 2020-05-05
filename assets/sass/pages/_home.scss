@@ -100,33 +100,45 @@
 .section-footer {
   height: 100vh;
   padding: 12rem 0 0;
+  margin-bottom: 0;
   border-top: 0.1rem solid rgba($color-primary-grey-dark, 0.15);
 
   .heading-primary {
     .heading-primary--sub {
       font-size: 3.8rem;
     }
-  } 
+  }
   .btn--white {
     margin-bottom: 6rem;
   }
   .row {
+    margin-bottom: 0;
+
+    .wrapper {
+      max-width: $grid-width; // variable
+      text-align: center;
+      // animation-name: move-in-down; // smooth animation (top to bottom)
+      // animation-duration: 1.5s;
+      // animation-timing-function: ease; //https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function
+      // margin-bottom: 6rem;
+    }
     .footer-block {
       border: 1px solid green;
       position: relative;
-      height: 18.7rem;
+      // height: 18.7rem;
+      height: calc(100vh - 427px); // 427px => (120px of .section-footer padding + 307px of .row total height) 
       text-align: center;
-      bottom: 0vh;
 
       // Transparent Background
       background-image: linear-gradient(
-        to right bottom, 
-        rgba(72, 116, 160, 0.808), 
-        rgba(41, 44, 48, 0.808)), 
-      url(../img/my-photo.jpg); /* reference path from "main.css" */
+          to right bottom,
+          rgba(72, 116, 160, 0.808),
+          rgba(41, 44, 48, 0.808)
+        ),
+        url(../img/my-photo.jpg); /* reference path from "main.css" */
       background-size: cover;
       background-position: top; // [center, bottom]
-      
+
       &__text {
         color: darken($color-primary-grey, 25%);
         position: absolute;
@@ -152,5 +164,9 @@
         }
       }
     }
+  }
+  .row:first-child {
+    padding: 0 0 6rem;
+    margin-bottom: 0;
   }
 }
