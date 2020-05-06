@@ -7,6 +7,20 @@ NOTES:
 */
 /** Importing partial sass files
 ***********************************************/
+/*
+Phones => 0-600px
+Tablets => 600-900px
+Tablets Landscape => 900-1200px
+where our normal styles apply => 1200px-1800px
+
+Big Desktops => 1800+px
+
+$breakpoint argumnent options
+- phone
+- tab-port
+- tab-land
+- big-desktop
+*/
 .u-special-text {
   color: #a58861; }
 
@@ -20,7 +34,25 @@ NOTES:
 html {
   font-size: 10px;
   /* 1rem = 10px(root font-size) / 16px(browser default) = 0.625 */
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  /* $breakpoint argumnent options
+- phone
+- tab-port
+- tab-land
+- big-desktop
+*/ }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (max-width: 37.5em) {
+    html {
+      font-size: 45%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
   box-sizing: border-box; }
@@ -553,32 +585,62 @@ body {
     padding: 0 0 6rem;
     margin-bottom: 0; }
 
-/** Media Queries
+/** Media Queries (max-width - Desktop-first)
 ***********************************************/
-@media screen and (max-width: 760px) {
-  h1.heading-primary .heading-primary--sub {
-    font-size: 3.4rem;
-    line-height: 4.2rem; }
-  .section-about .row .profile {
-    height: 25rem; }
-  .section-about .container {
-    padding-left: 4rem;
-    padding-right: 4rem; }
-    .section-about .container .col-left {
-      padding-right: 0;
-      width: 100%; }
-    .section-about .container .col-right {
-      width: 100%;
-      padding-left: 0;
-      padding-top: 2rem; }
-  .section-work {
-    padding-top: 4rem; }
-    .section-work .row .wrapper {
-      padding-bottom: 4rem; }
-      .section-work .row .wrapper h3.heading-secondary {
+/*
+@media screen and (max-width: 760px) { 
+  h1.heading-primary {
+    .heading-primary--sub {
+      font-size: 3.4rem;
+      line-height: 4.2rem;
+    }
+  }
+  .section-about {
+    // padding-bottom: 8rem;
+
+    .row {
+      .profile {
+        height: 25rem;
+        // top: -8rem; // this results in equal margin between elems in mobile view
+      }
+    }
+    .container {
+      padding-left: 4rem;
+      padding-right: 4rem;
+
+      .col-left {
+        padding-right: 0;
         width: 100%;
-        margin-right: 0; }
-      .section-work .row .wrapper a.btn {
-        margin-top: 2rem; }
-    .section-work .u-width-10 {
-      width: 100%; } }
+      }
+      .col-right {
+        width: 100%;
+        padding-left: 0;
+        padding-top: 2rem;
+      }
+    }
+  }
+  // work section
+
+  .section-work {
+    padding-top: 4rem;
+
+    .row {
+      .wrapper {
+        padding-bottom: 4rem;
+
+        h3.heading-secondary {
+          width: 100%;
+          margin-right: 0;
+        }
+        a.btn {
+          margin-top: 2rem;
+        }
+      }
+    }
+
+    .u-width-10 {
+      width: 100%;
+    }
+  }
+}
+*/

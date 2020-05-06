@@ -5,7 +5,7 @@
       content: "\a";
       white-space: pre; // wraps content after this elem onto a new line
     }
-  }
+  } 
 }
 
 @mixin textSpace-textSsize {
@@ -20,5 +20,37 @@
     content: "";
     display: table;
     clear: both; // (both float left and float right)
+  }
+}
+
+
+// MEDIA QUERIES 
+/*
+Phones => 0-600px
+Tablets => 600-900px
+Tablets Landscape => 900-1200px
+where our normal styles apply => 1200px-1800px
+
+Big Desktops => 1800+px
+
+$breakpoint argumnent options
+- phone
+- tab-port
+- tab-land
+- big-desktop
+*/
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    // rems fail to render in some browsers, thus em's
+    @media (max-width: 37.5em /*600px/16px = N em's*/) { @content }; // 600px 
+  }
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) { @content }; // 900px 
+  }
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) { @content }; // 1200px 
+  }
+  @if $breakpoint == big-desktop {
+    @media (min-width: 112.5em) { @content }; // 1800px 
   }
 }

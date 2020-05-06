@@ -25,10 +25,19 @@ NOTES:
 @import "layout/header";
 
 @import "pages/home";
-
-/** Media Queries
+ 
+/** Media Queries (max-width - Desktop-first)
 ***********************************************/
-@media screen and (max-width: 760px) {
+// Desktop-first - is width <= 760px? (in min-width/mobile-first approach - is width >= 760px?)
+// breakpoints: 0-600px, 900px, 1200px, ...
+
+// media query mixins
+// respond-phone {
+//   font-size: 50%;
+// }
+
+/*
+@media screen and (max-width: 760px) { 
   h1.heading-primary {
     .heading-primary--sub {
       font-size: 3.4rem;
@@ -83,3 +92,14 @@ NOTES:
     }
   }
 }
+*/
+
+
+// Tablet breakpoints (portrait)
+
+
+
+// Tablet breakpoints (Landscape)
+
+
+// Desktop breakpoints (laptops, PCs, Macs)
