@@ -9,7 +9,7 @@
   text-transform: uppercase;
 }
 
-// margin-bottom
+// margins
 .u-margin-bottom-xsmall {
   margin-bottom: 1rem; // 10px
 }
@@ -36,7 +36,7 @@
   a.btn--text {
     border-radius: unset; // removes border-radius
     padding-left: 0;
-    background-color: purple;
+    // background-color: purple;
   }
   .u-reset-padding-left {
     padding-left: 2.9rem;
@@ -68,9 +68,4 @@
 }
 .featured-2 {
   background-color: $color-primary-babyblue;
-}
-
-
-#card2_front {
-  background-color: #f3f5f6;
 }

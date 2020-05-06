@@ -22,12 +22,20 @@
     overflow: hidden;
 
     &--front {
-      background-color: #eeeee5; 
+
+      &-1 {
+        border: 1px solid #9E7D76;
+        background-color: #eeeee5;
+      }
+      &-2 {
+        border: 1px solid #8e9eab;
+        background-color: #f3f5f6;
+      }
     }
     &--back {
       // before we hover the card, flip the backside 180*
       transform: rotateY(180deg);
-      
+
       &-1 {
         background-image: linear-gradient(to right bottom, #b79891, #94716b);
         position: relative;
@@ -39,7 +47,7 @@
         }
       }
       &-2 {
-        background-image: linear-gradient(to right bottom, #eef2f3,#8e9eab);
+        background-image: linear-gradient(to right bottom, #eef2f3, #8e9eab);
         position: relative;
 
         .card__cta {
@@ -75,8 +83,8 @@
         url(../img/foodspot.png);
     }
     &--2 {
-      background-image: linear-gradient(to right bottom, #eef2f3,#8e9eab),
-      url(../img/foodspot.png);
+      background-image: linear-gradient(to right bottom, #eef2f3, #8e9eab),
+        url(../img/foodspot.png);
     }
   }
   // card__brand

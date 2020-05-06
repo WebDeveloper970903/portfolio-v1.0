@@ -34,21 +34,13 @@ body {
 }
 // section-about typography
 .heading-secondary {
+  color: $color-primary-grey-dark;
   font-size: 3.8rem;
   line-height: 4rem;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
   // adding mixin
   @include textSpace-textSsize;
   font-weight: 700;
-  // creating colour grandience on heading
-  background-image: linear-gradient(
-    to right,
-    $color-primary-grey-dark,
-    $color-primary-grey
-  ); // 1. add gradient background
-  display: inline-block; // 2. change elem display to be inline (so that gradient only goes unitil end of text)
-  -webkit-background-clip: text; // 3. apply colour gradient background effect to text
-  color: transparent; // 4. make text transparent so we see the text
 }
 .heading-tertiary {
   font-size: 1.3rem;
@@ -59,26 +51,24 @@ body {
 .section-about {
   .container {
     .col {
-      // h3
+     .heading-secondary {
+      color: $color-primary-grey;
+     }
       p {
         font-size: 1.5rem;
         line-height: 3rem;
         color: $color-primary-grey;
-        opacity: 0.7;
         letter-spacing: 0.1rem;
 
         &::not(:last-child) {
           margin-bottom: 3rem; // margin-bottom to all elems apart from the last elem
         }
+        &.paragraph {
+          opacity: 0.7;
+        }
       }
       // a
       .skills {
-        // .heading-tertiary {
-        //   font-size: 1.3rem;
-        //   font-weight: 700;
-        //   text-transform: uppercase;
-        //   letter-spacing: 0.1rem;
-        // }
         p {
           font-size: 1.4rem;
           font-weight: 700;

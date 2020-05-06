@@ -70,16 +70,13 @@ body {
       white-space: pre; }
 
 .heading-secondary {
+  color: #292c30;
   font-size: 3.8rem;
   line-height: 4rem;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
   letter-spacing: 0.1rem;
   word-spacing: 0.2rem;
-  font-weight: 700;
-  background-image: linear-gradient(to right, #292c30, #e6e9ec);
-  display: inline-block;
-  -webkit-background-clip: text;
-  color: transparent; }
+  font-weight: 700; }
 
 .heading-tertiary {
   font-size: 1.3rem;
@@ -87,14 +84,18 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.1rem; }
 
+.section-about .container .col .heading-secondary {
+  color: #e6e9ec; }
+
 .section-about .container .col p {
   font-size: 1.5rem;
   line-height: 3rem;
   color: #e6e9ec;
-  opacity: 0.7;
   letter-spacing: 0.1rem; }
   .section-about .container .col p::not(:last-child) {
     margin-bottom: 3rem; }
+  .section-about .container .col p.paragraph {
+    opacity: 0.7; }
 
 .section-about .container .col .skills p {
   font-size: 1.4rem;
@@ -126,8 +127,7 @@ body {
 
 .section-about a.btn--text {
   border-radius: unset;
-  padding-left: 0;
-  background-color: purple; }
+  padding-left: 0; }
 
 .section-about .u-reset-padding-left {
   padding-left: 2.9rem; }
@@ -151,9 +151,6 @@ body {
 
 .featured-2 {
   background-color: #e7ecef; }
-
-#card2_front {
-  background-color: #f3f5f6; }
 
 .btn,
 .btn-medium {
@@ -302,8 +299,12 @@ body {
     backface-visibility: hidden;
     border-radius: 0.1rem;
     overflow: hidden; }
-    .card__side--front {
+    .card__side--front-1 {
+      border: 1px solid #9E7D76;
       background-color: #eeeee5; }
+    .card__side--front-2 {
+      border: 1px solid #8e9eab;
+      background-color: #f3f5f6; }
     .card__side--back {
       transform: rotateY(180deg); }
       .card__side--back-1 {
@@ -366,7 +367,6 @@ body {
     margin-bottom: 0; }
 
 .section-work .col-1-of-2 .featured__box .wrapper {
-  border: 1px solid purple;
   padding: 4rem 0 0 4rem; }
   .section-work .col-1-of-2 .featured__box .wrapper .col {
     padding: 0;
@@ -383,7 +383,6 @@ body {
     padding: 0.1rem 0; }
 
 .row {
-  border: 2px solid orange;
   max-width: 110rem;
   margin: auto; }
 
@@ -408,34 +407,6 @@ body {
 .section-work .row .col-1-of-3 {
   width: calc((100% - (6rem *2)) / 3); }
 
-/*
-.row {
-  border: 2px solid orange;
-  // background-color: #eee;
-  max-width: $grid-width;
-  margin: 0 auto;
-  &:not(:last-child) {
-    margin-bottom: $gutter-vertical;
-  }
-  .col-1-of-1 {
-    width: 100%;
-    text-align: center;
-  }
-
-  @include clearfix;
-
-  [class^="col"] {
-    background-color: orangered;
-    border: 1px solid lighten($color: green, $amount: 0%);
-    text-align: center;
-    float: left;
-
-    &:not(:last-child) {
-      margin-right: $gutter-horizontal;
-    }
-  }
-  // .col-1-of-2 {
-  //   /* (width - horizontal gutter / 2) */
 /** Header
 ***********************************************/
 .nav {
@@ -489,9 +460,8 @@ body {
     float: left;
     top: -8rem;
     position: relative;
-    border: 2px solid blue;
     width: 100%;
-    height: 50rem; }
+    height: 55rem; }
     .section-about .row .profile__photo {
       width: 100%;
       height: 100%;
@@ -502,8 +472,7 @@ body {
       position: absolute;
       bottom: 0;
       right: 0;
-      z-index: 1;
-      border: 1px solid green; }
+      z-index: 1; }
   .section-about .container {
     margin: auto;
     padding-left: 8rem;
@@ -520,13 +489,11 @@ body {
       .section-about .container .col-right .skills-1 {
         float: left;
         padding-right: 5rem;
-        height: 100%;
-        border: 1px solid green; }
+        height: 100%; }
 
 .section-work {
   padding: 12rem 0; }
   .section-work .row .wrapper {
-    border: 2px dashed green;
     text-align: center;
     padding: 0;
     padding: 0 0 6rem; }
@@ -535,6 +502,7 @@ body {
       display: table;
       clear: both; }
     .section-work .row .wrapper .heading-secondary {
+      display: inline;
       line-height: 8rem;
       margin-right: 4rem; }
     .section-work .row .wrapper .btn--white {
@@ -555,7 +523,6 @@ body {
       max-width: 110rem;
       text-align: center; }
     .section-footer .row .footer-block {
-      border: 1px solid green;
       position: relative;
       height: calc(100vh - 427px);
       text-align: center;
@@ -604,7 +571,14 @@ body {
       width: 100%;
       padding-left: 0;
       padding-top: 2rem; }
-  .section-work .wrapper .heading-secondary {
-    width: 100%; }
-  .section-work .u-width-10 {
-    width: 100%; } }
+  .section-work {
+    padding-top: 4rem; }
+    .section-work .row .wrapper {
+      padding-bottom: 4rem; }
+      .section-work .row .wrapper h3.heading-secondary {
+        width: 100%;
+        margin-right: 0; }
+      .section-work .row .wrapper a.btn {
+        margin-top: 2rem; }
+    .section-work .u-width-10 {
+      width: 100%; } }

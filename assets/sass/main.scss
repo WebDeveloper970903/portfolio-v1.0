@@ -24,7 +24,7 @@ NOTES:
 @import "layout/grid";
 @import "layout/header";
 
-@import "pages/home"; 
+@import "pages/home";
 
 /** Media Queries
 ***********************************************/
@@ -62,11 +62,22 @@ NOTES:
   // work section
 
   .section-work {
-    .wrapper {
-      .heading-secondary {
-        width: 100%;
+    padding-top: 4rem;
+
+    .row {
+      .wrapper {
+        padding-bottom: 4rem;
+
+        h3.heading-secondary {
+          width: 100%;
+          margin-right: 0;
+        }
+        a.btn {
+          margin-top: 2rem;
+        }
       }
     }
+
     .u-width-10 {
       width: 100%;
     }
