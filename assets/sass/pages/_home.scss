@@ -128,6 +128,7 @@
         url(../img/my-photo.jpg); /* reference path from "main.css" */
       background-size: cover;
       background-position: top; // [center, bottom]
+      filter: grayscale(1);
 
       &__text {
         color: darken($color-primary-grey, 25%);

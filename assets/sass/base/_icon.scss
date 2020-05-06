@@ -1,0 +1,38 @@
+// Social icons
+.social {
+  display: flex;
+  flex-direction: column;
+  width: calc((100% - #{$grid-width}) / 2); // .row = $grid-width
+  align-items: center;
+  position: fixed;
+  top: calc((100vh - 135px) / 2); // 135px => 3x (.icon height + &__icon padding-top +  &__icon padding-bottom) // 3 x 45
+  z-index: 5;
+
+  // .social__icon
+  &__icon {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+
+		&:hover {
+			filter: contrast(10%);
+			cursor: pointer;
+			transition: transform 0.200s linear;
+
+			.icon {
+				transition: transform 0.200s linear;
+				transform: scale(1.1);
+			}
+		}
+    .icon {
+      padding: 0;
+      margin: 0;
+      width: 25px;
+      height: 25px;
+      stroke-width: 0;
+      // stroke: $color-primary-grey-dark;
+      fill: $color-primary-grey-dark;
+			filter: contrast(50%); // icon takes 50% of its original (fill) colour
+    }
+  }
+}
