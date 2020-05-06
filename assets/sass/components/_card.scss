@@ -22,7 +22,7 @@
     overflow: hidden;
 
     &--front {
-      background-color: #eeeee5;
+      background-color: #eeeee5; 
     }
     &--back {
       // before we hover the card, flip the backside 180*
@@ -30,6 +30,16 @@
       
       &-1 {
         background-image: linear-gradient(to right bottom, #b79891, #94716b);
+        position: relative;
+
+        .card__cta {
+          position: absolute;
+          top: 41.65%; // parent height = 83.3%
+          left: 33.75%; // parent width = 67.5%
+        }
+      }
+      &-2 {
+        background-image: linear-gradient(to right bottom, #eef2f3,#8e9eab);
         position: relative;
 
         .card__cta {
@@ -65,7 +75,8 @@
         url(../img/foodspot.png);
     }
     &--2 {
-      background-image: url(../img/boardgame.png);
+      background-image: linear-gradient(to right bottom, #eef2f3,#8e9eab),
+      url(../img/foodspot.png);
     }
   }
   // card__brand

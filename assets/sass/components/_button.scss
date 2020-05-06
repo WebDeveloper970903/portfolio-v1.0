@@ -106,7 +106,7 @@
   transition: transform 0s linear;
   // when we over the btn--wave, apply the following styles for the after pseudo-elem
   &:hover::after {
-    border: 1px solid red;
+    // border: 1px solid red;
     // make the pseudo-element grow and fade out
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0;
