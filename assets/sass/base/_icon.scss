@@ -13,9 +13,10 @@
     display: flex;
     flex-direction: column;
     padding: 10px;
+    // background: $color-primary-white;
 
 		&:hover {
-			filter: contrast(10%);
+			filter: contrast(45%);
 			cursor: pointer;
 			transition: transform 0.200s linear;
 
@@ -32,7 +33,7 @@
       stroke-width: 0;
       // stroke: $color-primary-grey-dark;
       fill: $color-primary-grey-dark;
-			filter: contrast(50%); // icon takes 50% of its original (fill) colour
+			filter: contrast(90%); // icon takes 50% of its original (fill) colour
     }
   }
 }

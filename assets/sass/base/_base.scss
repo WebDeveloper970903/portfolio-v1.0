@@ -3,35 +3,40 @@
 *::after {
   margin: 0;
   padding: 0;
-  box-sizing: inherit; 
+  box-sizing: inherit;
 }
+
 html {
   // allowing that the default font-size translates into the font-size given by the Browser/user
   font-size: 10px; /* 1rem = 10px(root font-size) / 16px(browser default) = 0.625 */
-  font-size: 62.5%;  // 1rem = 10px; 10px/16px = 62.5%
+  font-size: 62.5%; // 1rem = 10px; 10px/16px = 62.5%
 
   // MEDIA QUERY MIXINS
+
   /* $breakpoint argumnent options
-- phone
-- tab-port
-- tab-land
-- big-desktop
-*/
+   - phone
+   - tab-port
+   - tab-land
+   - big-desktop
+  */ 
+ 
   // larger media queries before the smaller ones (portrait and landscape breakpoits can conflict otherwise)
-  @include respond(tab-land) { // width < 12007
+  @include respond(tab-land) {
+    // width < 12007
     font-size: 56.25%; // we want 1rem toBe 9px, 9/16px = 0.5625 (56.25%)
   }
-  @include respond(tab-port) { // width < 907
+  @include respond(tab-port) {
+    // width < 907
     font-size: 50%; // we want 1rem toBe 8px, 8/16px = 0.5 (50%)
   }
-  @include respond(phone) {
-    font-size: 45%;
-  }
+  // @include respond(phone) {
+  //   font-size: 45%;
+  // }
   @include respond(big-desktop) {
     font-size: 75%; // we want 1rem toBe 12px, 12/16px = 0.75 (75%)
   }
-
 }
+
 body {
   box-sizing: border-box;
   // see more styles in typograpgy.sccss

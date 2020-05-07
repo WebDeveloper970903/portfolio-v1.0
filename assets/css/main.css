@@ -20,6 +20,12 @@ $breakpoint argumnent options
 - tab-port
 - tab-land
 - big-desktop
+
+
+1em = 16px
+
+ORDER: Base + typography > general layout, grid > page layout, components
+
 */
 .u-special-text {
   color: #a58861; }
@@ -36,20 +42,17 @@ html {
   /* 1rem = 10px(root font-size) / 16px(browser default) = 0.625 */
   font-size: 62.5%;
   /* $breakpoint argumnent options
-- phone
-- tab-port
-- tab-land
-- big-desktop
-*/ }
+   - phone
+   - tab-port
+   - tab-land
+   - big-desktop
+  */ }
   @media (max-width: 75em) {
     html {
       font-size: 56.25%; } }
   @media (max-width: 56.25em) {
     html {
       font-size: 50%; } }
-  @media (max-width: 37.5em) {
-    html {
-      font-size: 45%; } }
   @media (min-width: 112.5em) {
     html {
       font-size: 75%; } }
@@ -80,7 +83,7 @@ body {
     flex-direction: column;
     padding: 10px; }
     .social__icon:hover {
-      filter: contrast(10%);
+      filter: contrast(45%);
       cursor: pointer;
       transition: transform 0.200s linear; }
       .social__icon:hover .icon {
@@ -93,7 +96,7 @@ body {
       height: 25px;
       stroke-width: 0;
       fill: #292c30;
-      filter: contrast(50%); }
+      filter: contrast(90%); }
 
 body {
   font-family: "Silka-SemiBold", "Lato", sans-serif;
