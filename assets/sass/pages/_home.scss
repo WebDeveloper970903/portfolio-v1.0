@@ -7,15 +7,23 @@
 .col-right {
   float: left;
   padding-top: 10rem; // 100px
+
+  // media queries
+  @include respond(phone) {
+    padding-top: 4rem;
+  }
 }
 
 // About section
 .section-about {
   background-color: $color-primary-grey-dark;
   padding-bottom: 8rem;
+  // media queries
+  @include respond(phone) {
+    padding-bottom: 6rem;
+  }
 
   .row {
-
     .profile {
       background-color: $color-primary-grey-dark;
       float: left;
@@ -37,6 +45,11 @@
         right: 0;
         z-index: 1;
       }
+
+      // media queries
+      @include respond(phone) {
+        height: 34rem;
+      }
     }
   }
 
@@ -45,15 +58,24 @@
     padding-left: 8rem;
     padding-right: 8rem;
     padding-bottom: 4rem;
+    // media queries
+    @include respond(phone) {
+      padding-left: 4rem;
+      padding-right: 4rem;
+      // padding-bottom: 0rem;
+    }
 
     @include clearfix;
 
     .col-left {
-      // float: left;
       padding-right: 4rem;
     }
     .col-right {
       padding-left: 12rem;
+      // media queries
+      @include respond(phone) {
+        padding-left: 0;
+      }
 
       .skills-1 {
         float: left;
@@ -67,21 +89,53 @@
 // Work section
 .section-work {
   padding: 12rem 0;
+  // media queries
+  @include respond(tab-land) {
+    padding: 4rem 4rem 8rem 4rem;
+  }
 
   .row {
+    // media queries
+    @include respond(tab-land) {
+      .col-1-of-2 {
+        max-width: calc(100%) !important;
+      }
+      .col-1-of-2:last-child {
+        margin-top: 4rem;
+      }
+    }
     .wrapper {
       text-align: center;
       padding: 0;
       padding: 0 0 6rem;
       @include clearfix;
+      // media queries
+      @include respond(phone) {
+        padding: 0 0 4rem;
+      }
 
       .heading-secondary {
         display: inline;
         line-height: 8rem;
         margin-right: 4rem;
+
+        // media queries
+        @include respond(phone) {
+          margin-right: 0;
+          margin-bottom: 3rem;
+          &::after {
+            content: "\a";
+            white-space: pre; // wraps content after this elem onto a new line
+          }
+        }
       }
       .btn--white {
         top: -0.7rem;
+
+        // media queries
+        @include respond(phone) {
+          margin-top: 1.5rem;
+        }
       }
     }
   }
@@ -89,7 +143,7 @@
 
 // Footer section
 .section-footer {
-  height: 100vh;
+  // height: 100vh;
   padding: 12rem 0 0;
   margin-bottom: 0;
   border-top: 0.1rem solid rgba($color-primary-grey-dark, 0.15);
@@ -97,6 +151,12 @@
   .heading-primary {
     .heading-primary--sub {
       font-size: 3.8rem;
+
+      // media queries
+      @include respond(phone) {
+        font-size: 3.4rem;
+        margin-bottom: 1.5rem;
+      }
     }
   }
   .btn--white {
@@ -115,8 +175,8 @@
     }
     .footer-block {
       position: relative;
-      // height: 18.7rem;
-      height: calc(100vh - 427px); // 427px => (120px of .section-footer padding + 307px of .row total height) 
+      height: 18.7rem;
+      // height: calc(100vh - 427px); // 427px => (120px of .section-footer padding + 307px of .row total height)
       text-align: center;
 
       // Transparent Background
@@ -157,7 +217,7 @@
     }
   }
   .row:first-child {
-    padding: 0 0 6rem;
+    // padding: 0 0 6rem;
     margin-bottom: 0;
   }
 }

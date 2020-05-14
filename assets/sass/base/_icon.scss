@@ -14,9 +14,10 @@
     flex-direction: column;
     padding: 10px;
     // background: $color-primary-white;
+    
 
 		&:hover {
-			filter: contrast(45%);
+			// filter: contrast(100%);
 			cursor: pointer;
 			transition: transform 0.200s linear;
 
@@ -32,8 +33,13 @@
       height: 25px;
       stroke-width: 0;
       // stroke: $color-primary-grey-dark;
-      fill: $color-primary-grey-dark;
-			filter: contrast(90%); // icon takes 50% of its original (fill) colour
+      fill: darken($color-primary-white, 50%);
+      filter: contrast(100%); // icon takes 90% of its original (fill) colour
     }
   }
+  
+  @include respond(tab-land) { // width < 1200px
+    display: none;
+  }
+
 }

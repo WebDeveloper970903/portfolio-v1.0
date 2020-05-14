@@ -8,15 +8,20 @@
   width: 50%;
   float: left;
   text-align: left;
+
+  // media queries
+  @include respond(tab-land) {
+    width: 100%;
+  }
 }
 
 // Work section
 .section-work {
-  
   .row {
     @include clearfix;
 
     .col {
+      // media queries
       &:not(:last-child) {
         margin-right: $gutter-horizontal;
       }
@@ -26,9 +31,7 @@
       display: inline-block;
     }
     .col-1-of-3 {
-      width: calc((100% - (#{$gutter-horizontal} *2)) / 3);
+      width: calc((100% - (#{$gutter-horizontal} * 2)) / 3);
     }
   }
-  
-} 
-
+}
