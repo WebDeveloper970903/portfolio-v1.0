@@ -13,7 +13,6 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
 	width: 10px;
 	// display: none;
 }
-
 ::-webkit-scrollbar-track { 
 	/* represents the scrollbar track (without the scrollbar thumb) */ 
 	border-radius: 5px;
@@ -26,16 +25,5 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
 }
 ::-webkit-scrollbar-thumb:hover { 
 	/*  represents the actually thumb */ 
-	// border-radius: 5px;
-	cursor: pointer;
-	background-color: lighten($color-primary-gold, 15%);
+	background-color: lighten($color-primary-gold, 10%);
 }
-
-::-webkit-scrollbar-button { /* 2 - represents the scrollbar UP, DOWN (or LEFT, RIGHT) buttons */ }
-::-webkit-scrollbar-track-piece  {
-	/* 4 */ 
-	// background-color: red;
-}
-
-::-webkit-scrollbar-corner       { /* 6 */ }
-::-webkit-resizer  {}
