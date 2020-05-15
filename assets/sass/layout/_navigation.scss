@@ -4,32 +4,37 @@
   }
 
   &__button {
-    background-color: $color-primary-white;
-    height: 7rem;
-    width: 7rem;
+    // background-color: $color-primary-white;
+    height: 5rem;
+    width: 5rem;
     position: fixed;
-    top: 6rem;
-    right: 6rem;
-    border-radius: 50%;
+    top: 2.5rem;
+		// right: 4rem;
+		right: calc((100% - #{$grid-width}) / 2 /* = remaining right width*/ - 9rem); 
+    // border-radius: 50%;
 		z-index: 20; // sits on top of &__background and &__nav
-		box-shadow: 0 .5rem 1.5rem darken($color-primary-white, 15%);
+		// box-shadow: 0 .5rem 1.5rem darken($color-primary-white, 15%);
 		text-align: center;
 		cursor: pointer;
-    border: 2px solid blue;
+		// border: 1px solid blue;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		filter: contrast(100%); // icon takes 90% of its original (fill) colour
   }
 
   &__background {
-    height: 6rem;
-    width: 6rem;
-    border-radius: 50%;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%; // clickable round circle
     position: fixed;
-    top: 6.5rem;
-    right: 6.5rem;
-    background: $color-primary-grey-dark;
-    z-index: 10;
+    top: 4.5rem;
+    right: 4.5rem;
+    // background: $color-primary-grey-dark;
 		// transform: scale(80);
 		transition: transform .8s cubic-bezier(0.83, 0, 0.17, 1);
-    border: 1px solid orange;
+		// border: 1px solid orange;
+    z-index: 10;
   }
 
   &__nav {
@@ -45,7 +50,7 @@
 		opacity: 0;
 		transition: all .8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 
-    border: 1px solid red;
+    // border: 1px solid red;
 	}
 	&__list {
 		position: absolute;
@@ -53,7 +58,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     list-style: none;
-		border: 1px solid orange;
+		// border: 1px solid orange;
     // width: 50%;
     // float: right;
     text-align: left;
@@ -64,14 +69,13 @@
 		line-height: 5rem;
 		display: flex;
 		justify-content: center;
-
   }
 
   &__link {
     font-size: 3.2rem;
     font-weight: 700;
     color: $color-primary-grey;
-    border: 1px solid green;
+    // border: 1px solid green;
 		text-decoration: none;
 		letter-spacing: 0.1rem;
 		word-spacing: 0.2rem;
@@ -92,9 +96,11 @@
 
 	// label > checkbox:checked > navigation bacground becomes visible
 	&__checkbox:checked ~ &__background {
+    background: $color-primary-grey-dark;
     transform: scale(80);
 	}
 	&__checkbox:checked ~ &__nav {
+    background: $color-primary-grey-dark;
     width: 100%;
 		opacity: 1;
 	}
@@ -102,13 +108,13 @@
 	// ICON
 	&__icon {
 		position: relative;
-		margin-top: 3.25rem;
+		// margin-top: 1.25rem;
 		&, // icon elem itself
 		&::before, 
 		&::after {
-			width: 3rem;
+			width: 2.5rem;
 			height: 2px;
-			background-color: $color-primary-grey-dark;
+			background-color: darken($color-primary-white, 50%); // actual hamburguer lines colour
 			display: inline-block;
 		}
 		// defining the content property of the pseudo-classes
@@ -120,19 +126,19 @@
 			transition: all .2s;
 		}
 		&::before {
-			top: -.8rem;
+			top: -.6rem;
 		}
 		&::after {
-			top: .8rem;
+			top: .6rem;
 		}
 	}
 
-	// animate hamburguer lines when button is on hover
+	// animate hamburguer lines when button is on hover (space them out vertically)
 	&__button:hover &__icon::before {
-    top: -1rem;
+    top: -.8rem;
 	}
 	&__button:hover &__icon::after {
-    top: 1rem;
+    top: .8rem;
 	}
 
 	// label > checkbox:checked > select its sibling's child

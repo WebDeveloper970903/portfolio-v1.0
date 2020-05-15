@@ -6,7 +6,7 @@
   align-items: center;
   position: fixed;
   top: calc((100vh - 135px) / 2); // 135px => 3x (.icon height + &__icon padding-top +  &__icon padding-bottom) // 3 x 45
-  z-index: 5;
+  z-index: 25;
 
   // .social__icon
   &__icon {
