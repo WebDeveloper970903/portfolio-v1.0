@@ -1,0 +1,150 @@
+.navigation {
+  &__checkbox {
+    display: none;
+  }
+
+  &__button {
+    background-color: $color-primary-white;
+    height: 7rem;
+    width: 7rem;
+    position: fixed;
+    top: 6rem;
+    right: 6rem;
+    border-radius: 50%;
+		z-index: 20; // sits on top of &__background and &__nav
+		box-shadow: 0 .5rem 1.5rem darken($color-primary-white, 15%);
+		text-align: center;
+		cursor: pointer;
+    border: 2px solid blue;
+  }
+
+  &__background {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    position: fixed;
+    top: 6.5rem;
+    right: 6.5rem;
+    background: $color-primary-grey-dark;
+    z-index: 10;
+		// transform: scale(80);
+		transition: transform .8s cubic-bezier(0.83, 0, 0.17, 1);
+    border: 1px solid orange;
+  }
+
+  &__nav {
+		height: 100vh;
+		// width: 100%;
+		position: fixed;
+    top: 0;
+    left: 0;
+		z-index: 15; // sits on top of &__background
+		// background-color: orangered;
+   	// hide elements
+		width: 0; 
+		opacity: 0;
+		transition: all .8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+    border: 1px solid red;
+	}
+	&__list {
+		position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    list-style: none;
+		border: 1px solid orange;
+    // width: 50%;
+    // float: right;
+    text-align: left;
+	}
+
+  &__item {
+		padding: 1.2rem 0;
+		line-height: 5rem;
+		display: flex;
+		justify-content: center;
+
+  }
+
+  &__link {
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: $color-primary-grey;
+    border: 1px solid green;
+		text-decoration: none;
+		letter-spacing: 0.1rem;
+		word-spacing: 0.2rem;
+
+		transition: color 0.250s linear;
+
+		&:hover {
+			// filter: contrast(100%);
+			cursor: pointer;
+			color: $color-primary-grey-semidark;
+		}
+		&:active {
+			color: $color-primary-gold;
+		}
+	}
+
+	// FUNCTIONALITY 
+
+	// label > checkbox:checked > navigation bacground becomes visible
+	&__checkbox:checked ~ &__background {
+    transform: scale(80);
+	}
+	&__checkbox:checked ~ &__nav {
+    width: 100%;
+		opacity: 1;
+	}
+	
+	// ICON
+	&__icon {
+		position: relative;
+		margin-top: 3.25rem;
+		&, // icon elem itself
+		&::before, 
+		&::after {
+			width: 3rem;
+			height: 2px;
+			background-color: $color-primary-grey-dark;
+			display: inline-block;
+		}
+		// defining the content property of the pseudo-classes
+		&::before, 
+		&::after {
+			content: "";
+			position: absolute;
+			left: 0;
+			transition: all .2s;
+		}
+		&::before {
+			top: -.8rem;
+		}
+		&::after {
+			top: .8rem;
+		}
+	}
+
+	// animate hamburguer lines when button is on hover
+	&__button:hover &__icon::before {
+    top: -1rem;
+	}
+	&__button:hover &__icon::after {
+    top: 1rem;
+	}
+
+	// label > checkbox:checked > select its sibling's child
+	&__checkbox:checked + &__button &__icon {
+		background-color: transparent;
+	}
+	&__checkbox:checked + &__button &__icon::before {
+		top: 0;
+		transform: rotate(135deg);
+	}
+	&__checkbox:checked + &__button &__icon::after {
+		top: 0;
+		transform: rotate(-135deg);
+	}
+}
