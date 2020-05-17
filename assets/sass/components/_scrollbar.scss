@@ -16,14 +16,14 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
 ::-webkit-scrollbar-track { 
 	/* represents the scrollbar track (without the scrollbar thumb) */ 
 	border-radius: 5px;
-	box-shadow: inset 0 0 10px darken($color-primary-white, 50%);
+	box-shadow: inset 0 0 5px darken($color-primary-white, 50%);
 }
 ::-webkit-scrollbar-thumb { 
 	/*  represents the actually thumb */ 
 	border-radius: 5px;
-	background-color: $color-primary-gold;
+	background-color: darken($color-primary-white, 50%);
 }
 ::-webkit-scrollbar-thumb:hover { 
 	/*  represents the actually thumb */ 
-	background-color: lighten($color-primary-gold, 10%);
+	background-color: darken($color-primary-white, 45%);
 }

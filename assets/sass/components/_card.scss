@@ -42,8 +42,8 @@
 
         .card__cta {
           position: absolute;
-          top: 41.65%; // parent height = 83.3%
-          left: 33.75%; // parent width = 67.5%
+          // mixin to center btn vertically and horizontally
+          @include center_XY_axis();  
         }
       }
       &-2 {
@@ -52,8 +52,8 @@
 
         .card__cta {
           position: absolute;
-          top: 41.65%; // parent height = 83.3%
-          left: 33.75%; // parent width = 67.5%
+          // mixin to center btn vertically and horizontally
+          @include center_XY_axis();      
         }
       }
     }

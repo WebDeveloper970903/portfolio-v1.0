@@ -85,9 +85,10 @@ body {
 
         &.paragraph {
           // opacity: 0.7;
-          color: darken($color-primary-white, 50%);
+          color: darken($color-primary-white, 35%);
+          font-size: 1.6rem;
 
-          // media queries 
+          // media queries
           @include respond(phone) {
             font-size: 1.6rem;
           }
@@ -102,8 +103,10 @@ body {
           // media queries
           @include respond(phone) {
             font-size: 1.5rem;
-            // line-height: 3.2rem;
-            // margin-bottom: 1rem;
+          }
+
+          span {
+            color: darken($color-primary-white, 50%);
           }
         }
       }

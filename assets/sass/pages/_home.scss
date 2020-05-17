@@ -81,6 +81,10 @@
         float: left;
         padding-right: 5rem;
         height: 100%;
+        // media queries
+        @include respond(phone) {
+          padding-right: 3rem;
+        }
       }
     }
   }
@@ -160,7 +164,7 @@
     }
   }
   .btn--white {
-    margin-bottom: 6rem;
+    margin-bottom: 12rem;
   }
   .row {
     margin-bottom: 0;
@@ -175,9 +179,13 @@
     }
     .footer-block {
       position: relative;
-      height: 18.7rem;
-      // height: calc(100vh - 427px); // 427px => (120px of .section-footer padding + 307px of .row total height)
+      // height: 18.7rem;
+      height: calc(100vh - 423px); // 423px => (120px of .section-footer padding + 303px of .row total height)
       text-align: center;
+      // media queries
+      @include respond(tab-port) {
+        height: 150px;
+      }
 
       // Transparent Background
       background-image: linear-gradient(

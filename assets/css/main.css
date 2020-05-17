@@ -173,7 +173,8 @@ body {
   .section-about .container .col p::not(:last-child) {
     margin-bottom: 3rem; }
   .section-about .container .col p.paragraph {
-    color: gray; }
+    color: #a6a6a6;
+    font-size: 1.6rem; }
     @media (max-width: 37.5em) {
       .section-about .container .col p.paragraph {
         font-size: 1.6rem; } }
@@ -184,6 +185,8 @@ body {
   @media (max-width: 37.5em) {
     .section-about .container .col .skills p {
       font-size: 1.5rem; } }
+  .section-about .container .col .skills p span {
+    color: gray; }
 
 .u-center-text {
   text-align: center; }
@@ -401,15 +404,17 @@ body {
         position: relative; }
         .card__side--back-1 .card__cta {
           position: absolute;
-          top: 41.65%;
-          left: 33.75%; }
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%); }
       .card__side--back-2 {
         background-image: linear-gradient(to right bottom, #eef2f3, #8e9eab);
         position: relative; }
         .card__side--back-2 .card__cta {
           position: absolute;
-          top: 41.65%;
-          left: 33.75%; }
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%); }
   .card:hover .card__side--front {
     transform: rotateY(-180deg); }
   .card:hover .card__side--back {
@@ -484,16 +489,16 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
 ::-webkit-scrollbar-track {
   /* represents the scrollbar track (without the scrollbar thumb) */
   border-radius: 5px;
-  box-shadow: inset 0 0 10px gray; }
+  box-shadow: inset 0 0 5px gray; }
 
 ::-webkit-scrollbar-thumb {
   /*  represents the actually thumb */
   border-radius: 5px;
-  background-color: #a58861; }
+  background-color: gray; }
 
 ::-webkit-scrollbar-thumb:hover {
   /*  represents the actually thumb */
-  background-color: #b8a081; }
+  background-color: #8c8c8c; }
 
 .row {
   max-width: 110rem;
@@ -729,6 +734,9 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
         float: left;
         padding-right: 5rem;
         height: 100%; }
+        @media (max-width: 37.5em) {
+          .section-about .container .col-right .skills-1 {
+            padding-right: 3rem; } }
 
 .section-work {
   padding: 12rem 0; }
@@ -779,7 +787,7 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
         font-size: 3.4rem;
         margin-bottom: 1.5rem; } }
   .section-footer .btn--white {
-    margin-bottom: 6rem; }
+    margin-bottom: 12rem; }
   .section-footer .row {
     margin-bottom: 0; }
     .section-footer .row .wrapper {
@@ -787,13 +795,16 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
       text-align: center; }
     .section-footer .row .footer-block {
       position: relative;
-      height: 18.7rem;
+      height: calc(100vh - 423px);
       text-align: center;
       background-image: linear-gradient(to right bottom, rgba(72, 116, 160, 0.808), rgba(41, 44, 48, 0.808)), url(../img/my-photo.jpg);
       /* reference path from "main.css" */
       background-size: cover;
       background-position: top;
       filter: grayscale(1); }
+      @media (max-width: 56.25em) {
+        .section-footer .row .footer-block {
+          height: 150px; } }
       .section-footer .row .footer-block__text {
         color: #9ea9b5;
         position: absolute;
