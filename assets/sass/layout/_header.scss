@@ -35,11 +35,9 @@
   &__heading-box {
     max-width: $grid-width; // variable
     text-align: center;
-    animation-name: move-in-down; // smooth animation (top to bottom)
-    animation-duration: 1.5s;
+    animation-name: move-in-up; // smooth animation (bottom to top)
+    animation-duration: 1s;
     animation-timing-function: ease; //https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function
     margin-bottom: 6rem;
-    // animation-delay: 1.5s;
-    // animation-iteration-count: 2;
   }
 }

@@ -60,10 +60,20 @@ html {
 body {
   box-sizing: border-box; }
 
-@keyframes move-in-down {
+@keyframes move-in-up {
   0% {
     opacity: 0;
-    transform: translateY(-100px); }
+    transform: translateY(100px); }
+  80% {
+    opacity: 0.8; }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes reveal-img {
+  0% {
+    opacity: 0;
+    width: 0; }
   80% {
     opacity: 0.8; }
   100% {
@@ -245,12 +255,12 @@ body {
   .btn .fontawesome-icon,
   .btn-medium .fontawesome-icon {
     color: gray;
-    margin-left: 0.5rem; }
+    margin-left: 0.5rem;
+    transition-duration: 250ms; }
   .btn:link, .btn:visited,
   .btn-medium:link,
   .btn-medium:visited {
     vertical-align: middle;
-    font-size: 1.6rem;
     text-decoration: none;
     padding: 1.65rem 2.9rem;
     display: inline-block;
@@ -264,7 +274,7 @@ body {
       .btn:link, .btn:visited,
       .btn-medium:link,
       .btn-medium:visited {
-        padding: 1.75rem 3.0rem; } }
+        padding: 1.75rem 3rem; } }
   .btn:hover,
   .btn-medium:hover {
     cursor: pointer;
@@ -296,20 +306,26 @@ body {
     transition: transform 250ms; }
 
 .btn--scroll {
-  background-color: #a58861;
-  width: 8.5rem;
-  height: 8.5rem;
+  background: #a58861;
   bottom: 4.5rem;
-  z-index: 2;
-  border-radius: unset; }
-  .btn--scroll:link, .btn--scroll:visited {
-    padding-top: 2.5rem;
-    vertical-align: middle; }
-  .btn--scroll:hover .fontawesome-icon {
-    transform: translateY(0.3rem);
-    transition: transform 250ms; }
+  z-index: 2; }
   .btn--scroll .fontawesome-icon {
-    color: #e6e9ec; }
+    color: #e6e9ec;
+    vertical-align: middle;
+    margin: 0 auto;
+    margin-top: 2.5rem;
+    padding-left: .2rem; }
+  .btn--scroll:link, .btn--scroll:visited {
+    border-radius: unset;
+    padding: 0;
+    width: 8.5rem;
+    height: 8.5rem; }
+  .btn--scroll:hover {
+    cursor: pointer; }
+    .btn--scroll:hover .fontawesome-icon {
+      color: white;
+      transform: translateY(0.6rem);
+      transition-duration: 250ms; }
 
 .section-about .row .profile a.btn-medium {
   padding: 2rem 4rem; }
@@ -372,7 +388,7 @@ body {
   top: 0;
   left: 0;
   z-index: -1;
-  transition: all .4s; }
+  transition: all 0.4s; }
 
 .card {
   perspective: 150rem;
@@ -555,8 +571,8 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
   .header__heading-box {
     max-width: 110rem;
     text-align: center;
-    animation-name: move-in-down;
-    animation-duration: 1.5s;
+    animation-name: move-in-up;
+    animation-duration: 1s;
     animation-timing-function: ease;
     margin-bottom: 6rem; }
 
@@ -699,9 +715,12 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
     .section-about .row .profile__photo {
       width: 100%;
       height: 100%;
-      position: absolute;
       top: 0;
-      left: 0; }
+      left: 0;
+      position: absolute;
+      animation-name: reveal-img;
+      animation-duration: 1s;
+      animation-timing-function: ease; }
     .section-about .row .profile .btn--text {
       position: absolute;
       bottom: 0;
@@ -794,35 +813,22 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
       max-width: 110rem;
       text-align: center; }
     .section-footer .row .footer-block {
-      position: relative;
       height: calc(100vh - 423px);
       text-align: center;
       background-image: linear-gradient(to right bottom, rgba(72, 116, 160, 0.808), rgba(41, 44, 48, 0.808)), url(../img/my-photo.jpg);
       /* reference path from "main.css" */
       background-size: cover;
       background-position: top;
-      filter: grayscale(1); }
+      filter: grayscale(1);
+      position: relative; }
       @media (max-width: 56.25em) {
         .section-footer .row .footer-block {
           height: 150px; } }
       .section-footer .row .footer-block__text {
-        color: #9ea9b5;
         position: absolute;
-        display: inline-block;
-        top: 50%;
-        left: 10%; }
-      .section-footer .row .footer-block__logo {
-        text-transform: uppercase;
-        position: absolute;
-        top: 50%;
-        display: inline-block;
-        right: 10%;
-        font-size: 1.6rem;
-        letter-spacing: 0.1rem;
-        word-spacing: 0.2rem;
-        font-weight: 900; }
-        .section-footer .row .footer-block__logo:link, .section-footer .row .footer-block__logo:visited {
-          text-decoration: none;
-          color: #f3f5f6; }
+        color: #bbc3cb;
+        width: 250px;
+        left: calc(50% - 125px);
+        top: 50%; }
   .section-footer .row:first-child {
     margin-bottom: 0; }

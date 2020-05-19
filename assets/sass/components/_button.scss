@@ -5,11 +5,11 @@
   .fontawesome-icon {
     color: darken($color-primary-white, 50%);
     margin-left: 0.5rem;
+    transition-duration: 250ms;
   }
   &:link,
   &:visited {
     vertical-align: middle;
-    font-size: 1.6rem;
     text-decoration: none;
     padding: 1.65rem 2.9rem;
     display: inline-block;
@@ -22,7 +22,7 @@
 
     // media queries
     @include respond(phone) {
-      padding: 1.75rem 3.0rem;
+      padding: 1.75rem 3rem;
     }
   }
   &:hover {
@@ -59,27 +59,31 @@
 }
 
 .btn--scroll {
-  background-color: $color-primary-gold;
-  width: 8.5rem;
-  height: 8.5rem;
+  background: $color-primary-gold;
   bottom: 4.5rem;
   z-index: 2;
-  border-radius: unset;
 
+  .fontawesome-icon {
+    color: $color-primary-grey; // overides darken($color-primary-white, 50%);
+    vertical-align: middle;
+    margin: 0 auto; // center icon horizontally - overides margin-left: 0.5rem; 
+    margin-top: 2.5rem; // center icon vertically
+    padding-left: .2rem;
+  }
   &:link,
   &:visited {
-    padding-top: 2.5rem;
-    vertical-align: middle;
+    border-radius: unset; // overides border-radius: 3rem;
+    padding: 0; // overides padding: 1.65rem 2.9rem;
+    width: 8.5rem;
+    height: 8.5rem;
   }
-
-  // add mixin
   &:hover {
-    @include arrow-bottom-animate();
-  }
-  .fontawesome-icon {
-    color: $color-primary-grey;
+    cursor: pointer;
+    // add animation for the icon
+    @include arrow-bottom-animate(lighten($color-primary-grey, 100%));
   }
 }
+
 .section-about .row .profile a.btn-medium {
   padding: 2rem 4rem;
 }
@@ -90,7 +94,6 @@
   border: 2px dashed lighten($color: green, $amount: 0%);
   border-radius: 0.3rem 0 0 0.3rem;
   transition: transform 0.3s;
-  // transition: transform 0.5s linear;
 
   .fontawesome-icon {
     color: darken($color-primary-white, 50%);
@@ -129,7 +132,9 @@
   box-shadow: 0 1rem 2rem rgba($color-primary-grey-dark, 0.2); // shadow: [X Y Blur Colour]
 }
 .btn--wave:active {
-  transform: translateY(-1px); //when we click, goes down a litle (from -3px to -1px)
+  transform: translateY(
+    -1px
+  ); //when we click, goes down a litle (from -3px to -1px)
   box-shadow: 0 0.5rem 1rem rgba($color-primary-grey-dark, 0.2); // less shadow when user clicks the btn helps to create proximity effect (away)
 }
 // create a pseudo-elem that looks like the existing elem and place it behind the existing elem
@@ -146,6 +151,6 @@
   top: 0;
   left: 0;
   z-index: -1;
-  // transition to initial state 
-  transition: all .4s;
+  // transition to initial state
+  transition: all 0.4s;
 }

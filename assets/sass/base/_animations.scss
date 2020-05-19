@@ -6,18 +6,19 @@
     transition: transform 250ms;
   }
 }
-@mixin arrow-bottom-animate() {
+@mixin arrow-bottom-animate($iconColor) {
   .fontawesome-icon {
-    transform: translateY(0.3rem);
-    transition: transform 250ms;
+    color: $iconColor;
+    transform: translateY(.6rem);
+    transition-duration: 250ms;
   }
 }
 // animation with @keyframes
-@keyframes move-in-down {
+@keyframes move-in-up {
   0% {
     opacity: 0;
     // display: none;
-    transform: translateY(-100px);
+    transform: translateY(100px);
   }
   80% {
     opacity: 0.8;
@@ -46,5 +47,20 @@
   }
   .featured__box-2  {
       background-color: darken($color-primary-babyblue, 5%);
+  }
+}
+
+// reveal image in the about section
+@keyframes reveal-img {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0); // to look as it looked at the beggining
   }
 }
