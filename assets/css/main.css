@@ -826,9 +826,24 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
           height: 150px; } }
       .section-footer .row .footer-block__text {
         position: absolute;
-        color: #bbc3cb;
+        color: gray;
+        letter-spacing: 0.1rem;
+        word-spacing: 0.2rem;
         width: 250px;
         left: calc(50% - 125px);
         top: 50%; }
+      .section-footer .row .footer-block .social__icon {
+        position: absolute;
+        display: inline-block;
+        right: 30px;
+        top: 30px;
+        padding: 0;
+        line-height: 0;
+        display: inline-block;
+        transition-property: color;
+        transition-duration: 250ms; }
+        .section-footer .row .footer-block .social__icon .icon {
+          width: 40px;
+          height: 40px; }
   .section-footer .row:first-child {
     margin-bottom: 0; }

@@ -195,21 +195,32 @@
       background-position: top; // [center, bottom]
       filter: grayscale(1);
       position: relative;
-      // display: flex;
-      // align-items: center;
-      // justify-content: center;
 
       &__text {
         position: absolute;
-        // border: 1px solid green;
-        // background-color: red;
-        color: darken($color-primary-grey, 15%);
+        color: darken($color-primary-white, 50%);
+        // font-weight: 700;
+        letter-spacing: 0.1rem;
+        word-spacing: 0.2rem;
         width: 250px;
         left: calc(50% - 125px);
         top: 50%;
-        // margin-top: 1.5rem;
-        // @include center_XY_axis();
-        
+      }
+      .social__icon {
+        position: absolute;
+        display: inline-block;
+        right: 30px; 
+        top: 30px; 
+        padding: 0;
+        line-height: 0;
+        display: inline-block;
+        transition-property: color;
+        transition-duration: 250ms;
+
+        .icon {
+          width: 40px;
+          height: 40px;
+        }
       }
     }
   }
