@@ -113,7 +113,7 @@
 		&::before, 
 		&::after {
 			width: 2.5rem;
-			height: 2px;
+			height: .2rem;
 			background-color: darken($color-primary-white, 50%); // actual hamburguer lines colour
 			display: inline-block;
 		}

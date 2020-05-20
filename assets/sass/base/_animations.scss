@@ -51,16 +51,29 @@
 }
 
 // reveal image in the about section
-@keyframes reveal-img {
+@keyframes featuredimg {
   0% {
     opacity: 0;
     width: 0;
+    filter: grayscale(100%);
   }
-  80% {
-    opacity: 0.8;
+  50% {
+    opacity: 0.5;
+    filter: grayscale(50%);
   }
   100% {
+    filter: grayscale(0%);
     opacity: 1;
     transform: translate(0); // to look as it looked at the beggining
+  }
+}
+
+@keyframes featuredprojects {
+  from {
+    width: 0%;
+    opacity: 0;
+  }
+  to {
+    width: 100%;
   }
 }
