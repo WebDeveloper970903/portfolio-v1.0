@@ -1,3 +1,7 @@
+
+
+/**  Hamburguer menu
+*****************************************************/
 .navigation {
   &__checkbox {
     display: none;
@@ -32,7 +36,7 @@
     right: 4.5rem;
     // background: $color-primary-grey-dark;
 		// transform: scale(80);
-		transition: transform .8s cubic-bezier(0.83, 0, 0.17, 1);
+		transition: transform .7s cubic-bezier(0.83, 0, 0.17, 1);
 		// border: 1px solid orange;
     z-index: 10;
   }
@@ -48,7 +52,7 @@
    	// hide elements
 		width: 0; 
 		opacity: 0;
-		transition: all .8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+		transition: all .7s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 
     // border: 1px solid red;
 	}

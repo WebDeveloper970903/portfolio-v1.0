@@ -1,26 +1,29 @@
-// mixin and utility classes
 
+
+/** (single-purpose) Utility classes
+***********************************************/
 .u-center-text {
   text-align: center;
 }
 
-// uppercase text
 .u-text-ppercase {
   text-transform: uppercase;
 }
 
-// margins
 .u-margin-bottom-xsmall {
   margin-bottom: 1rem; // 10px
 }
+
 .u-margin-bottom-small {
-  margin-bottom: 2rem; // 20px
+  margin-bottom: 2rem;
 }
+
 .u-margin-bottom-medium {
-  margin-bottom: 4rem; // 40px
+  margin-bottom: 4rem;
 }
+
 .u-margin-bottom-big {
-  margin-bottom: 8rem; // 80px
+  margin-bottom: 8rem; 
 }
 
 .u-text-align-left {
@@ -32,11 +35,11 @@
     border-radius: unset;
   }
 }
+
 .section-about {
   a.btn--text {
     border-radius: unset; // removes border-radius
     padding-left: 0;
-    // background-color: purple;
   }
   .u-reset-padding-left {
     padding-left: 2.9rem;
@@ -66,6 +69,8 @@
 .featured-1 {
   background-color: $color-primary-beije;
 }
+
 .featured-2 {
   background-color: $color-primary-babyblue;
 }
+

@@ -1,3 +1,18 @@
+
+
+/** Homepage 
+***********************************************/
+.outer-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $color-primary-grey-dark;
+  width: 100%;
+  height: 0%;
+  z-index: 50;
+  animation: slidedown .6s cubic-bezier(0.25, 0.1, 0.25, 1) 0s; // animation [name] [duration] [ease] [delay];
+}	
+
 .row {
   @include clearfix;
 }
@@ -6,7 +21,7 @@
 }
 .col-right {
   float: left;
-  padding-top: 10rem; // 100px
+  padding-top: 10rem;
 
   // media queries
   @include respond(phone) {
@@ -37,11 +52,8 @@
         height: 100%;
         top: 0;
         left: 0;
-        // opacity: 0;
         position: absolute;
-        animation: featuredimg 1s ease-in-out 0s; // smooth animation (left to right)
-        // animation-duration: 1s;
-        // animation-timing-function: ease;
+        animation: featuredimg 0.9s ease-in-out .6s; // smooth animation (left to right) - animation [name] [duration] [ease] [delay]; 
       }
       .btn--text {
         position: absolute;
@@ -66,7 +78,6 @@
     @include respond(phone) {
       padding-left: 4rem;
       padding-right: 4rem;
-      // padding-bottom: 0rem;
     }
 
     @include clearfix;

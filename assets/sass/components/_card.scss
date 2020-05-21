@@ -1,14 +1,15 @@
+
+
+/** Featured projects
+***********************************************/
 .card {
   // FUNCTIONALITY
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
-  // height: 50rem;
   height: 38rem;
-  animation: featuredprojects 1s ease-in-out 0s;
-
+  
   &__side {
-    // height: 50rem;
     height: 38rem;
     transition: all 0.8s ease;
     color: white;
@@ -20,7 +21,7 @@
     backface-visibility: hidden;
     border-radius: 0.1rem;
     // box-shadow: 0 1.5rem 4rem $shandow-grey;
-    overflow: hidden;
+    overflow: hidden; 
 
     &--front {
 
@@ -71,7 +72,7 @@
 
   // FRONT CARD STYLYING
 
-  // card__picture
+  // .card__picture
   &__picture {
     background-size: cover;
     height: 23rem;
@@ -88,16 +89,14 @@
         url(../img/foodspot.png);
     }
   }
-  // card__brand
+  // .card__brand
   &__brand {
-    // border: 1px solid purple;
     background-size: cover;
     position: relative;
     padding-top: 5.5rem;
     text-align: center;
 
     &--logo {
-      // card__brand--logo
       background-color: $color-primary-grey-dark;
       padding: 1rem;
       width: 8rem;
@@ -125,4 +124,17 @@
       }
     }
   }
+}
+
+// 1. hides elems until scrolled into
+.section-work {
+  .col-1-of-2 {
+    .hide {
+      opacity: 0;
+    }
+  }
+}
+// 2. presents animation (after .hide is dynamically removed)
+.card-slidein {
+  animation: featuredprojects 1s ease-in-out 0.1s;
 }

@@ -7,6 +7,8 @@ NOTES:
 */
 /** Importing partial sass files
 ***********************************************/
+/**  Reusable styles (mixins)
+*****************************************************/
 /*
 Phones => 0-600px
 Tablets => 600-900px
@@ -27,9 +29,15 @@ $breakpoint argumnent options
 ORDER: Base + typography > general layout, grid > page layout, components
 
 */
+/**  Colours
+*****************************************************/
 .u-special-text {
   color: #a58861; }
 
+/**  Grid
+*****************************************************/
+/**  Global styles
+*****************************************************/
 *,
 *::before,
 *::after {
@@ -60,6 +68,8 @@ html {
 body {
   box-sizing: border-box; }
 
+/** Animations
+***********************************************/
 @keyframes move-in-up {
   0% {
     opacity: 0;
@@ -73,15 +83,16 @@ body {
 @keyframes featuredimg {
   0% {
     opacity: 0;
-    width: 0;
-    filter: grayscale(100%); }
-  50% {
-    opacity: 0.5;
-    filter: grayscale(50%); }
+    filter: grayscale(100%);
+    width: 0%; }
+  95% {
+    opacity: 0.95;
+    filter: grayscale(95%);
+    width: 95%; }
   100% {
     filter: grayscale(0%);
     opacity: 1;
-    transform: translate(0); } }
+    width: 100%; } }
 
 @keyframes featuredprojects {
   from {
@@ -90,6 +101,14 @@ body {
   to {
     width: 100%; } }
 
+@keyframes slidedown {
+  0% {
+    height: 0%; }
+  100% {
+    height: 100%; } }
+
+/**  Social icons
+*****************************************************/
 .social {
   display: flex;
   flex-direction: column;
@@ -120,6 +139,8 @@ body {
     .social {
       display: none; } }
 
+/**  Typography
+*****************************************************/
 body {
   font-family: "Silka-SemiBold", "Lato", sans-serif;
   font-weight: 400;
@@ -208,6 +229,8 @@ body {
   .section-about .container .col .skills p span {
     color: gray; }
 
+/** (single-purpose) Utility classes
+***********************************************/
 .u-center-text {
   text-align: center; }
 
@@ -259,6 +282,8 @@ body {
 .featured-2 {
   background-color: #e7ecef; }
 
+/**  Buttons
+*****************************************************/
 .btn,
 .btn-medium {
   transition: transform 0.5s linear; }
@@ -400,12 +425,13 @@ body {
   z-index: -1;
   transition: all 0.4s; }
 
+/** Featured projects
+***********************************************/
 .card {
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
-  height: 38rem;
-  animation: featuredprojects 1s ease-in-out 0s; }
+  height: 38rem; }
   .card__side {
     height: 38rem;
     transition: all 0.8s ease;
@@ -479,6 +505,14 @@ body {
         font-size: 1.3rem;
         margin-top: 0.5rem; }
 
+.section-work .col-1-of-2 .hide {
+  opacity: 0; }
+
+.card-slidein {
+  animation: featuredprojects 1s ease-in-out 0.1s; }
+
+/**  Featured projects
+*****************************************************/
 .section-work .col-1-of-2 .featured:link, .section-work .col-1-of-2 .featured:visited {
   text-decoration: none; }
 
@@ -527,6 +561,8 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
   /*  represents the actually thumb */
   background-color: #8c8c8c; }
 
+/**  Grid
+*****************************************************/
 .row {
   max-width: 110rem;
   margin: auto; }
@@ -582,11 +618,15 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
   .header__heading-box {
     max-width: 110rem;
     text-align: center;
-    animation-name: move-in-up;
-    animation-duration: 1s;
-    animation-timing-function: ease;
-    margin-bottom: 6rem; }
+    animation: move-in-up 0.9s ease-in-out .6s;
+    margin-bottom: 8rem;
+    /* Landscape */ }
+    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+      .header__heading-box {
+        margin-bottom: 12rem; } }
 
+/**  Hamburguer menu
+*****************************************************/
 .navigation__checkbox {
   display: none; }
 
@@ -611,7 +651,7 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
   position: fixed;
   top: 4.5rem;
   right: 4.5rem;
-  transition: transform 0.8s cubic-bezier(0.83, 0, 0.17, 1);
+  transition: transform 0.7s cubic-bezier(0.83, 0, 0.17, 1);
   z-index: 10; }
 
 .navigation__nav {
@@ -622,7 +662,7 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
   z-index: 15;
   width: 0;
   opacity: 0;
-  transition: all 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6); }
+  transition: all 0.7s cubic-bezier(0.68, -0.6, 0.32, 1.6); }
 
 .navigation__list {
   position: absolute;
@@ -695,6 +735,18 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
   top: 0;
   transform: rotate(-135deg); }
 
+/** Homepage 
+***********************************************/
+.outer-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #292c30;
+  width: 100%;
+  height: 0%;
+  z-index: 50;
+  animation: slidedown 0.6s cubic-bezier(0.25, 0.1, 0.25, 1) 0s; }
+
 .row::after {
   content: "";
   display: table;
@@ -729,7 +781,7 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
       top: 0;
       left: 0;
       position: absolute;
-      animation: featuredimg 1s ease-in-out 0s; }
+      animation: featuredimg 0.9s ease-in-out .6s; }
     .section-about .row .profile .btn--text {
       position: absolute;
       bottom: 0;

@@ -1,3 +1,7 @@
+
+
+/**  Buttons
+*****************************************************/
 .btn,
 .btn-medium {
   transition: transform 0.5s linear;
@@ -132,9 +136,7 @@
   box-shadow: 0 1rem 2rem rgba($color-primary-grey-dark, 0.2); // shadow: [X Y Blur Colour]
 }
 .btn--wave:active {
-  transform: translateY(
-    -1px
-  ); //when we click, goes down a litle (from -3px to -1px)
+  transform: translateY(-1px); //when we click, goes down a litle (from -3px to -1px)
   box-shadow: 0 0.5rem 1rem rgba($color-primary-grey-dark, 0.2); // less shadow when user clicks the btn helps to create proximity effect (away)
 }
 // create a pseudo-elem that looks like the existing elem and place it behind the existing elem

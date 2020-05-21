@@ -23,14 +23,13 @@
 	<link type="text/css" rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.1.0/css/all.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap">
 	<link type="text/css" rel="stylesheet" href="assets/css/main.css">
-
-
 </head>
 
 <body>
-	<div class="container">
+	<!-- page load effect -->
+	<div class="container outer-container"></div>
 
-    <!-- social media icons -->
+		<!-- social media icons -->
 		<div class="social">
 			<a class="social__icon" href="#">
 				<svg class="icon instagram">
@@ -53,16 +52,13 @@
 		<!-- Navigation menu -->
 		<div class="navigation">
 			<input type="checkbox" class="navigation__checkbox" id="navi-toggle">
-
 			<label for="navi-toggle" class="navigation__button">
 				<span class="navigation__icon">&nbsp;</span>
 			</label>
-
 			<div class="navigation__background">&nbsp;</div>
-
-					<nav class="navigation__nav">
-						<!-- <div class="wrapper"> -->
-						<!-- <div class="navigation__contact">
+			<nav class="navigation__nav">
+				<!-- <div class="wrapper"> -->
+				<!-- <div class="navigation__contact">
 						<div class="profile-picture"></div>
 						<h3>Contact Details</h3>
 						<p><a href="mailto:hello@aformoso.com">hello@aformoso.com</a></p>
@@ -71,30 +67,21 @@
 						<p>immediate</p>
 						<p class="credits">© 2020 Alexandre Formoso</p>
 					</div> -->
-						<ul class="navigation__list heading-primary">
-							<li class="navigation__item heading-primary--sub"><a href="#" class="navigation__link">Home</a></li>
-							<li class="navigation__item heading-primary--sub"><a href="#" class="navigation__link">My work</a></li>
-							<li class="navigation__item heading-primary--sub"><a href="#" class="navigation__link">Services</a></li>
-							<li class="navigation__item heading-primary--sub"><a href="#" class="navigation__link">About Me</a></li>
-							<li class="navigation__item heading-primary--sub"><a href="#" class="navigation__link">Blog</a></li>
-							<li class="navigation__item heading-primary--sub"><a href="#" class="navigation__link">Contact</a></li>
-						</ul>
-						<!-- </div> -->
-					</nav>
+				<ul class="navigation__list heading-primary">
+					<li class="navigation__item heading-primary--sub"><a href="#" class="navigation__link">Home</a></li>
+					<li class="navigation__item heading-primary--sub"><a href="#" class="navigation__link">My work</a></li>
+					<li class="navigation__item heading-primary--sub"><a href="#" class="navigation__link">Services</a></li>
+					<li class="navigation__item heading-primary--sub"><a href="#" class="navigation__link">About Me</a></li>
+					<li class="navigation__item heading-primary--sub"><a href="#" class="navigation__link">Blog</a></li>
+					<li class="navigation__item heading-primary--sub"><a href="#" class="navigation__link">Contact</a></li>
+				</ul>
+				<!-- </div> -->
+			</nav>
 		</div>
 
-
-		<!-- Haeder
+		<!-- Header
 		================================================== -->
-		<!-- <nav class="nav">
-			<div class="nav__logo-box">
-				<a href="index.html"><img class="nav__logo" src="img/af-logo-black.png" alt="logo" /></a>
-			</div>
-		</nav> -->
 		<header class="header">
-			<!-- <div class="header__logo-box">
-			<a href="index.html"><img class="header__logo" src="img/af-logo-black.png" alt="logo" /></a>
-		</div> -->
 			<div class="header__heading-box">
 				<h1 class="heading-primary">
 					<span class="heading-primary--title">Web Developer</span>
@@ -161,7 +148,7 @@
 				</div>
 				<div class="row">
 					<div class="col col-1-of-2">
-						<div class="card">
+						<div class="card hide">
 							<!-- card front side -->
 							<div class="card__side card__side--front card__side--front-1">
 								<div class="card__picture card__picture--1">
@@ -188,7 +175,7 @@
 					</div>
 
 					<div class="col col-1-of-2">
-						<div class="card">
+						<div class="card hide">
 							<!-- card front side -->
 							<div class="card__side card__side--front card__side--front-2">
 								<div class="card__picture card__picture--2">
@@ -240,7 +227,6 @@
 			</section>
 
 		</main>
-	</div>
 
 	<!-- jS scripts -->
 	<script src="assets/js/app.js"></script>
