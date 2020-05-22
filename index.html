@@ -30,36 +30,45 @@
 	<div class="slidedown slidedown-1"></div>
 	<div class="slidedown slidedown-2"></div>
 
-		<!-- social media icons -->
-		<div class="social">
-			<a class="social__icon" href="#">
-				<svg class="icon instagram">
-					<g stroke-width="0" stroke-linejoin="2">
-						<use xlink:href="assets/img/sprite.svg#icon-instagram"></use>
-				</svg>
-			</a>
-			<a class="social__icon" href="#">
-				<svg class="icon linkedin">
-					<use xlink:href="assets/img/sprite.svg#icon-linkedin"></use>
-				</svg>
-			</a>
-			<a class="social__icon" href="#">
-				<svg class="icon github">
-					<use xlink:href="assets/img/sprite.svg#icon-github"></use>
-				</svg>
-			</a>
-		</div>
+	<!-- social media icons -->
+	<div class="social">
+		<a class="social__icon" href="#">
+			<svg class="icon instagram">
+				<g stroke-width="0" stroke-linejoin="2">
+					<use xlink:href="assets/img/sprite.svg#icon-instagram"></use>
+			</svg>
+		</a>
+		<a class="social__icon" href="#">
+			<svg class="icon linkedin">
+				<use xlink:href="assets/img/sprite.svg#icon-linkedin"></use>
+			</svg>
+		</a>
+		<a class="social__icon" href="#">
+			<svg class="icon github">
+				<use xlink:href="assets/img/sprite.svg#icon-github"></use>
+			</svg>
+		</a>
+	</div>
 
-		<!-- Navigation menu -->
-		<div class="navigation">
-			<input type="checkbox" class="navigation__checkbox" id="navi-toggle">
-			<label for="navi-toggle" class="navigation__button">
-				<span class="navigation__icon">&nbsp;</span>
-			</label>
-			<div class="navigation__background">&nbsp;</div>
-			<nav class="navigation__nav">
-				<!-- <div class="wrapper"> -->
-				<!-- <div class="navigation__contact">
+	<div class="social whatsapp">
+		<a class="social__icon" href="#">
+			<img class="icon whatsapp" src="assets/img/whatsapp.png">
+			<!-- <svg class="icon whatsapp">
+				<use xlink:href="assets/img/sprite.svg#icon-whatsapp"></use>
+			</svg> -->
+		</a>
+	</div>
+
+	<!-- Navigation menu -->
+	<div class="navigation">
+		<input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+		<label for="navi-toggle" class="navigation__button">
+			<span class="navigation__icon">&nbsp;</span>
+		</label>
+		<div class="navigation__background">&nbsp;</div>
+		<nav class="navigation__nav">
+			<!-- <div class="wrapper"> -->
+			<!-- <div class="navigation__contact">
 						<div class="profile-picture"></div>
 						<h3>Contact Details</h3>
 						<p><a href="mailto:hello@aformoso.com">hello@aformoso.com</a></p>
@@ -68,166 +77,161 @@
 						<p>immediate</p>
 						<p class="credits">© 2020 Alexandre Formoso</p>
 					</div> -->
-				<ul class="navigation__list heading-primary">
-					<li class="navigation__item heading-primary--sub"><a href="#" class="navigation__link">Home</a></li>
-					<li class="navigation__item heading-primary--sub"><a href="#" class="navigation__link">My work</a></li>
-					<li class="navigation__item heading-primary--sub"><a href="#" class="navigation__link">Services</a></li>
-					<li class="navigation__item heading-primary--sub"><a href="#" class="navigation__link">About Me</a></li>
-					<li class="navigation__item heading-primary--sub"><a href="#" class="navigation__link">Blog</a></li>
-					<li class="navigation__item heading-primary--sub"><a href="#" class="navigation__link">Contact</a></li>
-				</ul>
-				<!-- </div> -->
-			</nav>
-		</div>
+			<ul class="navigation__list heading-primary">
+				<li class="navigation__item heading-primary--sub"><a href="#" class="navigation__link">Home</a></li>
+				<li class="navigation__item heading-primary--sub"><a href="#" class="navigation__link">My work</a></li>
+				<li class="navigation__item heading-primary--sub"><a href="#" class="navigation__link">Services</a></li>
+				<li class="navigation__item heading-primary--sub"><a href="#" class="navigation__link">About Me</a></li>
+				<li class="navigation__item heading-primary--sub"><a href="#" class="navigation__link">Blog</a></li>
+				<li class="navigation__item heading-primary--sub"><a href="#" class="navigation__link">Contact</a></li>
+			</ul>
+			<!-- </div> -->
+		</nav>
+	</div>
 
-		<!-- Header
+	<!-- Header
 		================================================== -->
-		<header class="header">
-			<div class="header__heading-box">
-				<h1 class="heading-primary">
-					<span class="heading-primary--title">Web Developer</span>
-					<span class="heading-primary--sub">I create <span class="u-special-text u-wrap-text">modern</span> experiences for
-						businesses.</span>
-				</h1>
-				<a class="btn btn--black" href="#">My work <i class="far fa-arrow-right fontawesome-icon"></i></a>
-				<!-- PRO fal, far, fas -->
-			</div>
-		</header>
+	<header class="header">
+		<div class="header__heading-box">
+			<h1 class="heading-primary">
+				<span class="heading-primary--title">Web Developer</span>
+				<span class="heading-primary--sub">I create <span class="u-special-text u-wrap-text">modern</span> experiences
+					for
+					businesses.</span>
+			</h1>
+			<a class="btn btn--black" href="#">My work <i class="far fa-arrow-right fontawesome-icon"></i></a>
+			<!-- PRO fal, far, fas -->
+		</div>
+	</header>
 
-		<!-- About
+	<!-- About
     ================================================== -->
-		<main>
-			<section class="section-about">
-				<div class="u-center-text u-margin-bottom-big row">
-					<div class="profile">
-						<img class="profile__photo" src="assets/img/my-photo.jpg" alt="Alexandre">
-						<a class="btn btn--text btn-medium" href="#">About Me <i
-								class="far fa-arrow-right fontawesome-icon"></i></a>
-						<a class="btn btn--scroll" href="#"><i class="far fa-long-arrow-down fa-2x fontawesome-icon"></i></a>
-					</div>
+	<main>
+		<section id="about" class="section-about">
+			<div class="u-center-text u-margin-bottom-big row">
+				<div class="profile">
+					<img class="profile__photo" src="assets/img/my-photo.jpg" alt="Alexandre">
+					<a class="btn btn--text btn-medium" href="#">About Me <i class="far fa-arrow-right fontawesome-icon"></i></a>
+					<a class="btn btn--scroll-down" href="#about"><i class="far fa-long-arrow-down fa-2x fontawesome-icon"></i></a>
 				</div>
-				<div class="row container">
-					<div class="col col-left">
-						<h3 class="heading-secondary">
-							How can I help<br> you?
-						</h3>
-						<p class="paragraph">
-							As a graduate Web Developer, I am here to help you solve a problem and stand out in the digital world.
-							The combination of my passion for Web Development and your vision will ensure great end results.
-						</p>
-						<a class="btn btn--text" href="#">Services <i class="far fa-arrow-right fontawesome-icon"></i></a>
-					</div>
-					<div class="col col-right">
-						<div class="u-margin-auto">
-							<div class="skills skills-1">
-								<h5 class="heading-tertiary u-special-text u-margin-bottom-xsmall">Front-end</h5>
-								<p>HTML5</p>
-								<p>CSS3 <span>/</span> Sass</p>
-								<p>JavaScript <span>/</span> React.js</p>
-							</div>
-							<div class="skills skills-2">
-								<h5 class="heading-tertiary u-special-text u-margin-bottom-xsmall">Back-end</h5>
-								<p>SQL <span>/</span> NoSQL</p>
-								<p>Node.js</p>
-								<p>PHP <span>/</span> WordPress</p>
-							</div>
+			</div>
+			<div class="row container">
+				<div class="col col-left">
+					<h3 class="heading-secondary">
+						How can I help<br> you?
+					</h3>
+					<p class="paragraph">
+						As a graduate Web Developer, I am here to help you solve a problem and stand out in the digital world.
+						The combination of my passion for Web Development and your vision will ensure great end results.
+					</p>
+					<a class="btn btn--text" href="#">Services <i class="far fa-arrow-right fontawesome-icon"></i></a>
+				</div>
+				<div class="col col-right">
+					<div class="u-margin-auto">
+						<div class="skills skills-1">
+							<h5 class="heading-tertiary u-special-text u-margin-bottom-xsmall">Front-end</h5>
+							<p>HTML5</p>
+							<p>CSS3 <span>/</span> Sass</p>
+							<p>JavaScript <span>/</span> React.js</p>
+						</div>
+						<div class="skills skills-2">
+							<h5 class="heading-tertiary u-special-text u-margin-bottom-xsmall">Back-end</h5>
+							<p>SQL <span>/</span> NoSQL</p>
+							<p>Node.js</p>
+							<p>PHP <span>/</span> WordPress</p>
 						</div>
 					</div>
 				</div>
-			</section>
+			</div>
+		</section>
 
-			<!-- Work
+		<!-- Work
       ================================================== -->
-			<section class="section-work">
-				<div class="row">
-					<div class="wrapper">
-						<h3 class="heading-secondary">
-							Recent work
-						</h3>
-						<a class="btn btn--white" href="#">All work <i class="far fa-arrow-right fontawesome-icon"></i></a>
-					</div>
+		<section class="section-work">
+			<div class="row">
+				<div class="wrapper">
+					<h3 class="heading-secondary">
+						Recent work
+					</h3>
+					<a class="btn btn--white" href="#">All work <i class="far fa-arrow-right fontawesome-icon"></i></a>
 				</div>
-				<div class="row">
-					<div class="col col-1-of-2">
-						<div class="card hide">
-							<!-- card front side -->
-							<div class="card__side card__side--front card__side--front-1">
-								<div class="card__picture card__picture--1">
-									<!-- site picture -->
-								</div>
-								<div class="card__brand">
-									<img class="card__brand--logo card__brand--logo-1" src="assets/img/af-logo-gold.png">
-									<!-- site logo -->
-									<div class="card__brand--name">
-										<p>
-											<span class="heading-primary--sub">Foodspot <span style="color: #A58861;">website</span></span>
-											<span class="heading-primary--title">Norwich, England</span>
-										</p>
-									</div>
-								</div>
+			</div>
+			<div class="row">
+				<div class="col col-1-of-2">
+					<div class="card hide">
+						<!-- card front side -->
+						<div class="card__side card__side--front card__side--front-1">
+							<div class="card__picture card__picture--1">
+								<!-- site picture -->
 							</div>
-							<!-- card back side -->
-							<div class="card__side card__side--back card__side--back-1">
-								<div class="card__cta">
-									<a id="wave-btn" href="#" class="btn btn--white btn--wave">See work</a>
+							<div class="card__brand">
+								<img class="card__brand--logo card__brand--logo-1" src="assets/img/af-logo-gold.png">
+								<!-- site logo -->
+								<div class="card__brand--name">
+									<p>
+										<span class="heading-primary--sub">Foodspot <span style="color: #A58861;">website</span></span>
+										<span class="heading-primary--title">Norwich, England</span>
+									</p>
 								</div>
 							</div>
 						</div>
-					</div>
-
-					<div class="col col-1-of-2">
-						<div class="card hide">
-							<!-- card front side -->
-							<div class="card__side card__side--front card__side--front-2">
-								<div class="card__picture card__picture--2">
-									<!-- site picture -->
-								</div>
-								<div class="card__brand">
-									<img class="card__brand--logo card__brand--logo-2" src="assets/img/af-logo-gold.png">
-									<!-- site logo -->
-									<div class="card__brand--name">
-										<p>
-											<span class="heading-primary--sub">JS board <span style="color: #FF3F4C;">game</span></span>
-											<span class="heading-primary--title">Norwich, England</span>
-										</p>
-									</div>
-								</div>
-							</div>
-							<!-- card back side -->
-							<div class="card__side card__side--back card__side--back-2">
-								<div class="card__cta">
-									<a id="wave-btn" href="#" class="btn btn--white btn--wave">See work</a>
-								</div>
+						<!-- card back side -->
+						<div class="card__side card__side--back card__side--back-1">
+							<div class="card__cta">
+								<a id="wave-btn" href="#" class="btn btn--white btn--wave">See work</a>
 							</div>
 						</div>
 					</div>
 				</div>
-			</section>
 
-			<!-- Footer
+				<div class="col col-1-of-2">
+					<div class="card hide">
+						<!-- card front side -->
+						<div class="card__side card__side--front card__side--front-2">
+							<div class="card__picture card__picture--2">
+								<!-- site picture -->
+							</div>
+							<div class="card__brand">
+								<img class="card__brand--logo card__brand--logo-2" src="assets/img/af-logo-gold.png">
+								<!-- site logo -->
+								<div class="card__brand--name">
+									<p>
+										<span class="heading-primary--sub">JS board <span style="color: #FF3F4C;">game</span></span>
+										<span class="heading-primary--title">Norwich, England</span>
+									</p>
+								</div>
+							</div>
+						</div>
+						<!-- card back side -->
+						<div class="card__side card__side--back card__side--back-2">
+							<div class="card__cta">
+								<a id="wave-btn" href="#" class="btn btn--white btn--wave">See work</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer
       ================================================== -->
-			<section class="section-footer">
-				<div class="row">
-					<div class="wrapper">
-						<h1 class="heading-primary">
-							<span class="heading-primary--title">Do you like my work?</span>
-							<span class="heading-primary--sub">Let's <span class="u-special-text">work</span> together!</span>
-						</h1>
-						<a class="btn btn--white" href="#">Get in touch <i class="far fa-arrow-right fontawesome-icon"></i></a>
-					</div>
-					<div style="bottom: 0;" class="footer-block">
-						<p class="footer-block__text">&copy; 2020 Alexandre Formoso</p>
-						<a class="social__icon">
-							<svg class="icon whatsapp">
-								<g stroke-width="0" stroke-linejoin="2">
-									<use xlink:href="assets/img/sprite.svg#icon-whatsapp"></use>
-							</svg>
-						</a>
-					</div>
+		<section class="section-footer">
+			<div class="row">
+				<div class="wrapper">
+					<h1 class="heading-primary">
+						<span class="heading-primary--title">Do you like my work?</span>
+						<span class="heading-primary--sub">Let's <span class="u-special-text">work</span> together!</span>
+					</h1>
+					<a class="btn btn--white" href="#">Get in touch <i class="far fa-arrow-right fontawesome-icon"></i></a>
 				</div>
-			</section>
+				<div class="footer-block">
+					<p class="footer-block__text">&copy; 2020 Alexandre Formoso</p>
+					<a href="#" class="btn btn--scroll-down btn--scroll-up u-margin-right-0" href="#about"><i class="far fa-long-arrow-up fa-2x fontawesome-icon"></i></a>
+				</div>
+			</div>
+		</section>
 
-		</main>
+	</main>
 
 	<!-- jS scripts -->
 	<script src="assets/js/app.js"></script>

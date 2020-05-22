@@ -62,13 +62,13 @@
   }
 }
 
-.btn--scroll {
+.btn--scroll-down {
   background: $color-primary-gold;
   bottom: 4.5rem;
   z-index: 2;
 
   .fontawesome-icon {
-    color: $color-primary-grey; // overides darken($color-primary-white, 50%);
+    color: darken($color-primary-grey, 0.25%); // overides darken($color-primary-white, 50%);
     vertical-align: middle;
     margin: 0 auto; // center icon horizontally - overides margin-left: 0.5rem; 
     margin-top: 2.5rem; // center icon vertically
@@ -84,7 +84,16 @@
   &:hover {
     cursor: pointer;
     // add animation for the icon
-    @include arrow-bottom-animate(lighten($color-primary-grey, 100%));
+    @include arrow-down-animate(lighten($color-primary-grey, 100%));
+  }
+}
+
+.btn--scroll-up {
+  .fontawesome-icon {
+    color: darken($color-primary-grey, 25%);
+  }
+  &:hover {
+    @include arrow-up-animate(darken($color-primary-white, 10%));
   }
 }
 

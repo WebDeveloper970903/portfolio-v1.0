@@ -9,7 +9,7 @@
   align-items: center;
   position: fixed;
   top: calc((100vh - 135px) / 2); // 135px => 3x (.icon height + &__icon padding-top +  &__icon padding-bottom) // 3 x 45
-  z-index: 25;
+  z-index: 27;
 
   // .social__icon
   &__icon {
@@ -17,13 +17,13 @@
     flex-direction: column;
     padding: 10px;
     // background: $color-primary-white;
-    transition: transform 0.200s linear;
+    transition: transform 200ms linear;
 
 		&:hover {
 			// filter: contrast(100%);
 			cursor: pointer;
 			.icon {
-				transition: transform 0.200s linear;
+				transition: transform 200ms linear; 
 				transform: scale(1.1);
 			}
 		}
@@ -41,6 +41,17 @@
   
   @include respond(tab-land) { // width < 1200px
     display: none;
-  }
+  } 
 
+}
+
+.whatsapp {
+  width: calc((100% - #{$grid-width}) / 2); // .row = $grid-width
+  top: calc((100vh - 70px)); // 70px => .icon height + icon padding-top + icon padding-bottom + icon margin-bottom) // 40+10+10+10
+  right: 0;
+
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
 }

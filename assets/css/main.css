@@ -117,16 +117,16 @@ body {
   align-items: center;
   position: fixed;
   top: calc((100vh - 135px) / 2);
-  z-index: 25; }
+  z-index: 27; }
   .social__icon {
     display: flex;
     flex-direction: column;
     padding: 10px;
-    transition: transform 0.200s linear; }
+    transition: transform 200ms linear; }
     .social__icon:hover {
       cursor: pointer; }
       .social__icon:hover .icon {
-        transition: transform 0.200s linear;
+        transition: transform 200ms linear;
         transform: scale(1.1); }
     .social__icon .icon {
       padding: 0;
@@ -139,6 +139,14 @@ body {
   @media (max-width: 75em) {
     .social {
       display: none; } }
+
+.whatsapp {
+  width: calc((100% - 110rem) / 2);
+  top: calc((100vh - 70px));
+  right: 0; }
+  .whatsapp .icon {
+    width: 40px;
+    height: 40px; }
 
 /**  Typography
 *****************************************************/
@@ -281,6 +289,17 @@ body {
 .featured-2 {
   background-color: #e7ecef; }
 
+.section-footer .row .footer-block .btn--scroll-down {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #292c30;
+  border-top: none;
+  border-right: none; }
+
+.section-footer .row .footer-block .u-margin-right-0 {
+  right: 0; }
+
 /**  Buttons
 *****************************************************/
 .btn,
@@ -339,27 +358,35 @@ body {
     transform: translateX(0.3rem);
     transition: transform 250ms; }
 
-.btn--scroll {
+.btn--scroll-down {
   background: #a58861;
   bottom: 4.5rem;
   z-index: 2; }
-  .btn--scroll .fontawesome-icon {
-    color: #e6e9ec;
+  .btn--scroll-down .fontawesome-icon {
+    color: #e5e8eb;
     vertical-align: middle;
     margin: 0 auto;
     margin-top: 2.5rem;
     padding-left: .2rem; }
-  .btn--scroll:link, .btn--scroll:visited {
+  .btn--scroll-down:link, .btn--scroll-down:visited {
     border-radius: unset;
     padding: 0;
     width: 8.5rem;
     height: 8.5rem; }
-  .btn--scroll:hover {
+  .btn--scroll-down:hover {
     cursor: pointer; }
-    .btn--scroll:hover .fontawesome-icon {
+    .btn--scroll-down:hover .fontawesome-icon {
       color: white;
       transform: translateY(0.6rem);
       transition-duration: 250ms; }
+
+.btn--scroll-up .fontawesome-icon {
+  color: #9ea9b5; }
+
+.btn--scroll-up:hover .fontawesome-icon {
+  color: #e6e6e6;
+  transform: translateY(-0.6rem);
+  transition-duration: 250ms; }
 
 .section-about .row .profile a.btn-medium {
   padding: 2rem 4rem; }
@@ -379,17 +406,9 @@ body {
     cursor: pointer;
     transform: translateY(-1.5rem) scale(1.03rem); }
     .featured:hover .fontawesome-icon {
-      margin-left: 0;
       color: #292c30;
-      transform: rotate(-45deg);
-      transition: transform 250ms; }
-    .featured:hover .highlight-text {
-      color: #292c30;
-      font-weight: 700; }
-    .featured:hover .featured__box-1 {
-      background-color: #e4e4d6; }
-    .featured:hover .featured__box-2 {
-      background-color: #d8e0e5; }
+      transform: translateY(-0.6rem);
+      transition-duration: 250ms; }
 
 .btn--wave {
   transition: transform 0s linear; }
@@ -884,21 +903,5 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
         width: 250px;
         left: calc(50% - 125px);
         top: 50%; }
-      .section-footer .row .footer-block .social__icon {
-        position: absolute;
-        display: inline-block;
-        right: 3rem;
-        top: 3rem;
-        padding: 0;
-        line-height: 0;
-        display: inline-block;
-        transition-property: color;
-        transition-duration: 250ms; }
-        .section-footer .row .footer-block .social__icon .icon {
-          width: 4rem;
-          height: 4rem;
-          stroke-width: 0; }
-          .section-footer .row .footer-block .social__icon .icon:hover {
-            fill: #bfbfbf; }
   .section-footer .row:first-child {
     margin-bottom: 0; }

@@ -228,29 +228,6 @@
         left: calc(50% - 125px);
         top: 50%;
       }
-      .social__icon {
-        position: absolute;
-        display: inline-block;
-        right: 3rem;
-        top: 3rem;
-        padding: 0;
-        line-height: 0;
-        display: inline-block;
-        transition-property: color;
-        transition-duration: 250ms;
-        // stroke: $color-primary-white;
-
-        .icon {
-          width: 4rem;
-          height: 4rem;
-          stroke-width: 0;
-
-          &:hover {
-            fill: darken($color-primary-white, 25%); // #50CA5D;
-            // filter: invert(70%);
-          }
-        }
-      }
     }
   }
   .row:first-child {

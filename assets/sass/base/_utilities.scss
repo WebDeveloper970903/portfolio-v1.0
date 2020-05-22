@@ -1,5 +1,3 @@
-
-
 /** (single-purpose) Utility classes
 ***********************************************/
 .u-center-text {
@@ -23,7 +21,7 @@
 }
 
 .u-margin-bottom-big {
-  margin-bottom: 8rem; 
+  margin-bottom: 8rem;
 }
 
 .u-text-align-left {
@@ -74,3 +72,20 @@
   background-color: $color-primary-babyblue;
 }
 
+.section-footer {
+  .row {
+    .footer-block {
+      .btn--scroll-down {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: $color-primary-grey-dark;
+        border-top: none;
+        border-right: none;
+      }
+      .u-margin-right-0 {
+        right: 0;
+      }
+    }
+  }
+}

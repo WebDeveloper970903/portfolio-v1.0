@@ -10,10 +10,18 @@
   }
 }
 
-@mixin arrow-bottom-animate($iconColor) {
+@mixin arrow-down-animate($iconColor) {
   .fontawesome-icon {
     color: $iconColor;
     transform: translateY(.6rem);
+    transition-duration: 250ms;
+  }
+}
+
+@mixin arrow-up-animate($iconColor) {
+  .fontawesome-icon {
+    color: $iconColor;
+    transform: translateY(-.6rem);
     transition-duration: 250ms;
   }
 }
@@ -29,7 +37,7 @@
   }
 }
 
-@mixin arrow-up-animate($iconColor) {
+@mixin arrow-up-rotate($iconColor) {
   .fontawesome-icon {
     margin-left: 0;
     color: $iconColor;
