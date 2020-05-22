@@ -2,7 +2,7 @@
 
 /** Animations
 ***********************************************/
-@mixin arrow-right-animate($iconColor) {
+@mixin arrow-right-animate-s($iconColor) {
   .fontawesome-icon {
     color: $iconColor;
     transform: translateX(0.3rem);
@@ -10,7 +10,7 @@
   }
 }
 
-@mixin arrow-down-animate($iconColor) {
+@mixin arrow-down-animate-m($iconColor) {
   .fontawesome-icon {
     color: $iconColor;
     transform: translateY(.6rem);
@@ -18,7 +18,7 @@
   }
 }
 
-@mixin arrow-up-animate($iconColor) {
+@mixin arrow-up-animate-m($iconColor) {
   .fontawesome-icon {
     color: $iconColor;
     transform: translateY(-.6rem);
@@ -37,7 +37,7 @@
   }
 }
 
-@mixin arrow-up-rotate($iconColor) {
+@mixin arrow-up-animate-m-rotate-L($iconColor) {
   .fontawesome-icon {
     margin-left: 0;
     color: $iconColor;

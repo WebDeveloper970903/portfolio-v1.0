@@ -391,25 +391,6 @@ body {
 .section-about .row .profile a.btn-medium {
   padding: 2rem 4rem; }
 
-.featured {
-  padding: unset;
-  display: inline-block;
-  border: 2px dashed green;
-  border-radius: 0.3rem 0 0 0.3rem;
-  transition: transform 0.3s; }
-  .featured .fontawesome-icon {
-    color: gray; }
-  .featured .highlight-text {
-    color: gray;
-    font-size: 1.5; }
-  .featured:hover {
-    cursor: pointer;
-    transform: translateY(-1.5rem) scale(1.03rem); }
-    .featured:hover .fontawesome-icon {
-      color: #292c30;
-      transform: translateY(-0.6rem);
-      transition-duration: 250ms; }
-
 .btn--wave {
   transition: transform 0s linear; }
   .btn--wave:hover::after {
