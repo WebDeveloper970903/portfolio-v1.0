@@ -2,31 +2,6 @@
 
 /** Header
 ***********************************************/
-.nav {
-  border: 1px solid red;
-  display: flex;
-  align-items: center;
-  z-index: 1;
-
-  // nesting - ".header__logo-box"
-  &__logo-box {
-    display: inline-flex;
-    padding: 0;
-    margin: 0;
-
-    a {
-      display: flex;
-      margin: 0;
-      padding: 0;
-    }
-  }
-  &__logo {
-    width: 3.5rem;
-    border: 1px solid green;
-    // display: none;
-  }
-}
-
 .header {
   height: 100vh;
   display: flex;
@@ -37,14 +12,13 @@
   &__heading-box {
     max-width: $grid-width; // variable
     text-align: center;
-    // opacity: 0;
-    animation: move-in-up 0.9s ease-in-out .6s; // smooth animation (bottom to top)  - animation [name] [duration] [ease] [delay];
-    // animation-duration: 1s;
+    opacity: 0;
+    animation: move-in-up 700ms ease-in-out 1.3s forwards; // animation [name] [duration] [animation-timing-function] [delay] [animation-fill-mode]; 
+    // [animation-fill-mode: forwards] makes sure elem retains the style values from the last @keyframe when the animation ends (opacity = 1)
     // animation-timing-function: ease; //https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function
-    // transition-delay: .8s;
     margin-bottom: 8rem;
     
-    /* Landscape */ 
+    // Landscape  
     @media only screen and (min-device-width: 375px) 
     and (max-device-width: 667px) 
     and (-webkit-min-device-pixel-ratio: 2)

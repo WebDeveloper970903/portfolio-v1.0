@@ -3,8 +3,7 @@
 /**  Reusable styles (mixins)
 *****************************************************/
 @mixin u-special-text($specialColor) {
-  .u-special-text {
-    color: $specialColor;
+  .u-wrap-text {
     &::after {
       content: "\a";
       white-space: pre; // wraps content after this elem onto a new line

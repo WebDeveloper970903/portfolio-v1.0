@@ -9,6 +9,7 @@
     transition: transform 250ms;
   }
 }
+
 @mixin arrow-bottom-animate($iconColor) {
   .fontawesome-icon {
     color: $iconColor;
@@ -20,10 +21,7 @@
 @keyframes move-in-up {
   0% {
     opacity: 0;
-    transform: translateY(100px);
-  }
-  80% {
-    opacity: 0.8;
+    transform: translateY(100px); // animation initial position in the Y axis
   }
   100% {
     opacity: 1;
@@ -57,11 +55,6 @@
     filter: grayscale(100%);
     width: 0%;
   }
-  95% {
-    opacity: 0.95;
-    filter: grayscale(95%);
-    width: 95%;
-  }
   100% {
     filter: grayscale(0%);
     opacity: 1;
@@ -76,14 +69,25 @@
   }
   to {
     width: 100%;
+    opacity: 1;
   }
 }
 
-@keyframes slidedown {
+@keyframes slidedown-1 {
   0% {
     height: 0%;
   }
   100% {
     height: 100%;
+  }
+}
+
+@keyframes slidedown-2 {
+  0% {
+    height: 100%;
+  }
+  100% {
+    height: 0%;
+    
   }
 }

@@ -136,5 +136,7 @@
 }
 // 2. presents animation (after .hide is dynamically removed)
 .card-slidein {
-  animation: featuredprojects 1s ease-in-out 0.1s;
+    opacity: 0; // style to be set before animation starts (opacity = 1 after)
+    animation: featuredprojects 1s ease-in-out 0.1s forwards; 
+    // [animation-fill-mode: forwards] makes sure elem retains the style values from the last @keyframe when the animation ends (opacity = 1)
 }

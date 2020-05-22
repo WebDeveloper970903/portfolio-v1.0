@@ -4,17 +4,6 @@
 ===========================================================================================================*/
 
 
-/** Page Load Transitions / <body onload="slidein('elem')">
-*****************************************************/
-function slideoc(elm) {
-	console.log("Page load: slideOpen");
-
-	const elem = document.getElementById(elm);
-	// elem.style.background = clr; // colour;
-	elem.style.transition = "height, 0.5s linear 0s"; // transition [property] [duration] [ease] [delay];
-	elem.style.height = "100%";
-}
-
 /**  Scroll based animations
 *****************************************************/
 (function() {
@@ -34,10 +23,6 @@ function slideoc(elm) {
 				elem.classList.remove('hide');
         elem.classList.add('card-slidein');
 			}
-			// else {
-			// 	elem.classList.add('hide');
-			// 	elem.classList.remove('card-slidein');
-			// }
     }
   }
 
