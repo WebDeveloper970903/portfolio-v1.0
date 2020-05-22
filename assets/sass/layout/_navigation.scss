@@ -1,30 +1,33 @@
-
-
 /**  Hamburguer menu
 *****************************************************/
 .navigation {
   &__checkbox {
     display: none;
+    border: 2px solid greenyellow;
+    z-index: 29;
   }
 
   &__button {
-    // background-color: $color-primary-white;
+    background-color: orangered;
+    // opacity: 0;
     height: 5rem;
     width: 5rem;
     position: fixed;
     top: 2.5rem;
-		// right: 4rem;
-		right: calc((100% - #{$grid-width}) / 2 /* = remaining right width*/ - 9rem); 
+    // right: 4rem;
+    right: calc(
+      (100% - #{$grid-width}) / 2 /* = remaining right width*/ - 9rem
+    );
     // border-radius: 50%;
-		z-index: 27; // sits on top of &__background and &__nav
-		// box-shadow: 0 .5rem 1.5rem darken($color-primary-white, 15%);
-		text-align: center;
-		cursor: pointer;
-		// border: 1px solid blue;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		filter: contrast(100%); // icon takes 90% of its original (fill) colour
+    z-index: 27; // sits on top of &__background and &__nav
+    // box-shadow: 0 .5rem 1.5rem darken($color-primary-white, 15%);
+    text-align: center;
+    cursor: pointer;
+    // border: 1px solid blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: contrast(100%); // icon takes 90% of its original (fill) colour
   }
 
   &__background {
@@ -32,129 +35,186 @@
     width: 4rem;
     border-radius: 50%; // clickable round circle
     position: fixed;
-    top: 4.5rem;
+    top: 3.5rem;
     right: 4.5rem;
-    // background: $color-primary-grey-dark;
-		// transform: scale(80);
-		transition: transform .7s cubic-bezier(0.83, 0, 0.17, 1);
-		// border: 1px solid orange;
+    background: orange;
+    // transform: scale(80);
+    transition: transform 0.7s cubic-bezier(0.83, 0, 0.17, 1);
+    // border: 1px solid orange;
     z-index: 25;
   }
-
+  // .row
   &__nav {
 		height: 100vh;
-		// width: 100%;
-		position: fixed;
+		padding-top: 8rem;
+    // width: 100%;
+    position: fixed;
     top: 0;
     left: 0;
-		z-index: 26; // sits on top of &__background
-		// background-color: orangered;
-   	// hide elements
-		width: 0; 
-		opacity: 0;
-		transition: all .7s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    z-index: 29; // sits on top of &__background
+    border: 4px solid red;
+    // hide elements
+    right: 0;
+    opacity: 0;
+    transition: all 0.7s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 
-    // border: 1px solid red;
-	}
-	&__list {
-		position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    list-style: none;
-		// border: 1px solid orange;
-    // width: 50%;
-    // float: right;
-    text-align: left;
-	}
+    .col {
+      border: 2px solid orangered;
 
-  &__item {
-		padding: 1.2rem 0;
-		line-height: 5rem;
-		display: flex;
-		justify-content: center;
+      .col:first-child {
+        text-align: left;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      .col:last-child {
+        text-align: right;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+
+      .navigation__contact {
+        border: 2px solid green;
+        list-style: none;
+        // background: pink;
+        margin-bottom: 0;
+				padding-left: 12rem;
+				font-weight: 400;
+				letter-spacing: 0.1rem;
+        word-spacing: 0.2rem;
+
+        .profile-picture {
+          margin-top: 2.5rem;
+          width: 11rem;
+          height: 11rem;
+          border-radius: 50%;
+          background: url(../img/me.jpeg) center center;
+          background-size: cover;
+				}
+				h5 {
+					margin-top: 4rem;
+					text-transform: uppercase;
+				}
+				a {
+					color: $color-primary-grey;
+					text-decoration: none;
+					// transition: text-decoration 50ms linear 0s;
+
+					&:hover {
+						text-decoration: underline;
+					}
+					&::after {
+						content: "\a";
+						white-space: pre; // wraps content after this elem onto a new line
+					}
+				}
+				p {
+					color: $color-primary-grey;
+				}
+				.credits {
+					margin-top: 6rem;
+					color: $color-primary-grey-semidark;
+				}
+      }
+      .navigation__list {
+        border: 2px solid green;
+        list-style: none;
+        // background: pink;
+        margin-bottom: 0;
+        padding-right: 12rem;
+
+        .navigation__item {
+          .navigation__link {
+            padding: 1.2rem 0;
+            line-height: 5rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: $color-primary-grey;
+            // border: 1px solid green;
+            text-decoration: none;
+            letter-spacing: 0.1rem;
+            word-spacing: 0.2rem;
+            transition: color 250ms linear;
+
+            &:hover {
+              cursor: pointer;
+              color: $color-primary-grey-semidark;
+            }
+            &:active {
+              color: $color-primary-gold;
+            }
+          }
+        }
+      }
+    }
   }
 
-  &__link {
-    font-size: 3.2rem;
-    font-weight: 700;
-    color: $color-primary-grey;
-    // border: 1px solid green;
-		text-decoration: none;
-		letter-spacing: 0.1rem;
-		word-spacing: 0.2rem;
+  // FUNCTIONALITY
 
-		transition: color 0.250s linear;
-
-		&:hover {
-			// filter: contrast(100%);
-			cursor: pointer;
-			color: $color-primary-grey-semidark;
-		}
-		&:active {
-			color: $color-primary-gold;
-		}
-	}
-
-	// FUNCTIONALITY 
-
-	// label > checkbox:checked > navigation bacground becomes visible
-	&__checkbox:checked ~ &__background {
+  // label > checkbox:checked > navigation bacground becomes visible
+  &__checkbox:checked ~ &__background {
     background: $color-primary-grey-dark;
     transform: scale(80);
-	}
-	&__checkbox:checked ~ &__nav {
+  }
+  &__checkbox:checked ~ &__nav {
     background: $color-primary-grey-dark;
     width: 100%;
-		opacity: 1;
-	}
-	
-	// ICON
-	&__icon {
-		position: relative;
-		// margin-top: 1.25rem;
-		&, // icon elem itself
+    opacity: 1;
+  }
+
+  // ICON
+  &__icon {
+    position: relative;
+    // margin-top: 1.25rem;
+    &, // icon elem itself
 		&::before, 
 		&::after {
-			width: 2.5rem;
-			height: .2rem;
-			background-color: darken($color-primary-white, 50%); // actual hamburguer lines colour
-			display: inline-block;
-		}
-		// defining the content property of the pseudo-classes
-		&::before, 
-		&::after {
-			content: "";
-			position: absolute;
-			left: 0;
-			transition: all .2s;
-		}
-		&::before {
-			top: -.6rem;
-		}
-		&::after {
-			top: .6rem;
-		}
-	}
+      width: 2.5rem;
+      height: 0.2rem;
+      background-color: darken(
+        $color-primary-white,
+        50%
+      ); // actual hamburguer lines colour
+      display: inline-block;
+    }
+    // defining the content property of the pseudo-classes
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: all 0.2s;
+    }
+    &::before {
+      top: -0.6rem;
+    }
+    &::after {
+      top: 0.6rem;
+    }
+  }
 
-	// animate hamburguer lines when button is on hover (space them out vertically)
-	&__button:hover &__icon::before {
-    top: -.8rem;
-	}
-	&__button:hover &__icon::after {
-    top: .8rem;
-	}
+  // animate hamburguer lines when button is on hover (space them out vertically)
+  &__button:hover &__icon::before {
+    top: -0.8rem;
+  }
+  &__button:hover &__icon::after {
+    top: 0.8rem;
+  }
 
-	// label > checkbox:checked > select its sibling's child
-	&__checkbox:checked + &__button &__icon {
-		background-color: transparent;
-	}
-	&__checkbox:checked + &__button &__icon::before {
-		top: 0;
-		transform: rotate(135deg);
-	}
-	&__checkbox:checked + &__button &__icon::after {
-		top: 0;
-		transform: rotate(-135deg);
-	}
+  // label > checkbox:checked > select its sibling's child
+  &__checkbox:checked + &__button &__icon {
+    background-color: transparent;
+  }
+  &__checkbox:checked + &__button &__icon::before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+  &__checkbox:checked + &__button &__icon::after {
+    top: 0;
+    transform: rotate(-135deg);
+  }
 }

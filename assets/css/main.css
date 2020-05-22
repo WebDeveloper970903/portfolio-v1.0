@@ -611,14 +611,17 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
 /**  Hamburguer menu
 *****************************************************/
 .navigation__checkbox {
-  display: none; }
+  display: none;
+  border: 2px solid greenyellow;
+  z-index: 29; }
 
 .navigation__button {
+  background-color: orangered;
   height: 5rem;
   width: 5rem;
   position: fixed;
   top: 2.5rem;
-  right: calc((100% - 110rem) / 2 /* = remaining right width*/ - 9rem);
+  right: calc( (100% - 110rem) / 2 /* = remaining right width*/ - 9rem);
   z-index: 27;
   text-align: center;
   cursor: pointer;
@@ -632,48 +635,89 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
   width: 4rem;
   border-radius: 50%;
   position: fixed;
-  top: 4.5rem;
+  top: 3.5rem;
   right: 4.5rem;
+  background: orange;
   transition: transform 0.7s cubic-bezier(0.83, 0, 0.17, 1);
   z-index: 25; }
 
 .navigation__nav {
   height: 100vh;
+  padding-top: 8rem;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 26;
-  width: 0;
+  z-index: 29;
+  border: 4px solid red;
+  right: 0;
   opacity: 0;
   transition: all 0.7s cubic-bezier(0.68, -0.6, 0.32, 1.6); }
-
-.navigation__list {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  list-style: none;
-  text-align: left; }
-
-.navigation__item {
-  padding: 1.2rem 0;
-  line-height: 5rem;
-  display: flex;
-  justify-content: center; }
-
-.navigation__link {
-  font-size: 3.2rem;
-  font-weight: 700;
-  color: #e6e9ec;
-  text-decoration: none;
-  letter-spacing: 0.1rem;
-  word-spacing: 0.2rem;
-  transition: color 0.250s linear; }
-  .navigation__link:hover {
-    cursor: pointer;
-    color: #8C8D8F; }
-  .navigation__link:active {
-    color: #a58861; }
+  .navigation__nav .col {
+    border: 2px solid orangered; }
+    .navigation__nav .col .col:first-child {
+      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; }
+    .navigation__nav .col .col:last-child {
+      text-align: right;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end; }
+    .navigation__nav .col .navigation__contact {
+      border: 2px solid green;
+      list-style: none;
+      margin-bottom: 0;
+      padding-left: 12rem;
+      font-weight: 400;
+      letter-spacing: 0.1rem;
+      word-spacing: 0.2rem; }
+      .navigation__nav .col .navigation__contact .profile-picture {
+        margin-top: 2.5rem;
+        width: 11rem;
+        height: 11rem;
+        border-radius: 50%;
+        background: url(../img/me.jpeg) center center;
+        background-size: cover; }
+      .navigation__nav .col .navigation__contact h5 {
+        margin-top: 4rem;
+        text-transform: uppercase; }
+      .navigation__nav .col .navigation__contact a {
+        color: #e6e9ec;
+        text-decoration: none; }
+        .navigation__nav .col .navigation__contact a:hover {
+          text-decoration: underline; }
+        .navigation__nav .col .navigation__contact a::after {
+          content: "\a";
+          white-space: pre; }
+      .navigation__nav .col .navigation__contact p {
+        color: #e6e9ec; }
+      .navigation__nav .col .navigation__contact .credits {
+        margin-top: 6rem;
+        color: #8C8D8F; }
+    .navigation__nav .col .navigation__list {
+      border: 2px solid green;
+      list-style: none;
+      margin-bottom: 0;
+      padding-right: 12rem; }
+      .navigation__nav .col .navigation__list .navigation__item .navigation__link {
+        padding: 1.2rem 0;
+        line-height: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        font-size: 3.2rem;
+        font-weight: 700;
+        color: #e6e9ec;
+        text-decoration: none;
+        letter-spacing: 0.1rem;
+        word-spacing: 0.2rem;
+        transition: color 250ms linear; }
+        .navigation__nav .col .navigation__list .navigation__item .navigation__link:hover {
+          cursor: pointer;
+          color: #8C8D8F; }
+        .navigation__nav .col .navigation__list .navigation__item .navigation__link:active {
+          color: #a58861; }
 
 .navigation__checkbox:checked ~ .navigation__background {
   background: #292c30;
@@ -688,24 +732,24 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
   position: relative; }
   .navigation__icon, .navigation__icon::before, .navigation__icon::after {
     width: 2.5rem;
-    height: .2rem;
+    height: 0.2rem;
     background-color: gray;
     display: inline-block; }
   .navigation__icon::before, .navigation__icon::after {
     content: "";
     position: absolute;
     left: 0;
-    transition: all .2s; }
+    transition: all 0.2s; }
   .navigation__icon::before {
-    top: -.6rem; }
+    top: -0.6rem; }
   .navigation__icon::after {
-    top: .6rem; }
+    top: 0.6rem; }
 
 .navigation__button:hover .navigation__icon::before {
-  top: -.8rem; }
+  top: -0.8rem; }
 
 .navigation__button:hover .navigation__icon::after {
-  top: .8rem; }
+  top: 0.8rem; }
 
 .navigation__checkbox:checked + .navigation__button .navigation__icon {
   background-color: transparent; }
