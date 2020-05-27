@@ -1,160 +1,190 @@
-
-
 /**  Hamburguer menu
 *****************************************************/
 .navigation {
-  &__checkbox {
-    display: none;
-  }
+  display: flex;
+  border: 3px solid red; // -------------------------------------------------------------------------------------------------
 
+  // .navigation__button
   &__button {
+    border: 3px solid blue;
     // background-color: $color-primary-white;
     height: 5rem;
     width: 5rem;
     position: fixed;
     top: 2.5rem;
-		// right: 4rem;
-		right: calc((100% - #{$grid-width}) / 2 /* = remaining right width*/ - 9rem); 
+    right: calc((100% - #{$grid-width}) / 2 /* = remaining right width*/ - 100px);
     // border-radius: 50%;
-		z-index: 27; // sits on top of &__background and &__nav
-		// box-shadow: 0 .5rem 1.5rem darken($color-primary-white, 15%);
-		text-align: center;
-		cursor: pointer;
-		// border: 1px solid blue;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		filter: contrast(100%); // icon takes 90% of its original (fill) colour
+    z-index: 27; // sits on top of &__background and &__nav
+    // box-shadow: 0 .5rem 1.5rem darken($color-primary-white, 15%);
+    text-align: center;
+    cursor: pointer;
+    // border: 1px solid blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: contrast(100%); // icon takes 90% of its original (fill) colour
   }
-
+  // .navigation__checkbox
+  &__checkbox {
+    // display: none;
+  }
+  // .navigation__background
   &__background {
+    border: 3px solid yellowgreen;
     height: 4rem;
     width: 4rem;
     border-radius: 50%; // clickable round circle
     position: fixed;
-    top: 4.5rem;
-    right: 4.5rem;
+    top: 2.5rem;
+		// right: 4rem;
+		right: calc((100% - #{$grid-width}) / 2 /* = remaining right width*/ - 100px);
     // background: $color-primary-grey-dark;
-		// transform: scale(80);
-		transition: transform .7s cubic-bezier(0.83, 0, 0.17, 1);
-		// border: 1px solid orange;
+    // transform: scale(80);
+    transition: transform 0.7s cubic-bezier(0.83, 0, 0.17, 1);
+    // border: 3px solid orange;
     z-index: 25;
   }
 
   &__nav {
-		height: 100vh;
-		// width: 100%;
-		position: fixed;
+    border: 3px solid red;
+    height: 100vh;
+    // width: 100%;
+    position: fixed;
     top: 0;
     left: 0;
-		z-index: 26; // sits on top of &__background
-		// background-color: orangered;
-   	// hide elements
-		width: 0; 
-		opacity: 0;
-		transition: all .7s cubic-bezier(0.68, -0.6, 0.32, 1.6);
-
-    // border: 1px solid red;
-	}
-	&__list {
-		position: absolute;
+    z-index: 26; // sits on top of &__background
+    // background-color: orangered;
+    // hide elements
+    width: 0;
+    opacity: 0;
+    transition: all 0.7s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  }
+  &__list {
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     list-style: none;
-		// border: 1px solid orange;
+    // border: 3px solid orange;
     // width: 50%;
     // float: right;
     text-align: left;
-	}
+  }
 
   &__item {
-		padding: 1.2rem 0;
-		line-height: 5rem;
-		display: flex;
-		justify-content: center;
+    padding: 1.2rem 0;
+    line-height: 5rem;
+    display: flex;
+    justify-content: center;
   }
 
   &__link {
     font-size: 3.2rem;
     font-weight: 700;
     color: $color-primary-grey;
-    // border: 1px solid green;
-		text-decoration: none;
-		letter-spacing: 0.1rem;
-		word-spacing: 0.2rem;
+    // border: 3px solid green;
+    text-decoration: none;
+    letter-spacing: 0.1rem;
+    word-spacing: 0.2rem;
 
-		transition: color 0.250s linear;
+    transition: color 0.25s linear;
 
-		&:hover {
-			// filter: contrast(100%);
-			cursor: pointer;
-			color: $color-primary-grey-semidark;
-		}
-		&:active {
-			color: $color-primary-gold;
-		}
-	}
+    &:hover {
+      // filter: contrast(100%);
+      cursor: pointer;
+      color: $color-primary-grey-semidark;
+    }
+    &:active {
+      color: $color-primary-gold;
+    }
+  }
 
-	// FUNCTIONALITY 
+  // FUNCTIONALITY
 
-	// label > checkbox:checked > navigation bacground becomes visible
-	&__checkbox:checked ~ &__background {
+  // label > checkbox:checked > navigation bacground becomes visible
+  &__checkbox:checked ~ &__background {
     background: $color-primary-grey-dark;
     transform: scale(80);
-	}
-	&__checkbox:checked ~ &__nav {
+  }
+  &__checkbox:checked ~ &__nav {
     background: $color-primary-grey-dark;
     width: 100%;
-		opacity: 1;
-	}
-	
-	// ICON
-	&__icon {
-		position: relative;
-		// margin-top: 1.25rem;
-		&, // icon elem itself
+    opacity: 1;
+  }
+
+  // navigation__iCON
+  &__icon {
+    position: relative;
+    // margin-top: 1.25rem;
+    &, // icon elem itself
 		&::before, 
 		&::after {
-			width: 2.5rem;
-			height: .2rem;
-			background-color: darken($color-primary-white, 50%); // actual hamburguer lines colour
-			display: inline-block;
-		}
-		// defining the content property of the pseudo-classes
-		&::before, 
-		&::after {
-			content: "";
-			position: absolute;
-			left: 0;
-			transition: all .2s;
-		}
-		&::before {
-			top: -.6rem;
-		}
-		&::after {
-			top: .6rem;
-		}
-	}
+      width: 2.5rem;
+      height: 0.2rem;
+      background-color: darken(
+        $color-primary-white,
+        50%
+      ); // actual hamburguer lines colour
+      display: inline-block;
+    }
+    // defining the content property of the pseudo-classes
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: all 0.2s;
+    }
+    &::before {
+      top: -0.6rem;
+    }
+    &::after {
+      top: 0.6rem;
+    }
+  }
 
-	// animate hamburguer lines when button is on hover (space them out vertically)
-	&__button:hover &__icon::before {
-    top: -.8rem;
-	}
-	&__button:hover &__icon::after {
-    top: .8rem;
-	}
+  // animate hamburguer lines when button is on hover (space them out vertically)
+  &__button:hover &__icon::before {
+    top: -0.8rem;
+  }
+  &__button:hover &__icon::after {
+    top: 0.8rem;
+  }
 
-	// label > checkbox:checked > select its sibling's child
-	&__checkbox:checked + &__button &__icon {
-		background-color: transparent;
-	}
-	&__checkbox:checked + &__button &__icon::before {
-		top: 0;
-		transform: rotate(135deg);
-	}
-	&__checkbox:checked + &__button &__icon::after {
-		top: 0;
-		transform: rotate(-135deg);
+  // label/navigation__button > checkbox:checked > select its sibling's child
+  &__checkbox:checked + &__button &__icon {
+    background-color: transparent;
+  }
+  &__checkbox:checked + &__button &__icon::before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+  &__checkbox:checked + &__button &__icon::after {
+    top: 0;
+    transform: rotate(-135deg);
+  }
+}
+
+// media queries - bringing hamburguer menu into view
+.navigation__button,
+.navigation__background {
+  @media (min-width: 300px) {
+		width: 50px;
+		height: 50px;
+  }
+  // phone devices
+  @media (min-width: 300px) and (max-width: 767px) {
+    top: 10px;
+    right: 10px;
+  }
+  // tablet devices
+  @media (min-width: 768px) and (max-width: 1199px) {
+		top: 15px;
+		right: 15px;
+  }
+  // some tablets' landscape view
+  @media (min-width: 812px) and (max-width: 1112px) {
+    top: 15px;
+		right: 15px;
 	}
 }

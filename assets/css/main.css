@@ -73,7 +73,7 @@ body {
 @keyframes move-in-up {
   0% {
     opacity: 0;
-    transform: translateY(100px); }
+    transform: translateY(80px); }
   100% {
     opacity: 1;
     transform: translate(0); } }
@@ -98,8 +98,10 @@ body {
 
 @keyframes slidedown-1 {
   0% {
-    height: 0%; }
+    opacity: 0;
+    height: 100%; }
   100% {
+    opacity: 1;
     height: 100%; } }
 
 @keyframes slidedown-2 {
@@ -118,11 +120,19 @@ body {
   position: fixed;
   top: calc((100vh - 135px) / 2);
   z-index: 27; }
+  @media (min-width: 768px) and (max-width: 1199px) {
+    .social {
+      border: 2px solid red;
+      left: 200px;
+      top: 15px; } }
   .social__icon {
     display: flex;
     flex-direction: column;
     padding: 10px;
     transition: transform 200ms linear; }
+    @media (min-width: 768px) and (max-width: 1199px) {
+      .social__icon {
+        border: 2px solid orangered; } }
     .social__icon:hover {
       cursor: pointer; }
       .social__icon:hover .icon {
@@ -136,13 +146,16 @@ body {
       stroke-width: 0;
       fill: gray;
       filter: contrast(100%); }
+      @media (min-width: 768px) and (max-width: 1199px) {
+        .social__icon .icon {
+          border: 2px solid green; } }
   @media (max-width: 75em) {
     .social {
       display: none; } }
 
 .whatsapp {
   width: calc((100% - 110rem) / 2);
-  top: calc((100vh - 70px));
+  top: calc( (100vh - 70px));
   right: 0; }
   .whatsapp .icon {
     width: 40px;
@@ -584,7 +597,11 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
 *****************************************************/
 .row {
   max-width: 110rem;
-  margin: auto; }
+  margin: auto;
+  border: 3px solid orangered; }
+  @media (min-width: 760px) and (max-width: 1200px) {
+    .row {
+      max-width: calc(100% - 300px / 2); } }
 
 [class^="col"] {
   width: 50%;
@@ -629,113 +646,127 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
 
 /**  Hamburguer menu
 *****************************************************/
-.navigation__checkbox {
-  display: none; }
-
-.navigation__button {
-  height: 5rem;
-  width: 5rem;
-  position: fixed;
-  top: 2.5rem;
-  right: calc((100% - 110rem) / 2 /* = remaining right width*/ - 9rem);
-  z-index: 27;
-  text-align: center;
-  cursor: pointer;
+.navigation {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  filter: contrast(100%); }
-
-.navigation__background {
-  height: 4rem;
-  width: 4rem;
-  border-radius: 50%;
-  position: fixed;
-  top: 4.5rem;
-  right: 4.5rem;
-  transition: transform 0.7s cubic-bezier(0.83, 0, 0.17, 1);
-  z-index: 25; }
-
-.navigation__nav {
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 26;
-  width: 0;
-  opacity: 0;
-  transition: all 0.7s cubic-bezier(0.68, -0.6, 0.32, 1.6); }
-
-.navigation__list {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  list-style: none;
-  text-align: left; }
-
-.navigation__item {
-  padding: 1.2rem 0;
-  line-height: 5rem;
-  display: flex;
-  justify-content: center; }
-
-.navigation__link {
-  font-size: 3.2rem;
-  font-weight: 700;
-  color: #e6e9ec;
-  text-decoration: none;
-  letter-spacing: 0.1rem;
-  word-spacing: 0.2rem;
-  transition: color 0.250s linear; }
-  .navigation__link:hover {
+  border: 3px solid red; }
+  .navigation__button {
+    border: 3px solid blue;
+    height: 5rem;
+    width: 5rem;
+    position: fixed;
+    top: 2.5rem;
+    right: calc((100% - 110rem) / 2 /* = remaining right width*/ - 100px);
+    z-index: 27;
+    text-align: center;
     cursor: pointer;
-    color: #8C8D8F; }
-  .navigation__link:active {
-    color: #a58861; }
-
-.navigation__checkbox:checked ~ .navigation__background {
-  background: #292c30;
-  transform: scale(80); }
-
-.navigation__checkbox:checked ~ .navigation__nav {
-  background: #292c30;
-  width: 100%;
-  opacity: 1; }
-
-.navigation__icon {
-  position: relative; }
-  .navigation__icon, .navigation__icon::before, .navigation__icon::after {
-    width: 2.5rem;
-    height: .2rem;
-    background-color: gray;
-    display: inline-block; }
-  .navigation__icon::before, .navigation__icon::after {
-    content: "";
-    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: contrast(100%); }
+  .navigation__background {
+    border: 3px solid yellowgreen;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    position: fixed;
+    top: 2.5rem;
+    right: calc((100% - 110rem) / 2 /* = remaining right width*/ - 100px);
+    transition: transform 0.7s cubic-bezier(0.83, 0, 0.17, 1);
+    z-index: 25; }
+  .navigation__nav {
+    border: 3px solid red;
+    height: 100vh;
+    position: fixed;
+    top: 0;
     left: 0;
-    transition: all .2s; }
-  .navigation__icon::before {
-    top: -.6rem; }
-  .navigation__icon::after {
-    top: .6rem; }
+    z-index: 26;
+    width: 0;
+    opacity: 0;
+    transition: all 0.7s cubic-bezier(0.68, -0.6, 0.32, 1.6); }
+  .navigation__list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    list-style: none;
+    text-align: left; }
+  .navigation__item {
+    padding: 1.2rem 0;
+    line-height: 5rem;
+    display: flex;
+    justify-content: center; }
+  .navigation__link {
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: #e6e9ec;
+    text-decoration: none;
+    letter-spacing: 0.1rem;
+    word-spacing: 0.2rem;
+    transition: color 0.25s linear; }
+    .navigation__link:hover {
+      cursor: pointer;
+      color: #8C8D8F; }
+    .navigation__link:active {
+      color: #a58861; }
+  .navigation__checkbox:checked ~ .navigation__background {
+    background: #292c30;
+    transform: scale(80); }
+  .navigation__checkbox:checked ~ .navigation__nav {
+    background: #292c30;
+    width: 100%;
+    opacity: 1; }
+  .navigation__icon {
+    position: relative; }
+    .navigation__icon, .navigation__icon::before, .navigation__icon::after {
+      width: 2.5rem;
+      height: 0.2rem;
+      background-color: gray;
+      display: inline-block; }
+    .navigation__icon::before, .navigation__icon::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: all 0.2s; }
+    .navigation__icon::before {
+      top: -0.6rem; }
+    .navigation__icon::after {
+      top: 0.6rem; }
+  .navigation__button:hover .navigation__icon::before {
+    top: -0.8rem; }
+  .navigation__button:hover .navigation__icon::after {
+    top: 0.8rem; }
+  .navigation__checkbox:checked + .navigation__button .navigation__icon {
+    background-color: transparent; }
+  .navigation__checkbox:checked + .navigation__button .navigation__icon::before {
+    top: 0;
+    transform: rotate(135deg); }
+  .navigation__checkbox:checked + .navigation__button .navigation__icon::after {
+    top: 0;
+    transform: rotate(-135deg); }
 
-.navigation__button:hover .navigation__icon::before {
-  top: -.8rem; }
+@media (min-width: 300px) {
+  .navigation__button,
+  .navigation__background {
+    width: 50px;
+    height: 50px; } }
 
-.navigation__button:hover .navigation__icon::after {
-  top: .8rem; }
+@media (min-width: 300px) and (max-width: 767px) {
+  .navigation__button,
+  .navigation__background {
+    top: 10px;
+    right: 10px; } }
 
-.navigation__checkbox:checked + .navigation__button .navigation__icon {
-  background-color: transparent; }
+@media (min-width: 768px) and (max-width: 1199px) {
+  .navigation__button,
+  .navigation__background {
+    top: 15px;
+    right: 15px; } }
 
-.navigation__checkbox:checked + .navigation__button .navigation__icon::before {
-  top: 0;
-  transform: rotate(135deg); }
-
-.navigation__checkbox:checked + .navigation__button .navigation__icon::after {
-  top: 0;
-  transform: rotate(-135deg); }
+@media (min-width: 812px) and (max-width: 1112px) {
+  .navigation__button,
+  .navigation__background {
+    top: 15px;
+    right: 15px; } }
 
 /** Homepage 
 ***********************************************/
@@ -772,15 +803,16 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
       padding-top: 4rem; } }
 
 .section-about {
+  border: 3px solid red;
   background-color: #292c30;
   padding-bottom: 8rem; }
   @media (max-width: 37.5em) {
     .section-about {
-      padding-bottom: 6rem; } }
+      padding-bottom: 4rem; } }
   .section-about .row .profile {
     background-color: #292c30;
     float: left;
-    top: -8rem;
+    top: -10rem;
     position: relative;
     width: 100%;
     height: 55rem; }
@@ -800,6 +832,18 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
     @media (max-width: 37.5em) {
       .section-about .row .profile {
         height: 34rem; } }
+    @media (min-width: 768px) and (max-width: 1199px) {
+      .section-about .row .profile {
+        top: -10rem;
+        height: 45rem; } }
+    @media (max-width: 823px) {
+      .section-about .row .profile {
+        top: -8rem; } }
+  .section-about .row:first-child {
+    height: 45rem; }
+    @media (max-width: 37.5em) {
+      .section-about .row:first-child {
+        height: 35rem; } }
   .section-about .container {
     margin: auto;
     padding-left: 8rem;
@@ -830,12 +874,17 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
 
 .section-work {
   padding: 12rem 0; }
-  @media (max-width: 75em) {
+  @media (max-width: 37.5em) {
     .section-work {
       padding: 4rem 4rem 8rem 4rem; } }
   @media (max-width: 75em) {
     .section-work .row .col-1-of-2 {
-      max-width: calc(100%) !important; }
+      max-width: calc(100%) !important; } }
+  @media (max-width: 75em) and (min-width: 768px) and (max-width: 1199px) {
+    .section-work .row .col-1-of-2 {
+      padding-left: 8rem;
+      padding-right: 8rem; } }
+  @media (max-width: 75em) {
     .section-work .row .col-1-of-2:last-child {
       margin-top: 4rem; } }
   .section-work .row .wrapper {
@@ -870,6 +919,9 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
   padding: 12rem 0 0;
   margin-bottom: 0;
   border-top: 0.1rem solid rgba(41, 44, 48, 0.15); }
+  @media (max-width: 37.5em) {
+    .section-footer {
+      padding: 8rem 0 0; } }
   .section-footer .heading-primary .heading-primary--sub {
     font-size: 3.8rem; }
     @media (max-width: 37.5em) {
@@ -878,13 +930,16 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
         margin-bottom: 1.5rem; } }
   .section-footer .btn--white {
     margin-bottom: 12rem; }
+    @media (max-width: 37.5em) {
+      .section-footer .btn--white {
+        margin-bottom: 8rem; } }
   .section-footer .row {
     margin-bottom: 0; }
     .section-footer .row .wrapper {
       max-width: 110rem;
       text-align: center; }
     .section-footer .row .footer-block {
-      height: calc(100vh - 423px);
+      height: calc( 100vh - 423px);
       text-align: center;
       background-image: linear-gradient(to right bottom, rgba(72, 116, 160, 0.808), rgba(41, 44, 48, 0.808)), url(../img/my-photo.jpg);
       /* reference path from "main.css" */
@@ -895,13 +950,16 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
       @media (max-width: 56.25em) {
         .section-footer .row .footer-block {
           height: 150px; } }
+      @media (min-width: 900px) and (max-width: 1366px) {
+        .section-footer .row .footer-block {
+          height: 200px; } }
       .section-footer .row .footer-block__text {
         position: absolute;
         color: gray;
         letter-spacing: 0.1rem;
         word-spacing: 0.2rem;
-        width: 250px;
-        left: calc(50% - 125px);
+        width: 300px;
+        left: calc(50% - 150px);
         top: 50%; }
   .section-footer .row:first-child {
     margin-bottom: 0; }

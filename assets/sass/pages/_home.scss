@@ -1,5 +1,3 @@
-
-
 /** Homepage 
 ***********************************************/
 .slidedown {
@@ -12,9 +10,10 @@
   top: 0;
   left: 0;
   height: 0%;
+  // opacity: 0;
   // background-color: orangered;
   animation: slidedown-1 650ms cubic-bezier(0.25, 0.1, 0.25, 1) 0s; // animation [name] [duration] [animation-timing-function] [delay];
-}	
+}
 .slidedown-2 {
   bottom: 0;
   left: 0;
@@ -40,18 +39,20 @@
 
 // About section
 .section-about {
+  border: 3px solid red;
   background-color: $color-primary-grey-dark;
   padding-bottom: 8rem;
   // media queries
   @include respond(phone) {
-    padding-bottom: 6rem;
+    padding-bottom: 4rem;
   }
 
   .row {
     .profile {
       background-color: $color-primary-grey-dark;
       float: left;
-      top: -8rem;
+      top: -10rem;
+
       position: relative;
       width: 100%;
       height: 55rem;
@@ -61,9 +62,10 @@
         height: 100%;
         top: 0;
         left: 0;
-        position: absolute; 
+        position: absolute;
         opacity: 0; // style to be set before animation starts (opacity = 1 after)
-        animation: featuredimg 700ms cubic-bezier(.49,.18,.23,1) 1.3s forwards; // animation [name] [duration] [animation-timing-function] [delay] [animation-fill-mode]; 
+        animation: featuredimg 700ms cubic-bezier(0.49, 0.18, 0.23, 1) 1.3s
+          forwards; // animation [name] [duration] [animation-timing-function] [delay] [animation-fill-mode];
         // [animation-fill-mode: forwards] makes sure elem retains the style values from the last @keyframe when the animation ends (opacity = 1)
       }
       .btn--text {
@@ -72,10 +74,23 @@
         right: 0;
         z-index: 1;
       }
-
       // media queries
       @include respond(phone) {
         height: 34rem;
+      }
+      @media (min-width: 768px) and (max-width: 1199px) {
+        top: -10rem;
+        height: 45rem;
+      }
+      @media (max-width: 823px) {
+        top: -8rem;
+      }
+    }
+    &:first-child {
+      height: 45rem;
+      // media queries
+      @include respond(phone) {
+        height: 35rem;
       }
     }
   }
@@ -89,6 +104,12 @@
     @include respond(phone) {
       padding-left: 4rem;
       padding-right: 4rem;
+    }
+    @media (min-width: 760px) and (max-width: 1260px) {
+      // ipad view
+      // margin-left: 80px;
+      // margin-right: 80px;
+      // $grid-width: calc(100% - 315px / 2);
     }
 
     @include clearfix;
@@ -120,7 +141,7 @@
 .section-work {
   padding: 12rem 0;
   // media queries
-  @include respond(tab-land) {
+  @include respond(phone) {
     padding: 4rem 4rem 8rem 4rem;
   }
 
@@ -129,6 +150,12 @@
     @include respond(tab-land) {
       .col-1-of-2 {
         max-width: calc(100%) !important;
+
+        // for tablet devices
+        @media (min-width: 768px) and (max-width: 1199px) {
+          padding-left: 8rem;
+          padding-right: 8rem;
+        }
       }
       .col-1-of-2:last-child {
         margin-top: 4rem;
@@ -177,6 +204,10 @@
   padding: 12rem 0 0;
   margin-bottom: 0;
   border-top: 0.1rem solid rgba($color-primary-grey-dark, 0.15);
+  // media queries
+  @include respond(phone) {
+    padding: 8rem 0 0;
+  }
 
   .heading-primary {
     .heading-primary--sub {
@@ -191,21 +222,42 @@
   }
   .btn--white {
     margin-bottom: 12rem;
+    // media queries
+    @include respond(phone) {
+      margin-bottom: 8rem;
+    }
   }
   .row {
     margin-bottom: 0;
+    //media queries
+    // @media (min-width: 56.25em) and (max-width: 75em) {
+    //   #about {
+    //     .row {
+    //       max-width: 90rem;
+    //     }
+    //   }
+    // }
 
     .wrapper {
-      max-width: $grid-width; // variable
+      max-width: $grid-width; // varsiable
       text-align: center;
     }
     .footer-block {
-      height: calc(100vh - 423px); // 423px => (120px of .section-footer padding + 303px of .row total height)
+      height: calc(
+        100vh - 423px
+      ); // 423px => (120px of .section-footer padding + 303px of .row total height)
       text-align: center;
-      // media queries
+      // media queries -----------------------------------------------------------------------------------------------------
       @include respond(tab-port) {
         height: 150px;
       }
+      @media (min-width: 900px) and (max-width: 1366px) {
+        height: 200px;
+      }
+      // @media (min-width: 800px) and (max-width: 1200px) {
+      //   // margin-top: 12rem;
+      //   height: 150px;
+      // }
       // Transparent Background
       background-image: linear-gradient(
           to right bottom,
@@ -224,8 +276,8 @@
         // font-weight: 700;
         letter-spacing: 0.1rem;
         word-spacing: 0.2rem;
-        width: 250px;
-        left: calc(50% - 125px);
+        width: 300px;
+        left: calc(50% - 150px);
         top: 50%;
       }
     }
