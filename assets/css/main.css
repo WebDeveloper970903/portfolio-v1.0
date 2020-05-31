@@ -459,27 +459,20 @@ body {
 /** Featured projects
 ***********************************************/
 .card {
-  position: relative;
   height: 38rem;
-  transition: transform 200ms; }
-  .card__side {
-    height: 38rem;
-    color: white;
-    font: 2rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    border-radius: 0.1rem;
-    overflow: hidden; }
-    .card__side--front {
-      transition: transform 200ms linear; }
-      .card__side--front-1 {
-        border: 1px solid #9E7D76;
-        background-color: #eeeee5; }
-      .card__side--front-2 {
-        border: 1px solid #8e9eab;
-        background-color: #f3f5f6; }
+  font: 2rem;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 0.1rem;
+  transition: transform 200ms linear; }
+  .card-1 {
+    border: 1px solid #9E7D76;
+    background-color: #eeeee5; }
+  .card-2 {
+    border: 1px solid #8e9eab;
+    background-color: #f3f5f6; }
   .card:hover {
     cursor: pointer;
     transform: translateY(-1.5rem) scale(1.02); }
@@ -489,9 +482,9 @@ body {
     background-position: top;
     filter: opacity(0.5); }
     .card__picture--1 {
-      background-image: linear-gradient(to right bottom, rgba(183, 152, 145, 0.808), rgba(148, 113, 107, 0.082)), url(../img/my-photo.jpg); }
+      background-image: linear-gradient(to right bottom, rgba(183, 152, 145, 0.808), rgba(148, 113, 107, 0.082)), url(../img/foodspot.png); }
     .card__picture--2 {
-      background-image: linear-gradient(to right bottom, rgba(238, 242, 243, 0.808), rgba(142, 158, 171, 0.082)), url(../img/my-photo.jpg); }
+      background-image: linear-gradient(to right bottom, rgba(238, 242, 243, 0.808), rgba(142, 158, 171, 0.082)), url(../img/foodspot.png); }
   .card__brand {
     background-size: cover;
     position: relative;

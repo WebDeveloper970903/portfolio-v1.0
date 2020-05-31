@@ -3,125 +3,41 @@
 /** Featured projects
 ***********************************************/
 .card {
-  // FUNCTIONALITY
-  // perspective: 150rem;
-  // -moz-perspective: 150rem;
-  position: relative;
   height: 38rem;
+  font: 2rem;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden; 
+  border-radius: 0.1rem;
+  transition: transform 200ms linear;
   
-  // .card__side
-  &__side {
-    height: 38rem;
-    // transition: all 0.8s ease;
-    color: white;
-    font: 2rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    // backface-visibility: hidden;
-    border-radius: 0.1rem;
-    // box-shadow: 0 1.5rem 4rem $shandow-grey;
-    overflow: hidden; 
-
-    // .card__side--front
-    &--front {
-      transition: transform 200ms linear;
-
-      // .card__side--front-1
-      &-1 {
-        border: 1px solid #9E7D76;
-        background-color: #eeeee5;
-        // &:hover {
-        //   cursor: pointer;
-        //   border: 1px solid #9E7D76;
-        //   transition: transform 200ms linear;
-        //   transform: scale(1.03);
-        // }
-      }
-      &-2 {
-        border: 1px solid #8e9eab;
-        background-color: #f3f5f6;
-        // &:hover {
-        //   cursor: pointer;
-        //   border: 1px solid #8e9eab;
-        //   transition: transform 200ms linear;
-        //   transform: scale(1.03);
-        // }
-      }
-      // &:hover {
-      //   cursor: pointer;
-      //   transition: transform 200ms linear;
-      //   transform: scale(1.03);
-      // }
-    }
-    // &--back {
-    //   // before we hover the card, flip the backside 180*
-    //   transform: rotateY(180deg);
-
-    //   &-1 {
-    //     background-image: linear-gradient(to right bottom, #b79891, #94716b);
-    //     position: relative;
-
-    //     .card__cta {
-    //       position: absolute;
-    //       // mixin to center btn vertically and horizontally
-    //       @include center_XY_axis();  
-    //     }
-    //   }
-    //   &-2 {
-    //     background-image: linear-gradient(to right bottom, #eef2f3, #8e9eab);
-    //     position: relative;
-
-    //     .card__cta {
-    //       position: absolute;
-    //       // mixin to center btn vertically and horizontally
-    //       @include center_XY_axis();      
-    //     }
-    //   }
-    // }
+  // .card-1 & .card-2
+  &-1 {
+    border: 1px solid #9E7D76;
+    background-color: #eeeee5;
   }
-  // // hover card...transform card__side--front/back
-  // &:hover &__side--front {
-  //   // when we hover the card frontside, flip 180*
-  //   transform: rotateY(-180deg);
-  // }
-  // &:hover &__side--back {
-  //   // since the backside is set to 180* by default, when we hover it should go back to normal (0*)
-  //   transform: rotateY(0deg);
-  // }
-  transition: transform 200ms;
-
+  &-2 {
+    border: 1px solid #8e9eab;
+    background-color: #f3f5f6;
+  }
   &:hover {
     cursor: pointer;
-    // transition: transform 200ms linear;
     transform: translateY(-1.5rem) scale(1.02);
   }
-
-  // FRONT CARD STYLYING
-
   // .card__picture
   &__picture {
     height: 23rem;
-    // blend back side with image on the fron side
-    // background-blend-mode: screen; // browser limitations
-
-    // Transparent Background
-    // background-image: url(../img/my-photo.jpg);
+    // create transparent Background
     background-size: cover;
     background-position: top; // [center, bottom]
-    filter: opacity(.5); // grayscale(1);
+    filter: opacity(.5);
     
-    // .card__picture--1
     &--1 {
-      // blend back side with image on the fron side
-      // background-image: linear-gradient(to right bottom, #b79891, #94716b), url(../img/foodspot.png);
-      background-image: linear-gradient(to right bottom, rgba(183, 152, 145, 0.808), rgba(148, 113, 107, 0.082)), url(../img/my-photo.jpg);
+      background-image: linear-gradient(to right bottom, rgba(183, 152, 145, 0.808), rgba(148, 113, 107, 0.082)), url(../img/foodspot.png);
     }
-    // .card__picture--2
     &--2 {
-      // background-image: linear-gradient(to right bottom, #eef2f3, #8e9eab), url(../img/foodspot.png);
-      background-image: linear-gradient(to right bottom, rgba(238, 242, 243, 0.808), rgba(142, 158, 171, 0.082)), url(../img/my-photo.jpg);
+      background-image: linear-gradient(to right bottom, rgba(238, 242, 243, 0.808), rgba(142, 158, 171, 0.082)), url(../img/foodspot.png);
     }
   }
   // .card__brand
@@ -142,7 +58,6 @@
       left: calc(50% - 4rem);
       z-index: 2;
     }
-
     &--name {
       color: $color-primary-grey-dark;
       margin-bottom: 4rem; // between the text and the btn
