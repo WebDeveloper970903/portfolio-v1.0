@@ -459,58 +459,39 @@ body {
 /** Featured projects
 ***********************************************/
 .card {
-  perspective: 150rem;
-  -moz-perspective: 150rem;
   position: relative;
-  height: 38rem; }
+  height: 38rem;
+  transition: transform 200ms; }
   .card__side {
     height: 38rem;
-    transition: all 0.8s ease;
     color: white;
     font: 2rem;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    backface-visibility: hidden;
     border-radius: 0.1rem;
     overflow: hidden; }
-    .card__side--front-1 {
-      border: 1px solid #9E7D76;
-      background-color: #eeeee5; }
-    .card__side--front-2 {
-      border: 1px solid #8e9eab;
-      background-color: #f3f5f6; }
-    .card__side--back {
-      transform: rotateY(180deg); }
-      .card__side--back-1 {
-        background-image: linear-gradient(to right bottom, #b79891, #94716b);
-        position: relative; }
-        .card__side--back-1 .card__cta {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%); }
-      .card__side--back-2 {
-        background-image: linear-gradient(to right bottom, #eef2f3, #8e9eab);
-        position: relative; }
-        .card__side--back-2 .card__cta {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%); }
-  .card:hover .card__side--front {
-    transform: rotateY(-180deg); }
-  .card:hover .card__side--back {
-    transform: rotateY(0deg); }
+    .card__side--front {
+      transition: transform 200ms linear; }
+      .card__side--front-1 {
+        border: 1px solid #9E7D76;
+        background-color: #eeeee5; }
+      .card__side--front-2 {
+        border: 1px solid #8e9eab;
+        background-color: #f3f5f6; }
+  .card:hover {
+    cursor: pointer;
+    transform: translateY(-1.5rem) scale(1.02); }
   .card__picture {
-    background-size: cover;
     height: 23rem;
-    background-blend-mode: screen; }
+    background-size: cover;
+    background-position: top;
+    filter: opacity(0.5); }
     .card__picture--1 {
-      background-image: linear-gradient(to right bottom, #b79891, #94716b), url(../img/foodspot.png); }
+      background-image: linear-gradient(to right bottom, rgba(183, 152, 145, 0.808), rgba(148, 113, 107, 0.082)), url(../img/my-photo.jpg); }
     .card__picture--2 {
-      background-image: linear-gradient(to right bottom, #eef2f3, #8e9eab), url(../img/foodspot.png); }
+      background-image: linear-gradient(to right bottom, rgba(238, 242, 243, 0.808), rgba(142, 158, 171, 0.082)), url(../img/my-photo.jpg); }
   .card__brand {
     background-size: cover;
     position: relative;
@@ -597,8 +578,7 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
 *****************************************************/
 .row {
   max-width: 110rem;
-  margin: auto;
-  border: 3px solid orangered; }
+  margin: auto; }
   @media (min-width: 760px) and (max-width: 1200px) {
     .row {
       max-width: calc(100% - 300px / 2); } }
@@ -647,10 +627,8 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
 /**  Hamburguer menu
 *****************************************************/
 .navigation {
-  display: flex;
-  border: 3px solid red; }
+  display: flex; }
   .navigation__button {
-    border: 3px solid blue;
     height: 5rem;
     width: 5rem;
     position: fixed;
@@ -663,8 +641,9 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
     align-items: center;
     justify-content: center;
     filter: contrast(100%); }
+  .navigation__checkbox {
+    display: none; }
   .navigation__background {
-    border: 3px solid yellowgreen;
     height: 4rem;
     width: 4rem;
     border-radius: 50%;
@@ -674,7 +653,6 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
     transition: transform 0.7s cubic-bezier(0.83, 0, 0.17, 1);
     z-index: 25; }
   .navigation__nav {
-    border: 3px solid red;
     height: 100vh;
     position: fixed;
     top: 0;
@@ -803,7 +781,6 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
       padding-top: 4rem; } }
 
 .section-about {
-  border: 3px solid red;
   background-color: #292c30;
   padding-bottom: 8rem; }
   @media (max-width: 37.5em) {
@@ -942,7 +919,6 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
       height: calc( 100vh - 423px);
       text-align: center;
       background-image: linear-gradient(to right bottom, rgba(72, 116, 160, 0.808), rgba(41, 44, 48, 0.808)), url(../img/my-photo.jpg);
-      /* reference path from "main.css" */
       background-size: cover;
       background-position: top;
       filter: grayscale(1);

@@ -2,11 +2,11 @@
 *****************************************************/
 .navigation {
   display: flex;
-  border: 3px solid red; // -------------------------------------------------------------------------------------------------
+  // border: 3px solid red; // -------------------------------------------------------------------------------------------------
 
   // .navigation__button
   &__button {
-    border: 3px solid blue;
+    // border: 3px solid blue;
     // background-color: $color-primary-white;
     height: 5rem;
     width: 5rem;
@@ -26,11 +26,11 @@
   }
   // .navigation__checkbox
   &__checkbox {
-    // display: none;
+    display: none;
   }
   // .navigation__background
   &__background {
-    border: 3px solid yellowgreen;
+    // border: 3px solid yellowgreen;
     height: 4rem;
     width: 4rem;
     border-radius: 50%; // clickable round circle
@@ -46,7 +46,7 @@
   }
 
   &__nav {
-    border: 3px solid red;
+    // border: 3px solid red;
     height: 100vh;
     // width: 100%;
     position: fixed;
