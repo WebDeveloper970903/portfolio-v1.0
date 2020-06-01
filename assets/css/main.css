@@ -155,7 +155,8 @@ body {
 
 .whatsapp {
   width: calc((100% - 110rem) / 2);
-  top: calc( (100vh - 70px));
+  top: calc(
+ (100vh - 70px));
   right: 0; }
   .whatsapp .icon {
     width: 40px;
@@ -909,7 +910,8 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
       max-width: 110rem;
       text-align: center; }
     .section-footer .row .footer-block {
-      height: calc( 100vh - 423px);
+      height: calc(
+ 100vh - 423px);
       text-align: center;
       background-image: linear-gradient(to right bottom, rgba(72, 116, 160, 0.808), rgba(41, 44, 48, 0.808)), url(../img/my-photo.jpg);
       background-size: cover;

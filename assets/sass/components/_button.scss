@@ -40,7 +40,7 @@
   color: $color-primary-grey;
   // add mixin
   &:hover {
-    @include arrow-right-animate($color-primary-grey);
+    @include arrow-right-animate-s($color-primary-grey);
   }
 }
 
@@ -49,7 +49,7 @@
   color: $color-primary-grey-dark;
   border: 0.1rem solid rgba($color-primary-grey-dark, 0.15);
   &:hover {
-    @include arrow-right-animate($color-primary-grey-dark);
+    @include arrow-right-animate-s($color-primary-grey-dark);
   }
 }
 
@@ -58,7 +58,7 @@
   background-color: $color-primary-grey-dark;
   // add mixin
   &:hover {
-    @include arrow-right-animate($color-primary-grey);
+    @include arrow-right-animate-s($color-primary-grey);
   }
 }
 
@@ -84,7 +84,7 @@
   &:hover {
     cursor: pointer;
     // add animation for the icon
-    @include arrow-down-animate(lighten($color-primary-grey, 100%));
+    @include arrow-down-animate-m(lighten($color-primary-grey, 100%));
   }
 }
 
@@ -93,34 +93,12 @@
     color: darken($color-primary-grey, 25%);
   }
   &:hover {
-    @include arrow-up-animate(darken($color-primary-white, 10%));
+    @include arrow-up-animate-m(darken($color-primary-white, 10%));
   }
 }
 
 .section-about .row .profile a.btn-medium {
   padding: 2rem 4rem;
-}
-
-.featured {
-  padding: unset;
-  display: inline-block;
-  border: 2px dashed lighten($color: green, $amount: 0%);
-  border-radius: 0.3rem 0 0 0.3rem;
-  transition: transform 0.3s;
-
-  .fontawesome-icon {
-    color: darken($color-primary-white, 50%);
-  }
-  .highlight-text {
-    color: darken($color-primary-white, 50%);
-    font-size: 1.5;
-  }
-  &:hover {
-    cursor: pointer;
-    transform: translateY(-1.5rem) scale(1.03rem);
-    // add mixin - "featured.scss" and "animations.scss" for inherited properties
-    @include arrow-up-animate($color-primary-grey-dark);
-  }
 }
 
 .btn--wave {

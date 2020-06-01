@@ -61,32 +61,36 @@
 
 	<!-- Navigation menu -->
 	<div class="navigation">
-		<input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+		<input type="checkbox" class="navigation__checkbox" id="navi-toggle"> 
 		<label for="navi-toggle" class="navigation__button">
 			<span class="navigation__icon">&nbsp;</span>
 		</label>
 		<div class="navigation__background">&nbsp;</div>
-		<nav class="navigation__nav">
-			<!-- <div class="wrapper"> -->
-			<!-- <div class="navigation__contact">
-						<div class="profile-picture"></div>
-						<h3>Contact Details</h3>
-						<p><a href="mailto:hello@aformoso.com">hello@aformoso.com</a></p>
-						<p></p><a href="tel:+447460529486">07460529486</a></p>
-						<h3>Availability</h3>
-						<p>immediate</p>
-						<p class="credits">© 2020 Alexandre Formoso</p>
-					</div> -->
-			<ul class="navigation__list heading-primary">
-				<li class="navigation__item heading-primary--sub"><a href="#" class="navigation__link">Home</a></li>
-				<li class="navigation__item heading-primary--sub"><a href="#" class="navigation__link">My work</a></li>
-				<li class="navigation__item heading-primary--sub"><a href="#" class="navigation__link">Services</a></li>
-				<li class="navigation__item heading-primary--sub"><a href="#" class="navigation__link">About Me</a></li>
-				<li class="navigation__item heading-primary--sub"><a href="#" class="navigation__link">Blog</a></li>
-				<li class="navigation__item heading-primary--sub"><a href="#" class="navigation__link">Contact</a></li>
-			</ul>
-			<!-- </div> -->
-		</nav>
+		<div class="row navigation__nav">
+			<div class="col col-1-of-2">
+        <div class="navigation__contact">
+					<div class="profile-picture">
+						<!-- picture -->
+					</div>
+					<h5><span class="u-special-text">Contact Details</span></h5>
+					<a href="mailto:hello@aformoso.com">hello@aformoso.com</a>
+					<a href="tel:+447460529486">+447460529486</a>
+					<h5><span class="u-special-text">Availability</span></h5>
+					<p>immediate</p>
+					<p class="credits">© 2020 Alexandre Formoso</p>
+				</div> 
+			</div>
+			<div class="col col-1-of-2">
+				<ul class="navigation__list heading-primary">
+					<li class="navigation__item heading-primary--sub"><a href="#" class="navigation__link active">Home</a></li>
+					<li class="navigation__item heading-primary--sub"><a href="#" class="navigation__link">My work</a></li>
+					<li class="navigation__item heading-primary--sub"><a href="#" class="navigation__link">Services</a></li>
+					<li class="navigation__item heading-primary--sub"><a href="#" class="navigation__link">About Me</a></li>
+					<li class="navigation__item heading-primary--sub"><a href="#" class="navigation__link">Blog</a></li>
+					<li class="navigation__item heading-primary--sub"><a href="#" class="navigation__link">Contact</a></li>
+				</ul>
+			</div>
+		</div>
 	</div>
 
 	<!-- Header
@@ -99,8 +103,7 @@
 					for
 					businesses.</span>
 			</h1>
-			<a class="btn btn--black" href="#">My work <i class="far fa-arrow-right fontawesome-icon"></i></a>
-			<!-- PRO fal, far, fas -->
+			<a class="btn btn--black" href="#">My work <i class="far fa-arrow-right fontawesome-icon"></i></a> <!-- PRO fal, far, fas -->
 		</div>
 	</header>
 
