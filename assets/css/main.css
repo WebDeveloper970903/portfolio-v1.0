@@ -602,14 +602,16 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
 /**  Hamburguer menu
 *****************************************************/
 .navigation {
-  display: flex; }
+  border: 3px solid red;
+  display: flex;
+  justify-content: center; }
   .navigation__button {
     border: 3px solid blue;
     height: 50px;
     width: 50px;
     position: fixed;
     top: 25px;
-    right: calc((100% - 110rem) / 2 /* = remaining right width*/ - 100px);
+    right: calc( (100% - 110rem) / 2 /* = remaining right width */ - 100px);
     z-index: 27;
     text-align: center;
     cursor: pointer;
@@ -618,18 +620,20 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
     justify-content: center;
     filter: contrast(100%); }
   .navigation__background {
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
+    border: 3px solid orangered;
+    height: 0;
+    width: 100%;
     position: fixed;
-    top: 25px;
-    right: calc((100% - 110rem) / 2 /* = remaining right width*/ - 100px);
-    transition: transform 0.7s cubic-bezier(0.83, 0, 0.17, 1);
+    top: 0;
+    left: 0;
+    background-color: #292c30;
+    transition: height 650ms cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
     z-index: 25; }
   .navigation__checkbox {
     display: none;
     border: 2px solid greenyellow; }
   .navigation__nav {
+    border: 3px solid purple;
     width: 110rem;
     margin: auto;
     height: 0vh;
@@ -637,11 +641,11 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
     display: flex;
     align-items: center;
     top: 0;
-    left: 0;
     z-index: -1;
-    right: 0;
     opacity: 0;
-    transition: all 0.7s; }
+    transition: all 650ms; }
+  .navigation .col {
+    border: 2px solid orangered; }
   .navigation .col-1 {
     text-align: left;
     display: flex;
@@ -653,6 +657,7 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
     align-items: center;
     justify-content: flex-end; }
   .navigation__contact {
+    border: 2px solid green;
     list-style: none;
     margin-bottom: 0;
     padding-left: 12rem;
@@ -681,12 +686,17 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
     .navigation__contact p {
       color: #e6e9ec; }
     .navigation__contact .credits {
-      margin-top: 6rem;
+      margin-top: 5.5rem;
       color: #8C8D8F; }
   .navigation__list {
+    border: 2px solid green;
     list-style: none;
     margin-bottom: 0;
     padding-right: 12rem; }
+  .navigation__list .active {
+    color: #9e845e; }
+    .navigation__list .active:hover {
+      color: #9e845e; }
   .navigation__item {
     padding: 1.2rem 0;
     line-height: 5rem;
@@ -706,7 +716,7 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
     .navigation__link:active {
       color: #a58861; }
   .navigation__checkbox:checked ~ .navigation__background {
-    transform: scale(80); }
+    height: 100vh; }
   .navigation__checkbox:checked ~ .navigation__nav {
     background: #292c30;
     opacity: 1;
@@ -742,26 +752,22 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
     transform: rotate(-135deg); }
 
 @media (min-width: 300px) {
-  .navigation__button,
-  .navigation__background {
+  .navigation__button {
     width: 50px;
     height: 50px; } }
 
 @media (min-width: 300px) and (max-width: 767px) {
-  .navigation__button,
-  .navigation__background {
+  .navigation__button {
     top: 10px;
     right: 10px; } }
 
 @media (min-width: 768px) and (max-width: 1199px) {
-  .navigation__button,
-  .navigation__background {
+  .navigation__button {
     top: 15px;
     right: 15px; } }
 
 @media (min-width: 812px) and (max-width: 1112px) {
-  .navigation__button,
-  .navigation__background {
+  .navigation__button {
     top: 15px;
     right: 15px; } }
 

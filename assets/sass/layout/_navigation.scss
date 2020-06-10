@@ -1,96 +1,79 @@
 /**  Hamburguer menu
 *****************************************************/
 .navigation {
+  border: 3px solid red;
   display: flex;
-  // border: 3px solid red; // -------------------------------------------------------------------------------------------------
+  justify-content: center;
 
-  // .navigation__button - sits on top of &__background
+  // .navigation__button - sits on top of &__background and &__nav
   &__button {
     border: 3px solid blue;
-    // opacity: 0;
     height: 50px;
     width: 50px;
     position: fixed;
     top: 25px;
-    // right: 4rem;
-    right: calc((100% - #{$grid-width}) / 2 /* = remaining right width*/ - 100px);
-    // border-radius: 50%;
-    z-index: 27; // sits on top of &__background and &__nav
-    // box-shadow: 0 .5rem 1.5rem darken($color-primary-white, 15%);
+    right: calc(
+      (100% - #{$grid-width}) / 2 /* = remaining right width */ - 100px
+    );
+    z-index: 27;
     text-align: center;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     filter: contrast(100%); // icon takes 90% of its original (fill) colour
-
-    // &:focus {
-    //   .navigation__nav{
-    //     z-index: 26;
-    //   }
-    // }
   }
   // .navigation__background
   &__background {
-    // border: 3px solid orangered;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%; // clickable round circle
+    border: 3px solid orangered;
+    height: 0;
+    width: 100%;
     position: fixed;
-    top: 25px;
-    right: calc((100% - #{$grid-width}) / 2 /* = remaining right width*/ - 100px); // right: 45px;
-    // background-color:  $color-primary-grey-dark;
-    // transform: scale(80);
-    transition: transform 0.7s cubic-bezier(0.83, 0, 0.17, 1); // ----------- OK --- animation [name] [duration] [animation-timing-function] [delay];
+    top: 0;
+    left: 0;
+    background-color: $color-primary-grey-dark;
+    transition: height 650ms cubic-bezier(0.25, 0.1, 0.25, 1) 0s; // transition [name] [duration] [animation-timing-function] [delay];
     z-index: 25;
   }
   // .navigation__checkbox
   &__checkbox {
     display: none;
     border: 2px solid greenyellow;
-    // z-index: 29;
   }
+  // .navigation__nav
   &__nav {
+    border: 3px solid purple;
     width: $grid-width; // if (viewport) width > max-width; let the browser use max-width
     margin: auto;
-    // border: 3px solid purple;
     height: 0vh;
     position: fixed;
     display: flex;
     align-items: center;
     top: 0;
-    left: 0; // comment this out?
-    z-index: -1; // sits on top of &__background
-    // // hide elements
-    // width: 0; 
-    right: 0;
+    // left: 0;
+    z-index: -1;
+    // hide menu elements
     opacity: 0;
-    // display: none;
-    // width: 0%;
-    // visibility: hidden;
-    // height: 0%;
-    // transition: opacity 800ms cubic-bezier(0.68, -0.6, 0.32, 1.6) 0s; // transition: all 0.7s cubic-bezier(0.68, -0.6, 0.32, 1.6); // ----------- OK ------------
-    transition: all 0.7s;
-    // background:  orangered;
+    transition: all 650ms; // transition: opacity 800ms cubic-bezier(0.68, -0.6, 0.32, 1.6) 0s;
   }
-  // .col {
-  //   // border: 2px solid orangered;
-  // }
+  .col {
+    border: 2px solid orangered;
+  }
   .col-1 {
     text-align: left;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-  } // .col-1
+  }
   .col-2 {
     text-align: right;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-  } // .col-2
+  }
   // .navigation__contact
   &__contact {
-    // border: 2px solid green;
+    border: 2px solid green;
     list-style: none;
     margin-bottom: 0;
     padding-left: 12rem;
@@ -127,35 +110,28 @@
       color: $color-primary-grey;
     }
     .credits {
-      margin-top: 6rem;
+      margin-top: 5.5rem;
       color: $color-primary-grey-semidark;
     }
   }
   &__list {
-    // border: 2px solid green;
+    border: 2px solid green;
     list-style: none;
     margin-bottom: 0;
     padding-right: 12rem;
-
-    // border: 2px solid green;
-    // position: absolute;
-    // top: 50%;
-    // left: 50%;
-    // transform: translate(-50%, -50%);
-    // list-style: none;
-    // width: 50%;
-    // float: right;
-    // text-align: left;
-    
   }
-
+  &__list .active {
+    color: #9e845e;
+    &:hover {
+      color: #9e845e;
+    }
+  }
   &__item {
     padding: 1.2rem 0;
     line-height: 5rem;
     display: flex;
     justify-content: flex-end;
   }
-
   &__link {
     font-size: 3.2rem;
     font-weight: 700;
@@ -181,11 +157,8 @@
 
   // label > checkbox:checked > navigation bacground becomes visible
   &__checkbox:checked ~ &__background {
-    // background: $color-primary-grey-dark;
-    transform: scale(80);
-    // top: 0;
-    // right: 0;
-    // height: 100vh;
+    // transform: scale(80);
+    height: 100vh;
   }
   &__checkbox:checked ~ &__nav {
     background: $color-primary-grey-dark;
@@ -248,8 +221,8 @@
 }
 
 // media queries - bringing hamburguer menu into view
-.navigation__button,
-.navigation__background {
+.navigation__button
+/*.navigation__background*/ {
   @media (min-width: 300px) {
     width: 50px;
     height: 50px;
@@ -272,7 +245,7 @@
 }
 // hide contact info
 @include respond(phone) {
-  .navigation .col-1, 
+  .navigation .col-1,
   .navigation__contact {
     display: none;
   }
