@@ -39,7 +39,7 @@
 
 // About section
 .section-about {
-  // border: 3px solid red;
+  border: 3px solid red;
   background-color: $color-primary-grey-dark;
   padding-bottom: 8rem;
   // media queries
@@ -76,7 +76,7 @@
       }
       // media queries
       @include respond(phone) {
-        height: 34rem;
+        height: 30rem;
       }
       @media (min-width: 768px) and (max-width: 1199px) {
         top: -10rem;
@@ -90,7 +90,7 @@
       height: 45rem;
       // media queries
       @include respond(phone) {
-        height: 35rem;
+        height: 30rem;
       }
     }
   }
@@ -141,7 +141,7 @@
 .section-work {
   padding: 12rem 0;
   // media queries
-  @include respond(phone) {
+  @media (min-width: 300px) and (max-width: 759px) {
     padding: 4rem 4rem 8rem 4rem;
   }
 
@@ -151,7 +151,7 @@
       .col-1-of-2 {
         max-width: calc(100%) !important;
 
-        // for tablet devices
+        // for tablet devices 
         @media (min-width: 768px) and (max-width: 1199px) {
           padding-left: 8rem;
           padding-right: 8rem;
@@ -259,7 +259,7 @@
       //   height: 150px;
       // }
       // Transparent Background
-      background-image: linear-gradient(to right bottom, rgba(72, 116, 160, 0.808), rgba(41, 44, 48, 0.808) ), url(../img/my-photo.jpg); 
+      background-image: linear-gradient(to right bottom, rgba(72, 116, 160, 0.808), rgba(41, 44, 48, 0.808)), url(../img/my-photo.jpg);
       background-size: cover;
       background-position: top; // [center, bottom]
       filter: grayscale(1);

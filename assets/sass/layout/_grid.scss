@@ -5,7 +5,7 @@
 .row {
   max-width: $grid-width; // if (viewport) width > max-width; let the browser use max-width
   margin: auto;
-  // border: 3px solid orangered; 
+  border: 3px solid orangered; 
 
   @media (min-width: 760px) and (max-width: 1200px) {
     // max-width: 700px; calc(100% - 270px);

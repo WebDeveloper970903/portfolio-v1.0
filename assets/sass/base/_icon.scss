@@ -58,9 +58,7 @@
 
 .whatsapp {
   width: calc((100% - #{$grid-width}) / 2); // .row = $grid-width
-  top: calc(
-    (100vh - 70px)
-  ); // 70px => .icon height + icon padding-top + icon padding-bottom + icon margin-bottom) // 40+10+10+10
+  top: calc((100vh - 70px)); // 70px => .icon height + icon padding-top + icon padding-bottom + icon margin-bottom) // 40+10+10+10
   right: 0;
 
   .icon {
