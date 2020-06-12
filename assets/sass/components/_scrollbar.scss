@@ -21,7 +21,7 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
 ::-webkit-scrollbar-thumb { 
 	/*  represents the actually thumb */ 
 	border-radius: 5px;
-	background-color: darken($color-primary-white, 50%);
+	background-color: darken($color-primary-white, 50%); //$color-primary-gold
 }
 ::-webkit-scrollbar-thumb:hover { 
 	/*  represents the actually thumb */ 

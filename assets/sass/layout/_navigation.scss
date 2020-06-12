@@ -2,8 +2,14 @@
 *****************************************************/
 .navigation {
   border: 3px solid red;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   justify-content: center;
+  background-color: $color-primary-grey-dark;
+  
+
 
   // .navigation__button - sits on top of &__background and &__nav
   &__button {
@@ -12,16 +18,14 @@
     width: 50px;
     position: fixed;
     top: 25px;
-    right: calc(
-      (100% - #{$grid-width}) / 2 /* = remaining right width */ - 100px
-    );
-    z-index: 27;
-    text-align: center;
+    right: calc((100% - #{$grid-width}) / 2 - 100px);
+    text-align: center; 
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     filter: contrast(100%); // icon takes 90% of its original (fill) colour
+    z-index: 27;
   }
   // .navigation__background
   &__background {
@@ -42,7 +46,7 @@
   }
   // .navigation__nav
   &__nav {
-    border: 3px solid purple;
+    // border: 3px solid purple;
     width: $grid-width; // if (viewport) width > max-width; let the browser use max-width
     margin: auto;
     height: 0vh;
@@ -50,11 +54,10 @@
     display: flex;
     align-items: center;
     top: 0;
-    // left: 0;
-    z-index: -1;
     // hide menu elements
     opacity: 0;
     transition: all 650ms; // transition: opacity 800ms cubic-bezier(0.68, -0.6, 0.32, 1.6) 0s;
+    z-index: -1; // in order to not conflict with existing page animations
   }
   .col {
     border: 2px solid orangered;
@@ -114,6 +117,7 @@
       color: $color-primary-grey-semidark;
     }
   }
+  // .navigation__list
   &__list {
     border: 2px solid green;
     list-style: none;
@@ -144,7 +148,6 @@
     transition: color 0.25s linear;
 
     &:hover {
-      // filter: contrast(100%);
       cursor: pointer;
       color: $color-primary-grey-semidark;
     }
@@ -161,7 +164,8 @@
     height: 100vh;
   }
   &__checkbox:checked ~ &__nav {
-    background: $color-primary-grey-dark;
+    // background: $color-primary-grey-dark;
+    // background: greenyellow;
     opacity: 1;
     z-index: 26;
     height: 100vh;
@@ -176,10 +180,7 @@
 		&::after {
       width: 2.5rem;
       height: 0.2rem;
-      background-color: darken(
-        $color-primary-white,
-        50%
-      ); // actual hamburguer lines colour
+      background-color: darken($color-primary-white, 50%); // actual hamburguer lines colour
       display: inline-block;
     }
     // defining the content property of the pseudo-classes
@@ -223,10 +224,10 @@
 // media queries - bringing hamburguer menu into view
 .navigation__button
 /*.navigation__background*/ {
-  @media (min-width: 300px) {
-    width: 50px;
-    height: 50px;
-  }
+  // @media (min-width: 300px) {
+  //   width: 50px;
+  //   height: 50px;
+  // }
   // phone devices
   @media (min-width: 300px) and (max-width: 767px) {
     top: 10px;
@@ -244,9 +245,65 @@
   }
 }
 // hide contact info
-@include respond(phone) {
-  .navigation .col-1,
-  .navigation__contact {
+@media (min-width: 300px) and (max-width: 500px) {
+  .navigation .col-1 {
+  // .navigation__contact {
     display: none;
+  }
+  .navigation__nav .col-2 {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    ul {
+      padding-left: 6rem;
+      padding-right: 0;
+    }
+  }
+}
+
+@media (min-width: 501px) and (max-width: 1199px) {
+  .navigation__contact {
+    padding-left: 24rem;
+  }
+  .navigation__list {
+    padding-right: 24rem;
+  }
+}
+
+.navigation__list {
+  @media (width: 568px) {
+    padding-right: 30rem;
+    
+    .navigation__item {
+      padding: .5rem 0;
+      line-height: 2.5rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+// iPhone 5s landscape
+@media (width: 568px) {
+  .navigation__contact 
+  .profile-picture {
+    margin-top: 1.5rem;
+  }
+  .navigation__contact .contact-details, 
+  .navigation__contact .availability, 
+  .navigation__contact .credits {
+    margin-top: 3rem;
+  }
+}
+// iPhone 4
+@media (width: 480px) {
+  .navigation__item {
+    padding: .5rem 0;
+    line-height: 2.5rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }

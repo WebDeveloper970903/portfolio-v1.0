@@ -603,22 +603,26 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
 *****************************************************/
 .navigation {
   border: 3px solid red;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  background-color: #292c30; }
   .navigation__button {
     border: 3px solid blue;
     height: 50px;
     width: 50px;
     position: fixed;
     top: 25px;
-    right: calc( (100% - 110rem) / 2 /* = remaining right width */ - 100px);
-    z-index: 27;
+    right: calc((100% - 110rem) / 2 - 100px);
     text-align: center;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    filter: contrast(100%); }
+    filter: contrast(100%);
+    z-index: 27; }
   .navigation__background {
     border: 3px solid orangered;
     height: 0;
@@ -633,7 +637,6 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
     display: none;
     border: 2px solid greenyellow; }
   .navigation__nav {
-    border: 3px solid purple;
     width: 110rem;
     margin: auto;
     height: 0vh;
@@ -641,9 +644,9 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
     display: flex;
     align-items: center;
     top: 0;
-    z-index: -1;
     opacity: 0;
-    transition: all 650ms; }
+    transition: all 650ms;
+    z-index: -1; }
   .navigation .col {
     border: 2px solid orangered; }
   .navigation .col-1 {
@@ -718,7 +721,6 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
   .navigation__checkbox:checked ~ .navigation__background {
     height: 100vh; }
   .navigation__checkbox:checked ~ .navigation__nav {
-    background: #292c30;
     opacity: 1;
     z-index: 26;
     height: 100vh; }
@@ -751,11 +753,6 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
     top: 0;
     transform: rotate(-135deg); }
 
-@media (min-width: 300px) {
-  .navigation__button {
-    width: 50px;
-    height: 50px; } }
-
 @media (min-width: 300px) and (max-width: 767px) {
   .navigation__button {
     top: 10px;
@@ -771,10 +768,48 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
     top: 15px;
     right: 15px; } }
 
-@media (max-width: 37.5em) {
-  .navigation .col-1,
+@media (min-width: 300px) and (max-width: 500px) {
+  .navigation .col-1 {
+    display: none; }
+  .navigation__nav .col-2 {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .navigation__nav .col-2 ul {
+      padding-left: 6rem;
+      padding-right: 0; } }
+
+@media (min-width: 501px) and (max-width: 1199px) {
   .navigation__contact {
-    display: none; } }
+    padding-left: 24rem; }
+  .navigation__list {
+    padding-right: 24rem; } }
+
+@media (width: 568px) {
+  .navigation__list {
+    padding-right: 30rem; }
+    .navigation__list .navigation__item {
+      padding: .5rem 0;
+      line-height: 2.5rem; }
+      .navigation__list .navigation__item:last-child {
+        margin-bottom: 0; } }
+
+@media (width: 568px) {
+  .navigation__contact
+.profile-picture {
+    margin-top: 1.5rem; }
+  .navigation__contact .contact-details,
+  .navigation__contact .availability,
+  .navigation__contact .credits {
+    margin-top: 3rem; } }
+
+@media (width: 480px) {
+  .navigation__item {
+    padding: .5rem 0;
+    line-height: 2.5rem; }
+    .navigation__item:last-child {
+      margin-bottom: 0; } }
 
 /** Homepage 
 ***********************************************/
