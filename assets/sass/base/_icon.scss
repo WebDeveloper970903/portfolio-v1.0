@@ -8,10 +8,10 @@
   position: fixed;
   top: calc((100vh - 135px) / 2); // 135px => 3x (.icon height + &__icon padding-top +  &__icon padding-bottom) // 3 x 45
   z-index: 27;
+
   @media (min-width: 768px) and (max-width: 1199px) {
-    border: 2px solid red;
     // position: static;
-    left: 200px;
+    left: 0px;
     top: 15px;
     // left: 15px;
   }
@@ -58,11 +58,12 @@
 
 .whatsapp {
   width: calc((100% - #{$grid-width}) / 2); // .row = $grid-width
-  top: calc((100vh - 70px)); // 70px => .icon height + icon padding-top + icon padding-bottom + icon margin-bottom) // 40+10+10+10
+  top: calc((100vh - 80px)); // 70px => .icon height + icon padding-top + icon padding-bottom + icon margin-bottom) // 40+10+10+10
   right: 0;
-
+  
   .icon {
     width: 40px;
     height: 40px;
   }
 }
+
