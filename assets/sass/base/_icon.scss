@@ -8,24 +8,13 @@
   position: fixed;
   top: calc((100vh - 135px) / 2); // 135px => 3x (.icon height + &__icon padding-top +  &__icon padding-bottom) // 3 x 45
   z-index: 27;
-
-  @media (min-width: 768px) and (max-width: 1199px) {
-    // position: static;
-    left: 0px;
-    top: 15px;
-    // left: 15px;
-  }
-
+  
   // .social__icon
   &__icon {
     display: flex;
     flex-direction: column;
     padding: 10px;
-    // background: $color-primary-white;
     transition: transform 200ms linear;
-    @media (min-width: 768px) and (max-width: 1199px) {
-      border: 2px solid orangered;
-    }
 
     &:hover {
       // filter: contrast(100%);
@@ -44,18 +33,13 @@
       // stroke: $color-primary-grey-dark;
       fill: darken($color-primary-white, 50%);
       filter: contrast(100%); // icon takes 90% of its original (fill) colour
-      @media (min-width: 768px) and (max-width: 1199px) {
-        border: 2px solid green;
-      }
     }
   }
 
-  @include respond(tab-land) {
-    // width < 1200px
-    display: none;
+  @media (max-width: 730px) {
+    opacity: 0; //<-------------------------------------------------------------------------------------------------------
   }
 }
-
 .whatsapp {
   width: calc((100% - #{$grid-width}) / 2); // .row = $grid-width
   top: calc((100vh - 80px)); // 70px => .icon height + icon padding-top + icon padding-bottom + icon margin-bottom) // 40+10+10+10
@@ -67,3 +51,49 @@
   }
 }
 
+
+// tablets devices - bringing icons into view 
+@media (min-width: 768px) and (max-width: 1199px) {
+  .socials-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    left: 0px;
+    top: calc((100vh - 135px) / 2);
+  }
+  .whatsapp {
+    width: 76px;
+    right: 0px;
+    top: calc((100vh - 64px)); 
+  }
+}
+
+// phones devices - hide social icons on lanscape view, show on portrait
+// .social {
+//   @media (max-width: 730px) and (orientation: landscape) {
+//     opacity: 0;
+//     // display: none;
+//   }
+//   // @media (max-width: 730px) and (orientation: landscape) {
+//   //   display: none;
+//   // }
+// }
+
+// label > checkbox:checked > make social icons visible
+@media (max-width: 730px) and (orientation: portrait) {
+  .navigation__checkbox:checked .social {
+    opacity: 1; //<-------------------------------------------------------------------------------------------------------
+  }
+}
+// bringing icons into view on mobile phones
+@media (max-width: 767px) {
+  .socials-left {
+    width: 80px;
+    left: 7px;
+  }
+  .socials-right {
+    width: 80px;
+    right: 7px;
+  }
+}

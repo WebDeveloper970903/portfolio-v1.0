@@ -120,18 +120,11 @@ body {
   position: fixed;
   top: calc((100vh - 135px) / 2);
   z-index: 27; }
-  @media (min-width: 768px) and (max-width: 1199px) {
-    .social {
-      left: 0px;
-      top: 15px; } }
   .social__icon {
     display: flex;
     flex-direction: column;
     padding: 10px;
     transition: transform 200ms linear; }
-    @media (min-width: 768px) and (max-width: 1199px) {
-      .social__icon {
-        border: 2px solid orangered; } }
     .social__icon:hover {
       cursor: pointer; }
       .social__icon:hover .icon {
@@ -145,12 +138,9 @@ body {
       stroke-width: 0;
       fill: gray;
       filter: contrast(100%); }
-      @media (min-width: 768px) and (max-width: 1199px) {
-        .social__icon .icon {
-          border: 2px solid green; } }
-  @media (max-width: 75em) {
+  @media (max-width: 730px) {
     .social {
-      display: none; } }
+      opacity: 0; } }
 
 .whatsapp {
   width: calc((100% - 110rem) / 2);
@@ -159,6 +149,31 @@ body {
   .whatsapp .icon {
     width: 40px;
     height: 40px; }
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .socials-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    left: 0px;
+    top: calc((100vh - 135px) / 2); }
+  .whatsapp {
+    width: 76px;
+    right: 0px;
+    top: calc((100vh - 64px)); } }
+
+@media (max-width: 730px) and (orientation: portrait) {
+  .navigation__checkbox:checked .social {
+    opacity: 1; } }
+
+@media (max-width: 767px) {
+  .socials-left {
+    width: 80px;
+    left: 7px; }
+  .socials-right {
+    width: 80px;
+    right: 7px; } }
 
 /**  Typography
 *****************************************************/
@@ -613,8 +628,6 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
     height: 50px;
     width: 50px;
     position: fixed;
-    top: 25px;
-    right: calc((100% - 110rem) / 2 - 100px);
     text-align: center;
     cursor: pointer;
     display: flex;
@@ -622,6 +635,17 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
     justify-content: center;
     filter: contrast(100%);
     z-index: 27; }
+    @media (max-width: 1199px) {
+      .navigation__button {
+        top: 12.5px;
+        right: 12.5px; } }
+    @media (min-width: 1200px) {
+      .navigation__button {
+        top: 25px;
+        right: calc((100% - 110rem) / 2 - 90px); } }
+    @media (min-width: 1369px) {
+      .navigation__button {
+        right: 25px; } }
   .navigation__background {
     height: 0;
     width: 100%;
@@ -758,21 +782,6 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
     top: 0;
     transform: rotate(-135deg); }
 
-@media (min-width: 300px) and (max-width: 767px) {
-  .navigation__button {
-    top: 10px;
-    right: 10px; } }
-
-@media (min-width: 768px) and (max-width: 1199px) {
-  .navigation__button {
-    top: 15px;
-    right: 15px; } }
-
-@media (min-width: 812px) and (max-width: 1112px) {
-  .navigation__button {
-    top: 15px;
-    right: 15px; } }
-
 @media (min-width: 300px) and (max-width: 500px) {
   .navigation .col-1 {
     display: none; }
@@ -795,7 +804,7 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
   .navigation__list {
     padding-right: 30rem; }
     .navigation__list .navigation__item {
-      padding: .5rem 0;
+      padding: 0.5rem 0;
       line-height: 2.5rem; }
       .navigation__list .navigation__item:last-child {
         margin-bottom: 0; } }
@@ -815,7 +824,7 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
 
 @media (width: 480px) and (orientation: landscape) {
   .navigation__item {
-    padding: .5rem 0;
+    padding: 0.5rem 0;
     line-height: 2.5rem; }
     .navigation__item:last-child {
       margin-bottom: 0; } }
