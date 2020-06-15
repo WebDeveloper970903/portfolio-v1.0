@@ -37,14 +37,12 @@
 
 /**  Social icons - mobile display
 *****************************************************/
- (function() {
-  let socials, navigation__checkbox;
-  
-  // hide social icons by default
-  function hideSocials() {
-    socials = document.querySelectorAll('.social');
-    navigation__checkbox = document.querySelector('.navigation__checkbox');
+(function() {
+  let socials = document.querySelectorAll('.social');
+  let navigation__checkbox = document.querySelector('.navigation__checkbox');
 
+// hide social icons by default
+  function hideSocials() {
     for (let i = 0; i < socials.length; i++) {
       if (socials[i].classList.contains('u-opacity-1')) {
         socials[i].classList.remove('u-opacity-1');
@@ -56,7 +54,6 @@
 
   function showSocials(phonePort) {
     if (phonePort.matches) { // If media query matches
-      document.body.style.backgroundColor = "yellow";
       hideSocials();
       navigation__checkbox.addEventListener('change', function() { // if mobile view and navigation__checkbox is unchecked, then set opacity = 0
         if (this.checked) {
@@ -66,20 +63,29 @@
             socials[i].style.transition = "opacity, 550ms linear 400ms"; // transition [property] [duration] [ease] [delay];
           }
         } 
-        else {
-         hideSocials();
+        if (!this.checked) {
+          hideSocials();
         }
       });
     } 
-    else { // If media query does not match
-      document.body.style.backgroundColor = "pink";
-    }
-  }
+  } 
+
+  function removeOpc(m2lDevices) {
+    if (m2lDevices.matches) { // If media query matches   
+      for (let i = 0; i < socials.length; i++) {
+        socials[i].classList.remove('u-opacity-0');
+      }  
+    } 
+  } 
   
-  window.addEventListener('resize', hideSocials);
-  window.addEventListener('load', hideSocials);
+  // window.addEventListener('resize', init);
+  // window.addEventListener('load', init);
 
   const phonePort = window.matchMedia("(max-width: 480px)");
   showSocials(phonePort); // Call listener function at run time
   phonePort.addListener(showSocials); // Attach listener function on state changes
-})();
+
+  const m2lDevices = window.matchMedia("(min-width: 768px)");
+  removeOpc(m2lDevices); 
+  m2lDevices.addListener(removeOpc);
+})(); 
