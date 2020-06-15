@@ -76,10 +76,10 @@
     right: 7px;
   }
 }
-// hide icons phone landscape views
+// remove icons on phone landscape views
 @media (min-width: 481px) and (max-width: 767px) {
   .socials-left, 
   .socials-right {
-    opacity: 0;
+    display: none;
   }
 }

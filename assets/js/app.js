@@ -37,56 +37,49 @@
 
 /**  Social icons - mobile display
 *****************************************************/
-  function showSocials(phoneP) {
-    if (phoneP.matches) { // If media query matches
-      document.body.style.backgroundColor = "yellow";
+ (function() {
+  let socials, navigation__checkbox;
+  
+  // hide social icons by default
+  function hideSocials() {
+    socials = document.querySelectorAll('.social');
+    navigation__checkbox = document.querySelector('.navigation__checkbox');
 
-      let socials = document.querySelectorAll('.social');
-      let navigation__checkbox = document.querySelector('.navigation__checkbox');
-      
-      navigation__checkbox.addEventListener('change', function() {
-        if (this.checked) {
-          console.log('checkbox is checked');
-          // show icons
-          for (let i = 0; i < socials.length; i++) {
-            socials[i].classList.remove('u-opacity-0');
-            socials[i].classList.add('u-opacity-1');
-            socials[i].style.transition = "opacity, 650ms linear 0s"; // transition [property] [duration] [ease] [delay];
-          }
-        } 
-        else {
-          // hide icons
-          for (let i = 0; i < socials.length; i++) {
-            socials[i].classList.remove('u-opacity-1');
-            socials[i].classList.add('u-opacity-0');
-            socials[i].style.transition = "opacity, 250ms linear 0s"; // transition [property] [duration] [ease] [delay];
-          }
-        }
-      });
-      // hide icons by default
-      for (let i = 0; i < socials.length; i++) {
-        socials[i].classList.add('u-opacity-0');
+    for (let i = 0; i < socials.length; i++) {
+      if (socials[i].classList.contains('u-opacity-1')) {
+        socials[i].classList.remove('u-opacity-1');
       }
-    } 
-    else { // If media query does not matches
-      document.body.style.backgroundColor = "pink";
+      socials[i].classList.add('u-opacity-0');
+      socials[i].style.transition = "opacity, 100ms linear 0s"; // transition [property] [duration] [ease] [delay];
     }
   }
 
-  function hideSocials(phoneL) {
-    if (phoneL.matches) { // If media query matches
-      document.body.style.backgroundColor = "blue";
-      let socials = document.querySelectorAll('.social');
-      for (let i = 0; i < socials.length; i++) {
-        socials[i].classList.add('u-opacity-0');
-      }
+  function showSocials(phonePort) {
+    if (phonePort.matches) { // If media query matches
+      document.body.style.backgroundColor = "yellow";
+      hideSocials();
+      navigation__checkbox.addEventListener('change', function() { // if mobile view and navigation__checkbox is unchecked, then set opacity = 0
+        if (this.checked) {
+          for (let i = 0; i < socials.length; i++) {
+            socials[i].classList.remove('u-opacity-0');
+            socials[i].classList.add('u-opacity-1');
+            socials[i].style.transition = "opacity, 550ms linear 400ms"; // transition [property] [duration] [ease] [delay];
+          }
+        } 
+        else {
+         hideSocials();
+        }
+      });
+    } 
+    else { // If media query does not match
+      document.body.style.backgroundColor = "pink";
     }
-  } 
+  }
   
-  const phoneP = window.matchMedia("(max-width: 480px)");
-  showSocials(phoneP); // Call listener function at run time
-  phoneP.addListener(showSocials); // Attach listener function on state changes
+  window.addEventListener('resize', hideSocials);
+  window.addEventListener('load', hideSocials);
 
-  const phoneL = window.matchMedia("(min-width: 481px) and (max-width: 767px)");
-  hideSocials(phoneL); // Call listener function at run time
-  phoneL.addListener(hideSocials); // Attach listener function on state changes
+  const phonePort = window.matchMedia("(max-width: 480px)");
+  showSocials(phonePort); // Call listener function at run time
+  phonePort.addListener(showSocials); // Attach listener function on state changes
+})();

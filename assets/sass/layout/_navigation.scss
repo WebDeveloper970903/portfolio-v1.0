@@ -59,7 +59,7 @@
   &__nav {
     // border: 3px solid purple;
     width: $grid-width; // if (viewport) width > max-width; let the browser use max-width
-    margin: auto;
+    margin: auto;  
     height: 0vh;
     position: fixed;
     display: flex;
@@ -67,7 +67,7 @@
     top: 0;
     // hide menu elements
     opacity: 0;
-    transition: all 650ms; // transition: opacity 800ms cubic-bezier(0.68, -0.6, 0.32, 1.6) 0s;
+    transition: all 500ms cubic-bezier(0.25, 0.1, 0.25, 1) 0s; // transition: opacity 800ms cubic-bezier(0.68, -0.6, 0.32, 1.6) 0s;
     z-index: -1; // in order to not conflict with existing page animations
   }
   // .col {
