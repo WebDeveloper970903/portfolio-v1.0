@@ -138,9 +138,6 @@ body {
       stroke-width: 0;
       fill: gray;
       filter: contrast(100%); }
-  @media (max-width: 730px) {
-    .social {
-      opacity: 0; } }
 
 .whatsapp {
   width: calc((100% - 110rem) / 2);
@@ -163,10 +160,6 @@ body {
     right: 0px;
     top: calc((100vh - 64px)); } }
 
-@media (max-width: 730px) and (orientation: portrait) {
-  .navigation__checkbox:checked .social {
-    opacity: 1; } }
-
 @media (max-width: 767px) {
   .socials-left {
     width: 80px;
@@ -174,6 +167,11 @@ body {
   .socials-right {
     width: 80px;
     right: 7px; } }
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .socials-left,
+  .socials-right {
+    opacity: 0; } }
 
 /**  Typography
 *****************************************************/
@@ -329,6 +327,12 @@ body {
 
 .u-line-height-3 {
   line-height: 3rem; }
+
+.u-opacity-0 {
+  opacity: 0; }
+
+.u-opacity-1 {
+  opacity: 1; }
 
 /**  Buttons
 *****************************************************/

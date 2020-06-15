@@ -89,7 +89,15 @@
     }
   }
 }
-
+// for consistency in the nav menu
 .u-line-height-3 {
   line-height: 3rem;
+}
+
+// show / hide icons on phone (portrait, landscape views)
+.u-opacity-0 {
+  opacity: 0; 
+}
+.u-opacity-1 {
+  opacity: 1; 
 }

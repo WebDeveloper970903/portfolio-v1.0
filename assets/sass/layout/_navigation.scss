@@ -194,18 +194,11 @@
     height: 100vh;
   }
   &__checkbox:checked ~ &__nav {
-    // background: $color-primary-grey-dark;
-    // background: greenyellow;
     opacity: 1;
     z-index: 26;
     height: 100vh;
   }
-  // @media (max-width: 730px) and (orientation: portrait) {
-  //   &__checkbox:checked .social {
-  //     opacity: 1;
-  //   }
-  // }
-
+  
   // navigation__iCON
   &__icon {
     position: relative;
@@ -325,3 +318,4 @@
     }
   }
 }
+
