@@ -1,4 +1,3 @@
-
 /*===========================================================================================================
 *  TRIGGERING CSS3 TRANSITIONS
 ===========================================================================================================*/
@@ -82,9 +81,6 @@
       }  
     } 
   } 
-  
-  // window.addEventListener('resize', init);
-  // window.addEventListener('load', init);
 
   const phonePort = window.matchMedia("(max-width: 480px)");
   showSocials(phonePort); // Call listener function at run time
@@ -94,3 +90,49 @@
   removeOpc(m2lDevices); 
   m2lDevices.addListener(removeOpc);
 })(); 
+
+
+/**  Smooth scroll effect
+*****************************************************/
+function smoothScrroll(target, duration) {
+  let tar = document.querySelector(target);
+  let tarPos = tar.getBoundingClientRect().top;
+  let pageStartPos = window.pageYOffset;
+  let dist = tarPos - pageStartPos;
+  let startTime = null;
+
+  console.log("elem start pos: " + tarPos);
+  console.log("window start pos: " + pageStartPos);
+  
+  function animate(currTime) {
+    if (startTime === null) startTime = currTime;
+    let timeElapsed = currTime - startTime;
+    let run = easeInOutQuad(timeElapsed, pageStartPos, dist, duration); // t, b, c, d
+    window.scrollTo(0, run);
+    if (timeElapsed < duration) requestAnimationFrame(animate);
+  }
+  // quadratic easing in/out - acceleration until halfway, then deceleration - http://gizma.com/easing/
+  function easeInOutQuad(t, b, c, d) {
+    t /= d/2;
+	  if (t < 1) return c/2*t*t + b;
+	  t--;
+	  return -c/2 * (t*(t-2) - 1) + b;
+  }
+  
+  requestAnimationFrame(animate);
+}
+
+let toAbout = document.querySelector('.btn--scroll-down');
+toAbout.addEventListener('click', function() {
+  smoothScrroll('#about', 1500);
+});
+let toHome = document.querySelector('.btn--scroll-up');
+toHome.addEventListener('click', function() {
+  smoothScrroll('#home', 1500);
+});
+// let about = document.querySelector('#about');
+// let work = document.querySelector('#work');
+
+
+
+// smoothScrroll('#about', 1000);
