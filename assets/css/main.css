@@ -146,6 +146,15 @@ body {
   .whatsapp .icon {
     width: 40px;
     height: 40px; }
+  @media (max-width: 480px) {
+    .whatsapp {
+      top: calc((100vh - 160px)); } }
+  @media (max-width: 480px) and (orientation: landscape) {
+    .whatsapp {
+      top: 240px; } }
+  @media (max-width: 320px) and (orientation: portrait) {
+    .whatsapp {
+      top: calc((100vh - 100px)); } }
 
 @media (min-width: 768px) and (max-width: 1199px) {
   .socials-left {
@@ -334,6 +343,10 @@ body {
 .u-opacity-1 {
   opacity: 1; }
 
+.u-position-left-8 {
+  left: 8px;
+  bottom: 0; }
+
 /**  Buttons
 *****************************************************/
 .btn,
@@ -507,10 +520,11 @@ body {
       margin-bottom: 4rem;
       line-height: 1.4; }
       .card__brand--name p span:first-child {
-        font-size: 2.8rem; }
+        font-size: 2.8rem;
+        margin: 0 0 0.8rem; }
       .card__brand--name p span.heading-primary--title {
         font-size: 1.3rem;
-        margin-top: 0.5rem; }
+        margin: 0; }
 
 .section-work .col-1-of-2 .hide {
   opacity: 0; }
@@ -609,6 +623,9 @@ https://css-tricks.com/custom-scrollbars-in-awebkit/
   flex-direction: column;
   align-items: center;
   justify-content: center; }
+  @media (max-width: 480px) {
+    .header {
+      height: 90vh; } }
   .header__heading-box {
     max-width: 110rem;
     text-align: center;

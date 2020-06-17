@@ -3,11 +3,16 @@
 /** Header
 ***********************************************/
 .header {
+  // border: 3px solid red;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  // mobile portrait
+  @media (max-width: 480px) {
+    height: 90vh;
+  }
 
   &__heading-box {
     max-width: $grid-width; // variable
@@ -17,7 +22,7 @@
     // [animation-fill-mode: forwards] makes sure elem retains the style values from the last @keyframe when the animation ends (opacity = 1)
     // animation-timing-function: ease; //https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function
     margin-bottom: 8rem;
-    
+
     // Landscape  
     @media only screen and (min-device-width: 375px) 
     and (max-device-width: 667px) 

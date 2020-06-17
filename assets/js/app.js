@@ -54,7 +54,12 @@
 
   function showSocials(phonePort) {
     if (phonePort.matches) { // If media query matches
+      // reposition Whatsapp icon to left on mobile phones (landscape)
+      const whatsappIcon = document.querySelector('.whatsapp');
+      whatsappIcon.classList.add('u-position-left-8');
+
       hideSocials();
+      
       navigation__checkbox.addEventListener('change', function() { // if mobile view and navigation__checkbox is unchecked, then set opacity = 0
         if (this.checked) {
           for (let i = 0; i < socials.length; i++) {

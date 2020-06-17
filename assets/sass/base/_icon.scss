@@ -45,6 +45,19 @@
     width: 40px;
     height: 40px;
   }
+  
+  @media (max-width: 480px) {
+    top: calc((100vh - 160px));
+  }
+  // reposition Whatsapp icon to left on mobile iphone 4 (landscape)
+  @media (max-width: 480px) and (orientation: landscape) {
+      top: 240px;
+    }
+  // phone - portrait
+  @media (max-width: 320px) and (orientation: portrait) {
+    // iPhone 4
+    top: calc((100vh - 100px));
+  }
 }
 
 
