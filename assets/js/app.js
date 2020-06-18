@@ -100,9 +100,6 @@ function smoothScrroll(target, duration) {
   let pageStartPos = window.pageYOffset;
   let dist = tarPos - pageStartPos;
   let startTime = null;
-
-  console.log("elem start pos: " + tarPos);
-  console.log("window start pos: " + pageStartPos);
   
   function animate(currTime) {
     if (startTime === null) startTime = currTime;
@@ -124,15 +121,9 @@ function smoothScrroll(target, duration) {
 
 let toAbout = document.querySelector('.btn--scroll-down');
 toAbout.addEventListener('click', function() {
-  smoothScrroll('#about', 1500);
+  smoothScrroll('#about', 1000);
 });
 let toHome = document.querySelector('.btn--scroll-up');
 toHome.addEventListener('click', function() {
-  smoothScrroll('#home', 1500);
+  smoothScrroll('#home', 2000);
 });
-// let about = document.querySelector('#about');
-// let work = document.querySelector('#work');
-
-
-
-// smoothScrroll('#about', 1000);
