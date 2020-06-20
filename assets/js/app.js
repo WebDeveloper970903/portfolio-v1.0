@@ -121,9 +121,10 @@ function smoothScrroll(target, duration) {
 
 let toAbout = document.querySelector('.btn--scroll-down');
 toAbout.addEventListener('click', function() {
-  smoothScrroll('#about', 1000);
+  smoothScrroll('#about', 1250); 
 });
 let toHome = document.querySelector('.btn--scroll-up');
 toHome.addEventListener('click', function() {
-  smoothScrroll('#home', 2000);
+  smoothScrroll('#home', 2500);  
 });
+ 
